@@ -1,0 +1,280 @@
+/* ==========================================================
+   MANUFACTURING / CERTIFICATION SYSTEMS
+   A compact proof-of-quality composition for the ISO records.
+   ========================================================== */
+
+/* Match the document canvas to Manufacturing's final light section so
+   natural end-of-page overscroll stays visually seamless. */
+html:has(.manufacturing-page),
+body:has(.manufacturing-page) {
+    background-color: #f7f9fd !important;
+}
+
+.manufacturing-systems {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 88% 8%, rgba(67, 104, 238, .16), transparent 31%),
+        radial-gradient(circle at 5% 96%, rgba(47, 78, 180, .14), transparent 29%),
+        #07142b;
+}
+
+.manufacturing-systems::before {
+    content: "";
+    position: absolute;
+    top: -260px;
+    right: -220px;
+    width: 560px;
+    height: 560px;
+    border: 1px solid rgba(123, 151, 255, .11);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 72px rgba(82, 115, 239, .026),
+        0 0 0 144px rgba(82, 115, 239, .018);
+    pointer-events: none;
+}
+
+.manufacturing-systems .container {
+    position: relative;
+    z-index: 1;
+}
+
+.manufacturing-systems-intro .section-label {
+    gap: 11px;
+    padding: 8px 13px 8px 9px;
+    border: 1px solid rgba(126, 155, 255, .18);
+    border-radius: 999px;
+    background: rgba(91, 122, 230, .09);
+    color: #82a2ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.manufacturing-systems-intro .section-label::before {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7f9eff;
+    box-shadow: 0 0 0 5px rgba(127, 158, 255, .12);
+}
+
+.manufacturing-systems .manufacturing-section-title {
+    margin-top: 20px;
+    line-height: .94;
+    letter-spacing: -.055em;
+}
+
+.manufacturing-systems-right {
+    min-width: 0;
+}
+
+.manufacturing-certificates-paper {
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 24px;
+    background: rgba(246, 249, 255, .98);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .92) inset,
+        0 22px 46px rgba(0, 6, 20, .24);
+}
+
+.manufacturing-certificates-paper.manufacturing-certificates-paper--systems {
+    padding: 12px;
+}
+
+.manufacturing-certificate-previews {
+    gap: 12px;
+}
+
+.manufacturing-certificate-preview {
+    border: 1px solid rgba(24, 41, 94, .10);
+    border-radius: 14px;
+    box-shadow: 0 7px 16px rgba(20, 36, 83, .08);
+}
+
+.manufacturing-certificates-showcase {
+    margin-top: 28px;
+    padding: 28px;
+    border: 1px solid rgba(132, 158, 255, .15);
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .025));
+    box-shadow: 0 18px 40px rgba(0, 5, 18, .12);
+}
+
+.manufacturing-certificates-showcase .manufacturing-certificates-paper {
+    margin-top: 20px;
+}
+
+.manufacturing-certificates-showcase-head h3 {
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+@media (max-width: 700px) {
+    .manufacturing-page .manufacturing-systems {
+        display: flex;
+        min-height: 100vh;
+        min-height: 100svh;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 42px 0 46px;
+    }
+
+    .manufacturing-systems::before {
+        top: -190px;
+        right: -290px;
+        width: 460px;
+        height: 460px;
+    }
+
+    .manufacturing-systems-layout {
+        display: block;
+    }
+
+    .manufacturing-systems-intro {
+        text-align: center;
+    }
+
+    .manufacturing-systems-intro .section-label {
+        justify-content: center;
+        font-size: 9px;
+    }
+
+    .manufacturing-systems .manufacturing-section-title {
+        max-width: 520px;
+        margin: 18px auto 0;
+        font-size: clamp(36px, 10vw, 48px);
+        line-height: .92;
+    }
+
+    .manufacturing-section-description {
+        max-width: 480px;
+        margin: 16px auto 0;
+        color: rgba(231, 237, 255, .72);
+        font-size: 14px;
+        line-height: 1.52;
+    }
+
+    .manufacturing-systems-right {
+        margin-top: 26px;
+    }
+
+    .manufacturing-certificates-paper.manufacturing-certificates-paper--systems {
+        padding: 7px;
+        border-radius: 20px;
+    }
+
+    .manufacturing-certificate-previews {
+        gap: 7px;
+    }
+
+    .manufacturing-certificate-preview {
+        border-radius: 11px;
+    }
+
+    .manufacturing-certificate-preview img,
+    .manufacturing-certificates-paper--systems .manufacturing-certificate-preview img {
+        height: clamp(104px, 22vw, 132px);
+    }
+
+    .manufacturing-certificate-preview-label {
+        padding: 7px 6px;
+        background: linear-gradient(180deg, transparent, rgba(5, 14, 35, .94) 68%);
+    }
+
+    .manufacturing-certificate-preview-label strong {
+        font-size: clamp(8px, 2.1vw, 10px);
+        line-height: 1.1;
+    }
+
+    .manufacturing-certificate-preview-label span {
+        display: none;
+    }
+
+    .manufacturing-certificates-showcase {
+        margin-top: 18px;
+        padding: 18px 14px 14px;
+        border-radius: 22px;
+        text-align: center;
+    }
+
+    .manufacturing-certificates-showcase-head {
+        display: block;
+    }
+
+    .manufacturing-certificates-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-left: 0;
+        color: #87a6ff;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: .14em;
+    }
+
+    .manufacturing-certificates-eyebrow::before {
+        position: static;
+        flex: 0 0 auto;
+        width: 18px;
+        margin-right: 9px;
+    }
+
+    .manufacturing-certificates-showcase-head h3 {
+        max-width: 390px;
+        margin: 0 auto;
+        font-size: clamp(23px, 6.2vw, 29px);
+        line-height: 1.02;
+        letter-spacing: -.045em;
+    }
+
+    .manufacturing-certificates-showcase-head p {
+        max-width: 410px;
+        margin: 10px auto 0;
+        color: rgba(231, 237, 255, .62);
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .manufacturing-certificates-showcase .manufacturing-certificates-paper {
+        margin-top: 15px;
+        padding: 7px;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .manufacturing-page .manufacturing-systems {
+        padding-top: 36px;
+        padding-bottom: 38px;
+    }
+
+    .manufacturing-systems .manufacturing-section-title {
+        font-size: 35px;
+    }
+
+    .manufacturing-section-description {
+        font-size: 13px;
+    }
+
+    .manufacturing-systems-right {
+        margin-top: 22px;
+    }
+
+    .manufacturing-certificate-preview img,
+    .manufacturing-certificates-paper--systems .manufacturing-certificate-preview img {
+        height: 98px;
+    }
+
+    .manufacturing-certificates-showcase {
+        margin-top: 14px;
+        padding: 15px 10px 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .manufacturing-certificate-preview,
+    .manufacturing-certificate-preview img {
+        transition-duration: .01ms;
+    }
+}

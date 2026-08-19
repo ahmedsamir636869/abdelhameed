@@ -1,0 +1,469 @@
+
+
+    <!-- ==========================================================
+         HEADER
+    =========================================================== -->
+
+    <header class="header">
+
+        <div class="navbar glass">
+
+            <!-- Logo -->
+
+            <a href="index.php" class="nav-logo">
+
+                <img
+                    src="assets/logos/logo.png"
+                    alt="Abdelhamid Engineering Industries"
+                    width="960"
+                    height="960">
+
+                <div class="nav-logo-text" aria-hidden="true">
+
+                    <h4>Abdelhamid</h4>
+
+                    <span>
+                        For Engineering Industries
+                    </span>
+
+                </div>
+
+            </a>
+
+           <!-- Navigation -->
+
+<nav
+    class="navigation"
+    id="primary-navigation"
+    aria-label="Primary navigation"
+>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.php"
+               class="">
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="about.php"
+               class="">
+                <span>About</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="products.php"
+               class="">
+                <span>Products</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="manufacturing.php"
+               class="">
+                <span>Manufacturing</span>
+            </a>
+        </li>
+
+
+        <li>
+            <a href="contact.php"
+               class="">
+                <span>Contact</span>
+            </a>
+        </li>
+
+        <li class="mobile-nav-quote">
+            <a href="quote.php"
+               class="active">
+                <span>Get a Quote</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+            <!-- Right Side -->
+
+            <div class="nav-cta">
+
+                <a href="quote.php"
+                    class="btn glass btn-navbar">
+
+                    Get a Quote
+
+                </a>
+
+                <button
+                    class="mobile-toggle glass"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="primary-navigation"
+                    aria-expanded="false"
+                >
+
+                    ☰
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+<main class="quote-page relative isolate overflow-x-clip">
+
+    <!-- ==========================================================
+         QUOTE HERO
+    =========================================================== -->
+
+    <section class="quote-hero">
+
+        <div class="quote-hero-image"></div>
+
+        <div class="quote-hero-overlay"></div>
+
+        <div class="quote-hero-content">
+
+            <div class="quote-container">
+
+                <div class="quote-label">
+                    <span></span>
+                    REQUEST A QUOTE
+                </div>
+
+                <h1>
+                    Tell us what<br>
+                    you need.
+                    <span>
+                        We'll engineer<br>
+                        the right solution.
+                    </span>
+                </h1>
+
+                <p>
+                    Share your project requirements with our engineering
+                    team and we'll review your request and prepare
+                    a quotation tailored to your needs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         QUOTE FORM
+    =========================================================== -->
+
+    <section class="quote-section">
+
+        <div class="quote-container">
+
+            <div class="quote-card">
+
+                <!-- FORM HEADER -->
+
+                <div class="quote-card-header">
+
+                    <div class="quote-card-icon" aria-hidden="true">
+                        <span>↗</span>
+                    </div>
+
+                    <div>
+                        <span class="quote-card-label">
+                            REQUEST A QUOTE
+                        </span>
+
+                        <h2 id="quote-form-heading">
+                            Tell us about your project
+                        </h2>
+
+                        <p>
+                            Give us the details you have and our engineering
+                            team will take it from there.
+                        </p>
+                    </div>
+
+                </div>
+
+                
+
+                <!-- FORM -->
+
+                <form
+                    class="quote-form"
+                    method="post"
+                    action=""
+                    enctype="multipart/form-data"
+                    aria-labelledby="quote-form-heading"
+                >
+
+                    <div
+                        aria-hidden="true"
+                        style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;"
+                    >
+                        <label for="quote-website">Website</label>
+                        <input
+                            id="quote-website"
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <input
+                        type="hidden"
+                        name="form_started_at"
+                        value="1787154250"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value=""
+                    >
+
+                    <!-- ROW 1 -->
+
+                    <div class="quote-form-row">
+
+                        <div class="quote-field">
+
+                            <label for="quote-name">
+                                Your Name
+                            </label>
+
+                            <input
+                                id="quote-name"
+                                type="text"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                                value=""
+                                                            >
+
+                            
+                        </div>
+
+
+                        <div class="quote-field">
+
+                            <label for="quote-company">
+                                Company Name
+                            </label>
+
+                            <input
+                                id="quote-company"
+                                type="text"
+                                name="company"
+                                placeholder="Your company name"
+                                autocomplete="organization"
+                                value=""
+                                                            >
+
+                            
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROW 2 -->
+
+                    <div class="quote-form-row">
+
+                        <div class="quote-field">
+
+                            <label for="quote-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                id="quote-email"
+                                type="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                autocomplete="email"
+                                required
+                                value=""
+                                                            >
+
+                            
+                        </div>
+
+
+                        <div class="quote-field">
+
+                            <label for="quote-phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                id="quote-phone"
+                                type="tel"
+                                name="phone"
+                                placeholder="+20 100 000 0000"
+                                autocomplete="tel"
+                                value=""
+                                                            >
+
+                            
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROJECT / PRODUCT -->
+
+                    <div class="quote-field">
+
+                        <label for="quote-project">
+                            Project / Product
+                        </label>
+
+                        <input
+                            id="quote-project"
+                            type="text"
+                            name="project"
+                            placeholder="What are you looking to manufacture?"
+                            required
+                            value=""
+                                                    >
+
+                        
+                    </div>
+
+
+                    <!-- REQUIREMENTS -->
+
+                    <div class="quote-field">
+
+                        <label for="quote-requirements">
+                            Tell us about your requirements
+                        </label>
+
+                        <textarea
+                            id="quote-requirements"
+                            name="requirements"
+                            placeholder="Tell us anything you know about the project — dimensions, material, quantity, application, drawings, or any other requirements..."
+                            required
+                                                    ></textarea>
+
+                        
+                    </div>
+
+
+                    <!-- FILE UPLOAD -->
+
+                    <div class="quote-field">
+
+                        <label id="quote-files-label">
+                            Upload Files
+                            <span class="quote-optional">
+                                OPTIONAL
+                            </span>
+                        </label>
+
+                        <label
+                            for="quote-files"
+                            class="quote-upload"
+                            id="quote-files-instructions"
+                        >
+
+                            <div class="quote-upload-icon" aria-hidden="true">
+                                +
+                            </div>
+
+                            <div class="quote-upload-text">
+
+                                <strong id="quote-files-title">
+                                    Add drawings, CAD files or images
+                                </strong>
+
+                                <span id="quote-files-description">
+                                    Accepted: JPG/JPEG, PNG, PDF, DWG, DXF,
+                                    STEP/STP and IGES/IGS. Maximum 5 files,
+                                    10 MiB each and 25 MiB total.
+                                </span>
+
+                                <span
+                                    id="quote-files-status"
+                                    class="quote-file-selection-status"
+                                    role="status"
+                                    hidden
+                                ></span>
+
+                            </div>
+
+                        </label>
+
+                        <input
+                            id="quote-files"
+                            class="quote-file-input"
+                            type="file"
+                            name="files[]"
+                            aria-labelledby="quote-files-label quote-files-instructions"
+                            multiple
+                            accept=".jpg,.jpeg,.png,.pdf,.dwg,.dxf,.step,.stp,.iges,.igs"
+                             aria-describedby="quote-files-label quote-files-instructions"                        >
+
+                        
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="quote-submit-area">
+
+                        <div class="quote-submit-note">
+                            Our engineering team will review your request
+                            and contact you with the next steps.
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="quote-submit"
+                        >
+
+                            <span>
+                                REQUEST QUOTATION
+                            </span>
+
+                            <span class="quote-submit-arrow" aria-hidden="true">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+
+
+<!-- ==========================================================
+     GLOBAL LIQUID GLASS NAVIGATION
+========================================================== -->
+
+
+
+
+

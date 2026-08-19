@@ -1,0 +1,1533 @@
+/* =========================================================
+   PRODUCTS PAGE
+   Safely extracted Products-owned source-order regions.
+   Mixed multi-page responsive patches remain in css/design.css.
+   ========================================================= */
+
+/* ==========================================================
+   PRODUCTS PAGE
+========================================================== */
+
+.products-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.products-hero-background {
+    position: absolute;
+    inset: 0;
+}
+
+.products-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.products-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 12, 28, 0.55),
+            rgba(5, 12, 28, 0.78)
+        );
+}
+
+.products-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 90%);
+    text-align: center;
+    color: #fff;
+}
+
+.products-hero-content h1 {
+    margin: 18px 0;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.products-hero-content h1 span {
+    color: #4f6ff5;
+}
+
+.products-hero-content p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+}
+
+
+/* ==========================================================
+   SHOWROOM
+========================================================== */
+
+.product-showroom {
+    padding: 100px 0;
+    background: #f5f7fb;
+}
+
+.product-showroom .container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+/* ==========================================================
+   CATEGORY
+========================================================== */
+
+.product-category {
+    position: relative;
+    min-height: 540px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #111827;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+.category-image {
+    position: relative;
+    width: 100%;
+    min-height: 540px;
+    overflow: hidden;
+}
+
+.category-image img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.7,.2,1);
+}
+
+.product-category:hover .category-image img {
+    transform: scale(1.035);
+}
+
+
+/* ==========================================================
+   CATEGORY OVERLAY
+========================================================== */
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 10, 20, 0.88) 0%,
+            rgba(5, 10, 20, 0.65) 35%,
+            rgba(5, 10, 20, 0.18) 75%,
+            rgba(5, 10, 20, 0.05) 100%
+        );
+}
+
+
+/* ==========================================================
+   CATEGORY CONTENT
+========================================================== */
+
+.category-content {
+    position: absolute;
+
+    left: 70px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: min(430px, 45%);
+
+    color: #fff;
+}
+
+.category-number {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    color: #7c98ff;
+}
+
+.category-content h2 {
+    margin: 0 0 22px;
+
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+
+    line-height: 0.94;
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+
+    text-transform: uppercase;
+}
+
+.category-content p {
+    max-width: 390px;
+
+    margin: 0 0 30px;
+
+    font-size: 0.98rem;
+
+    line-height: 1.65;
+
+    color: rgba(255,255,255,0.78);
+}
+
+
+/* ==========================================================
+   CATEGORY BUTTON
+========================================================== */
+
+.category-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 13px 19px;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    color: #fff;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.category-button span {
+    font-size: 1.1rem;
+}
+
+.category-button:hover {
+    background: #4f6ff5;
+    border-color: #4f6ff5;
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   EMPTY PRODUCT AREA
+   Prepared for the product windows we will add later.
+========================================================== */
+
+.category-products {
+    display: none;
+}
+
+
+/* ==========================================================
+   CUSTOM SOLUTIONS
+========================================================== */
+
+.custom-category .category-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 10, 20, 0.9),
+            rgba(5, 10, 20, 0.45),
+            rgba(5, 10, 20, 0.15)
+        );
+}
+
+
+/* ==========================================================
+   BOTTOM CTA
+========================================================== */
+
+.products-cta {
+    padding: 110px 20px;
+
+    background: #fff;
+
+    text-align: center;
+}
+
+.products-cta-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.products-cta h2 {
+    margin: 18px 0;
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+
+    color: #111827;
+}
+
+.products-cta h2 span {
+    color: #4f6ff5;
+}
+
+.products-cta p {
+    max-width: 600px;
+
+    margin: 0 auto 32px;
+
+    color: #6b7280;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .products-hero {
+        min-height: 440px;
+    }
+
+    .product-showroom {
+        padding: 50px 15px;
+    }
+
+    .product-category,
+    .category-image {
+        min-height: 520px;
+    }
+
+    .category-content {
+        left: 30px;
+        right: 30px;
+        width: auto;
+    }
+
+    .category-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .category-content p {
+        font-size: 0.9rem;
+    }
+
+    .category-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5,10,20,0.25),
+                rgba(5,10,20,0.88)
+            );
+    }
+
+}
+
+/* ==========================================================
+   PRODUCTS PAGE — FINAL MASTER BLOCK
+   ==========================================================
+   This block is ONLY for products.php.
+   Keep it together at the end of design.css.
+   The Home capabilities/product-overview section is NOT touched.
+========================================================== */
+
+
+/* ==========================================================
+   01 — HERO
+========================================================== */
+
+.products-hero {
+    position: relative;
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #050c1c 0%,
+            #07132d 55%,
+            #0b1d45 100%
+        );
+}
+
+.products-hero-background {
+    display: none !important;
+}
+
+.products-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(79, 111, 245, 0.16),
+            transparent 55%
+        );
+}
+
+.products-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    text-align: center;
+    color: #fff;
+}
+
+.products-hero-content h1 {
+    margin: 18px 0;
+
+    color: #fff;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.products-hero-content h1 span {
+    color: #4f6ff5;
+}
+
+.products-hero-content p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.80);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   02 — WHITE CATEGORY AREA
+========================================================== */
+
+.product-showroom {
+    padding: 70px 0 100px;
+
+    background: #f5f7fb;
+}
+
+.product-showroom > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+
+/* ==========================================================
+   03 — CATEGORY NAVIGATOR
+   Desktop: 5 columns × 2 rows
+========================================================== */
+
+.product-category-nav {
+    width: calc(100% - 70px);
+    max-width: 1420px;
+
+    margin: 0 auto;
+}
+
+.product-category-nav-heading {
+    margin-bottom: 28px;
+}
+
+.product-category-nav-heading .section-label {
+    color: #4f6ff5;
+}
+
+.product-category-nav-heading h2 {
+    margin: 10px 0 0;
+
+    color: #111827;
+
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.product-category-nav-heading h2 span {
+    color: #4f6ff5;
+}
+
+.product-category-nav-grid {
+    display: grid;
+
+    width: 100%;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 145px);
+
+    column-gap: 18px;
+    row-gap: 18px;
+}
+
+
+/* ==========================================================
+   04 — CATEGORY CARDS
+========================================================== */
+
+.product-category-nav-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 145px;
+    box-sizing: border-box;
+
+    padding: 20px 22px;
+
+    border: 1px solid rgba(17, 24, 39, 0.10);
+    border-radius: 16px;
+
+    background: #fff;
+    color: #111827;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.product-category-nav-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(79, 111, 245, 0.45);
+
+    background: #f8faff;
+
+    box-shadow:
+        0 14px 32px rgba(15, 23, 42, 0.10);
+}
+
+.nav-card-number {
+    display: block;
+
+    color: #4f6ff5;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+    line-height: 1;
+}
+
+.nav-card-title {
+    display: block;
+
+    margin-top: 14px;
+
+    color: #111827;
+
+    font-size: 0.94rem;
+    font-weight: 700;
+
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+}
+
+
+/* ==========================================================
+   05 — CONTINUOUS SHOWROOM
+========================================================== */
+
+.product-showroom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 95px;
+
+    width: 100%;
+}
+
+.showroom-category {
+    width: 100%;
+
+    scroll-margin-top: 110px;
+}
+
+
+/* ----------------------------------------------------------
+   SHOWROOM CATEGORY HEADER
+---------------------------------------------------------- */
+
+.showroom-category-header {
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1000px);
+
+    gap: 28px;
+
+    align-items: start;
+
+    max-width: 1100px;
+
+    margin: 0 auto 35px;
+}
+
+.showroom-category-number {
+    color: #4f6ff5;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+.showroom-category-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #4f6ff5;
+
+    font-size: 0.70rem;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+.showroom-category-header h2 {
+    margin: 0 0 14px;
+
+    color: #111827;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 0.98;
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+}
+
+.showroom-category-header p {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ----------------------------------------------------------
+   FUTURE PRODUCT AREA
+   ----------------------------------------------------------
+   Kept empty for now so actual product cards/images can be
+   inserted here category-by-category without changing the
+   showroom architecture.
+---------------------------------------------------------- */
+
+.showroom-products {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   06 — LEGACY PRODUCT BLOCKS
+   Hide old image-based category cards if they still exist
+   anywhere in products.php / older markup.
+========================================================== */
+
+.product-showroom > .container > .product-category,
+.product-category {
+    display: none !important;
+}
+
+.category-products {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   07 — DESKTOP
+========================================================== */
+
+@media (min-width: 1450px) {
+
+    .product-category-nav {
+        width: calc(100% - 90px);
+        max-width: 1460px;
+    }
+
+    .product-category-nav-grid {
+        grid-template-rows: repeat(2, 150px);
+
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .product-category-nav-card {
+        min-height: 150px;
+        padding: 22px 24px;
+    }
+}
+
+
+/* ==========================================================
+   08 — TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .product-category-nav {
+        width: calc(100% - 50px);
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+}
+
+
+/* ==========================================================
+   09 — SMALL TABLET
+========================================================== */
+
+@media (max-width: 850px) {
+
+    .product-showroom {
+        padding: 55px 0 80px;
+    }
+
+    .product-category-nav {
+        width: calc(100% - 35px);
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .showroom-category-header {
+        grid-template-columns: 45px minmax(0, 1fr);
+
+        gap: 15px;
+
+        width: calc(100% - 35px);
+    }
+}
+
+
+/* ==========================================================
+   10 — MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .products-hero {
+        min-height: 420px;
+    }
+
+    .product-showroom {
+        padding: 50px 15px 70px;
+    }
+
+    .product-showroom > .container {
+        gap: 55px;
+    }
+
+    .product-category-nav {
+        width: 100%;
+    }
+
+    .product-category-nav-heading {
+        margin-bottom: 24px;
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .product-category-nav-card {
+        min-height: 110px;
+
+        padding: 15px;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        font-size: 0.80rem;
+    }
+
+    .product-showroom-list {
+        gap: 65px;
+    }
+
+    .showroom-category {
+        scroll-margin-top: 90px;
+    }
+
+    .showroom-category-header {
+        width: 100%;
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .showroom-category-header h2 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+    }
+
+    .showroom-category-header p {
+        font-size: 0.92rem;
+    }
+}
+
+
+/* ==========================================================
+   11 — VERY SMALL MOBILE
+========================================================== */
+
+@media (max-width: 390px) {
+
+    .product-category-nav-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================================
+   PRODUCTS SHOWROOM — PRODUCT GALLERIES
+   Add this after the existing Products-page CSS.
+========================================================== */
+
+.product-showroom-list {
+    scroll-margin-top: 120px;
+}
+
+.showroom-category {
+    scroll-margin-top: 120px;
+    padding: 110px 0 120px;
+    border-top: 1px solid rgba(20, 27, 48, 0.08);
+}
+
+.showroom-category:first-child {
+    border-top: 0;
+}
+
+.showroom-category-header {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    margin-bottom: 48px;
+}
+
+.showroom-category-number {
+    color: #5d70ff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    padding-top: 8px;
+}
+
+.showroom-category-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #5d70ff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.showroom-category-header h2 {
+    max-width: 1050px;
+    margin: 0 0 18px;
+    color: #111728;
+    font-size: clamp(2.6rem, 4.2vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.showroom-category-header p {
+    max-width: 760px;
+    margin: 0;
+    color: #697080;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.showroom-products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.showroom-product-card {
+    overflow: hidden;
+    border: 1px solid rgba(20, 27, 48, 0.08);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(20, 27, 48, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showroom-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 45px rgba(20, 27, 48, 0.12);
+}
+
+.showroom-product-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f3f5f8;
+}
+
+.showroom-product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    padding: 24px;
+    transition: transform 0.45s ease;
+}
+
+.showroom-product-card:hover .showroom-product-image img {
+    transform: scale(1.045);
+}
+
+.showroom-product-info {
+    padding: 18px 20px 21px;
+}
+
+.showroom-product-category {
+    display: block;
+    margin-bottom: 7px;
+    color: #6878ed;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.showroom-product-info h3 {
+    margin: 0;
+    color: #151a2b;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+/* Sector 01 keeps its user-facing product names above the category label. */
+#mesh-decks .showroom-product-info h3,
+#rest-various-products .showroom-product-info h3,
+#shopping-baskets .showroom-product-info h3,
+#wire-products .showroom-product-info h3,
+#gas-cooker-shelves .showroom-product-info h3,
+#refrigerator-shelves .showroom-product-info h3,
+#pan-supports .showroom-product-info h3,
+#cable-trays .showroom-product-info h3,
+#dishwasher-racks .showroom-product-info h3,
+#protection-screens .showroom-product-info h3 {
+    min-height: 2.5em;
+    margin-bottom: 7px;
+}
+
+#mesh-decks .showroom-product-category,
+#rest-various-products .showroom-product-category,
+#shopping-baskets .showroom-product-category,
+#wire-products .showroom-product-category,
+#gas-cooker-shelves .showroom-product-category,
+#refrigerator-shelves .showroom-product-category,
+#pan-supports .showroom-product-category,
+#cable-trays .showroom-product-category,
+#dishwasher-racks .showroom-product-category,
+#protection-screens .showroom-product-category {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+#mesh-decks .showroom-product-card,
+#rest-various-products .showroom-product-card,
+#shopping-baskets .showroom-product-card,
+#wire-products .showroom-product-card,
+#gas-cooker-shelves .showroom-product-card,
+#refrigerator-shelves .showroom-product-card,
+#pan-supports .showroom-product-card,
+#cable-trays .showroom-product-card,
+#dishwasher-racks .showroom-product-card,
+#protection-screens .showroom-product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#mesh-decks .showroom-product-info,
+#rest-various-products .showroom-product-info,
+#shopping-baskets .showroom-product-info,
+#wire-products .showroom-product-info,
+#gas-cooker-shelves .showroom-product-info,
+#refrigerator-shelves .showroom-product-info,
+#pan-supports .showroom-product-info,
+#cable-trays .showroom-product-info,
+#dishwasher-racks .showroom-product-info,
+#protection-screens .showroom-product-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 94px;
+}
+
+.showroom-products-empty {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(20, 27, 48, 0.16);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.showroom-empty-message {
+    text-align: center;
+}
+
+.showroom-empty-message span {
+    color: #6878ed;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.showroom-empty-message p {
+    margin: 8px 0 0;
+    color: #7b8392;
+}
+
+/* Smooth navigation when a category card is selected */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1100px) {
+    .showroom-products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .showroom-category {
+        padding: 80px 0 90px;
+    }
+
+    .showroom-category-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 34px;
+    }
+
+    .showroom-category-number {
+        padding-top: 0;
+    }
+
+    .showroom-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .showroom-category {
+        padding: 65px 0 75px;
+    }
+
+    .showroom-category-header h2 {
+        font-size: 2.4rem;
+    }
+
+    .showroom-products {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   PRODUCTS — CATEGORY NAVIGATOR
+   FINAL — LARGER CARDS + TIGHT TWO-ROW GRID
+========================================================== */
+
+.product-category-nav {
+    padding-top: 0 !important;
+    padding-bottom: 15px !important;
+    transform: translateY(-30px);
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.product-category-nav-heading {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+}
+
+
+/* ==========================================================
+   CARD GRID
+========================================================== */
+
+.product-category-nav-grid {
+    display: grid !important;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, 105px) !important;
+    grid-auto-rows: 105px !important;
+
+    column-gap: 5px !important;
+    row-gap: 30px !important;
+
+    align-content: start !important;
+    justify-content: start !important;
+    align-items: start !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.product-category-nav-card {
+    position: relative !important;
+
+    min-height: 105px !important;
+    height: 105px !important;
+
+    padding: 16px 18px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    text-align: center !important;
+
+    overflow: hidden !important;
+}
+
+
+/* ==========================================================
+   BLUE NUMBER
+   FIXED TOP-LEFT
+========================================================== */
+
+.product-category-nav-card .nav-card-number {
+    position: absolute !important;
+
+    top: 13px !important;
+    left: 16px !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 0.68rem !important;
+    line-height: 1 !important;
+
+    text-align: left !important;
+
+    align-self: auto !important;
+
+    transform: none !important;
+}
+
+
+/* ==========================================================
+   CATEGORY TITLE
+   PERFECTLY CENTERED INSIDE CARD
+========================================================== */
+
+.product-category-nav-card .nav-card-title {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 5px !important;
+
+    font-size: 0.9rem !important;
+    line-height: 1.12 !important;
+
+    text-align: center !important;
+
+    transform: none !important;
+}
+
+
+/* ==========================================================
+   RESET OLD POSITIONING
+========================================================== */
+
+.product-category-nav-card > * {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+}
+
+
+/* ==========================================================
+   RE-APPLY NUMBER POSITION
+========================================================== */
+
+.product-category-nav-card > .nav-card-number {
+    position: absolute !important;
+
+    top: 13px !important;
+    left: 16px !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+
+    transform: none !important;
+}
+
+
+/* ==========================================================
+   RE-APPLY CENTERED TITLE
+========================================================== */
+
+.product-category-nav-card > .nav-card-title {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 5px !important;
+
+    text-align: center !important;
+
+    transform: none !important;
+}
+
+
+/* ==========================================================
+   RESTORED PRE-4G PRODUCTS RESPONSIVE CASCADE
+
+   These were originally the late Products overrides in design.css.
+   Keep them after the extracted Products master rules so Products retains
+   the exact pre-extraction responsive source order.
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+        grid-template-rows: none !important;
+
+        grid-auto-rows: minmax(110px, auto) !important;
+
+        column-gap: 12px !important;
+
+        row-gap: 12px !important;
+
+    }
+
+
+    .product-category-nav-card {
+
+        min-height: 110px !important;
+
+        height: auto !important;
+
+        padding: 16px !important;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: 1fr !important;
+
+    }
+
+
+    .product-category-nav-card {
+
+        min-height: 104px !important;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .products-hero {
+        min-height: 360px;
+    }
+
+    .product-category-nav {
+        transform: translateY(-18px);
+        padding-bottom: 4px !important;
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .product-category-nav-card {
+        min-height: 88px !important;
+        padding: 14px !important;
+    }
+
+    .showroom-category {
+        padding: 48px 0 52px;
+    }
+
+    .showroom-category-header {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .showroom-category-header h2 {
+        margin-bottom: 10px;
+        font-size: clamp(2rem, 9vw, 2.45rem);
+    }
+
+    .showroom-category-header p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .showroom-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .showroom-product-card {
+        border-radius: 16px;
+    }
+
+    .showroom-product-image img {
+        padding: 12px;
+    }
+
+    .showroom-product-info {
+        padding: 10px 12px 12px;
+    }
+
+    .showroom-product-category {
+        margin-bottom: 0;
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+    }
+
+    #mesh-decks .showroom-product-info h3,
+    #rest-various-products .showroom-product-info h3,
+    #shopping-baskets .showroom-product-info h3,
+    #wire-products .showroom-product-info h3,
+    #gas-cooker-shelves .showroom-product-info h3,
+    #refrigerator-shelves .showroom-product-info h3,
+    #pan-supports .showroom-product-info h3,
+    #cable-trays .showroom-product-info h3,
+    #dishwasher-racks .showroom-product-info h3,
+    #protection-screens .showroom-product-info h3 {
+        margin-bottom: 4px;
+        font-size: 0.78rem;
+        line-height: 1.25;
+    }
+
+    #mesh-decks .showroom-product-info,
+    #rest-various-products .showroom-product-info,
+    #shopping-baskets .showroom-product-info,
+    #wire-products .showroom-product-info,
+    #gas-cooker-shelves .showroom-product-info,
+    #refrigerator-shelves .showroom-product-info,
+    #pan-supports .showroom-product-info,
+    #cable-trays .showroom-product-info,
+    #dishwasher-racks .showroom-product-info,
+    #protection-screens .showroom-product-info {
+        min-height: 65px;
+    }
+
+}
+
+
+@media (max-width: 339px) {
+
+    .showroom-products {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .products-hero-content {
+        transform: translateY(40px);
+    }
+
+    .product-category-nav {
+        padding-bottom: 18px !important;
+    }
+
+    .product-category-nav-heading {
+        margin-bottom: 10px !important;
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(5, 106px) !important;
+        grid-auto-rows: 106px !important;
+        column-gap: 10px !important;
+        row-gap: 8px !important;
+    }
+
+    .product-category-nav-card {
+        position: relative !important;
+        display: block !important;
+        min-height: 106px !important;
+        height: 106px !important;
+        padding: 10px 12px !important;
+        box-sizing: border-box;
+    }
+
+    .product-category-nav-card .nav-card-number {
+        position: absolute !important;
+        top: 10px !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: 12px !important;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 0 !important;
+        padding-top: 16px;
+        box-sizing: border-box;
+        color: #111827;
+        font-size: 0.72rem !important;
+        line-height: 1.18 !important;
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 340px) {
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(5, 116px) !important;
+        grid-auto-rows: 116px !important;
+    }
+
+    .product-category-nav-card {
+        min-height: 116px !important;
+        height: 116px !important;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        font-size: 0.68rem !important;
+        line-height: 1.16 !important;
+    }
+
+}

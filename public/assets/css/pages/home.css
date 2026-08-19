@@ -1,0 +1,811 @@
+/* ==========================================================
+   HOME PAGE
+   Final Home-owned layout and responsive composition rules.
+   Shared base, navbar, glass, button and Back-to-Top rules remain with their owners.
+   ========================================================== */
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+/* Match the Home hero accent word to the CTA's bright blue without a gradient. */
+.hero h1 span {
+    background: none;
+    color: #668fff;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: #668fff;
+}
+
+
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.about-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   CAPABILITIES — FIT THE FULL SECTION IN ONE VIEWPORT
+========================================================== */
+
+.capabilities-section {
+    position: relative;
+
+    height: 100vh;
+    height: 100svh;
+
+    min-height: 0;
+
+    box-sizing: border-box;
+
+    padding: 75px 0 55px;
+
+    background: #E2E9FF;
+
+    overflow: hidden;
+
+    scroll-snap-align: start;
+}
+
+
+/* ----------------------------------------------------------
+   HEADER
+---------------------------------------------------------- */
+
+.capabilities-section .capabilities-header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(600px, 1.3fr)
+        minmax(360px, 0.7fr);
+
+    column-gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 38px;
+}
+
+
+.capabilities-section .capabilities-title {
+    font-size: 76px;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.045em;
+
+    margin: 18px 0 0;
+
+    max-width: 680px;
+}
+
+
+.capabilities-section .capabilities-intro {
+    align-self: end;
+
+    max-width: 440px;
+
+    padding-bottom: 0;
+
+    transform: none;
+}
+
+
+.capabilities-section .capabilities-intro p {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+}
+
+
+/* ----------------------------------------------------------
+   GRID
+---------------------------------------------------------- */
+
+.capabilities-section .capabilities-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 14px;
+
+    height: calc(100vh - 75px - 55px - 190px);
+
+    min-height: 0;
+}
+
+
+/* ----------------------------------------------------------
+   CARDS
+---------------------------------------------------------- */
+
+.capabilities-section .capability-card {
+    min-height: 0;
+    height: 100%;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    main > section {
+        scroll-snap-stop: normal;
+    }
+
+    .capabilities-section {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+
+        padding: 100px 0 110px;
+
+        overflow: visible;
+    }
+
+    .capabilities-section .capabilities-header {
+        grid-template-columns: 1fr;
+
+        row-gap: 30px;
+
+        margin-bottom: 45px;
+    }
+
+    .capabilities-section .capabilities-title {
+        font-size: clamp(54px, 9vw, 76px);
+    }
+
+    .capabilities-section .capabilities-intro {
+        max-width: 600px;
+        transform: none;
+    }
+
+    .capabilities-section .capabilities-grid {
+        height: auto;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            300px 300px 300px;
+    }
+
+    .capability-wire {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .capability-appliance {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .capability-retail {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .capability-custom {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .hero,
+    .about-section,
+    .capabilities-section {
+        min-height: auto;
+    }
+
+    .capabilities-section {
+        height: auto;
+
+        padding: 90px 0 100px;
+
+        overflow: hidden;
+    }
+
+    .capabilities-section .capabilities-header {
+        grid-template-columns: 1fr;
+
+        row-gap: 24px;
+
+        margin-bottom: 45px;
+    }
+
+    .capabilities-section .capabilities-title {
+        font-size: clamp(48px, 14vw, 70px);
+    }
+
+    .capabilities-section .capabilities-intro {
+        max-width: 100%;
+        transform: none;
+    }
+
+    .capabilities-section .capabilities-intro p {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+
+    .capabilities-section .capabilities-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        gap: 12px;
+    }
+
+    .capability-wire,
+    .capability-appliance,
+    .capability-retail,
+    .capability-custom {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        min-height: 320px;
+        height: auto;
+    }
+
+    .capability-wire {
+        min-height: 420px;
+    }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 520px) {
+
+    .capabilities-section {
+        padding: 80px 0 90px;
+    }
+}
+
+/* Controlled phone composition refinements. */
+@media (max-width: 700px) {
+
+    /* HOME — keep the introduction and capabilities intentional on phones. */
+    .about-section {
+        min-height: 100svh;
+        padding: 46px 0 38px;
+        overflow: visible;
+    }
+
+    .about-section .about-grid {
+        gap: 18px;
+    }
+
+    .about-section .about-title {
+        margin-top: 14px;
+        font-size: clamp(36px, 10vw, 42px);
+        letter-spacing: -0.045em;
+    }
+
+    .about-section .about-description {
+        margin-top: 14px;
+        font-size: 14px;
+        line-height: 1.48;
+    }
+
+    .about-section .about-link {
+        margin-top: 18px;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .about-section .about-visual {
+        min-height: 178px;
+    }
+
+    .about-section .about-glass-card {
+        width: 164px;
+        min-height: 164px;
+        padding: 22px;
+        border-radius: 28px;
+    }
+
+    .about-section .about-card-number {
+        font-size: 58px;
+        letter-spacing: -0.075em;
+    }
+
+    .about-section .about-card-title {
+        margin-top: 8px;
+        font-size: 18px;
+    }
+
+    .about-section .about-orbit-1 {
+        width: 208px;
+        height: 208px;
+    }
+
+    .about-section .about-orbit-2 {
+        width: 276px;
+        height: 276px;
+    }
+
+    .about-section .about-side-card {
+        right: 8px;
+        bottom: 2px;
+        width: 106px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .about-section .about-side-card span {
+        font-size: 8px;
+        letter-spacing: 0.12em;
+    }
+
+    .about-section .about-side-card strong {
+        margin-top: 3px;
+        font-size: 26px;
+    }
+
+    .about-section .about-side-card small {
+        margin-top: 4px;
+        font-size: 8px;
+    }
+
+    .capabilities-section {
+        min-height: 100svh;
+        padding: 48px 0 40px;
+        overflow: visible;
+    }
+
+    .capabilities-section .capabilities-header {
+        row-gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .capabilities-section .capabilities-title {
+        margin-top: 12px;
+        font-size: clamp(40px, 11.5vw, 48px);
+    }
+
+    .capabilities-section .capabilities-intro p {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .capabilities-section .capabilities-link {
+        font-size: 13px;
+    }
+
+    .capabilities-section .capabilities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .capabilities-section .capability-wire,
+    .capabilities-section .capability-appliance,
+    .capabilities-section .capability-retail,
+    .capabilities-section .capability-custom {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .capabilities-section .capability-card {
+        border-radius: 18px;
+    }
+
+    .capabilities-section .capability-number {
+        top: 9px;
+        right: 52px;
+        font-size: 11px;
+    }
+
+    .capabilities-section .capability-category {
+        margin-bottom: 4px;
+        font-size: 7px;
+    }
+
+    .capabilities-section .capability-content h3 {
+        font-size: 20px;
+        line-height: 1.05;
+    }
+
+    .capabilities-section .capability-content p {
+        margin-top: 6px;
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .capabilities-section .capability-content {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .capabilities-section .capability-arrow {
+        top: 10px;
+        right: 10px;
+        bottom: auto;
+        width: 36px;
+        height: 36px;
+    }
+
+}
+
+/* WCAG AA contrast tuning for the existing photographic capability cards. */
+@media (min-width: 701px) {
+    .capability-wire .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .18) 0%, rgba(8, 13, 28, .54) 35%, rgba(7, 11, 24, .99) 100%);
+    }
+
+    .capability-appliance .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .70) 0%, rgba(8, 13, 28, .75) 35%, rgba(7, 11, 24, .99) 100%);
+    }
+
+    .capability-retail .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .55) 0%, rgba(8, 13, 28, .70) 35%, rgba(7, 11, 24, .98) 100%);
+    }
+
+    .capability-custom .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .60) 0%, rgba(8, 13, 28, .74) 35%, rgba(7, 11, 24, .99) 100%);
+    }
+}
+
+@media (max-width: 700px) {
+    .capability-wire .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .24) 0%, rgba(8, 13, 28, .78) 35%, rgba(7, 11, 24, .98) 100%);
+    }
+
+    .capability-appliance .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .18) 0%, rgba(8, 13, 28, .65) 35%, rgba(7, 11, 24, .98) 100%);
+    }
+
+    .capability-retail .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .18) 0%, rgba(8, 13, 28, .69) 35%, rgba(7, 11, 24, .98) 100%);
+    }
+
+    .capability-custom .capability-overlay {
+        background: linear-gradient(180deg, rgba(8, 13, 28, .64) 0%, rgba(8, 13, 28, .78) 35%, rgba(7, 11, 24, .99) 100%);
+    }
+
+    .capabilities-section .capability-arrow {
+        background: rgba(7, 11, 24, .92);
+        border-color: rgba(255, 255, 255, .82);
+    }
+}
+
+/* Final phone hero-stat refinements. */
+@media (max-width: 700px) {
+    /* HOME — compact the existing five-card glass system for phones only. */
+    .hero-stats {
+        width: min(352px, calc(100% - 38px));
+        bottom: 30px;
+    }
+
+    .hero-stat {
+        min-height: 56px;
+        height: 56px;
+        padding: 6px 8px;
+        border-radius: 28px;
+    }
+
+    .hero-stat h2 {
+        margin-bottom: 3px;
+        font-size: 18px;
+    }
+
+    .hero-stat span {
+        font-size: 7.5px;
+        line-height: 1.15;
+    }
+
+    .hero-stat:nth-child(5) {
+        max-width: 184px;
+    }
+
+    /* HOME — make the complete existing hero composition fill the viewport. */
+    .hero {
+        height: 100svh;
+        min-height: 100svh;
+    }
+}
+
+/* Keep the approved phone hero composition clear on short devices. */
+@media (max-width: 700px) and (max-height: 720px) {
+    .hero-content {
+        padding-top: 96px;
+        padding-bottom: 75px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero p {
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        margin-top: 20px;
+    }
+
+    .hero .btn {
+        min-height: 46px;
+    }
+
+    .hero-stats {
+        bottom: 18px;
+        gap: 5px;
+    }
+
+    .hero-stat {
+        min-height: 52px;
+        height: 52px;
+        padding: 5px 8px;
+    }
+
+    .hero-stat h2 {
+        font-size: 17px;
+    }
+}
+
+/* Bridge the short-phone composition into the standard phone layout without a collision. */
+@media (max-width: 700px) and (min-height: 721px) and (max-height: 758px) {
+    .hero-content {
+        padding-top: clamp(96px, calc(130svh - 842px), 142px);
+    }
+
+    .hero h1 {
+        font-size: clamp(37px, calc(11.11svh - 43px), 40.9px);
+    }
+}
+
+/* Preserve the same hero hierarchy on very short phone viewports. */
+@media (max-width: 700px) and (max-height: 600px) {
+    .hero-content {
+        padding-top: 78px;
+        padding-bottom: 64px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .hero-buttons {
+        margin-top: 10px;
+    }
+
+    .hero .btn {
+        min-height: 42px;
+    }
+
+    .hero-stats {
+        width: calc(100% - 32px);
+        bottom: 6px;
+        gap: 4px;
+    }
+
+    .hero-stat {
+        min-height: 50px;
+        height: 50px;
+        padding: 4px 6px;
+        border-radius: 25px;
+    }
+
+    .hero-stat h2 {
+        margin-bottom: 2px;
+        font-size: 16px;
+    }
+
+    .hero-stat span {
+        font-size: 7px;
+    }
+
+    .hero-stat:nth-child(5) {
+        max-width: 174px;
+    }
+}
+
+/* Let very short landscape screens use a readable, naturally scrolling hero. */
+@media (max-width: 700px) and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 520px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        max-width: 50%;
+        padding-top: 108px;
+        padding-bottom: 48px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 6vw, 40px);
+        line-height: .98;
+    }
+
+    .hero p {
+        margin-top: 12px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .hero-buttons {
+        margin-top: 12px;
+    }
+
+    .hero-stats {
+        right: 5%;
+        left: auto;
+        width: 38%;
+        min-width: 0;
+        transform: none;
+    }
+}
+
+/*
+   PHONE HERO — natural-flow editorial composition.
+   The portrait layout intentionally continues below the first viewport rather
+   than compressing the approved content into 100svh. Desktop and landscape
+   rules remain untouched.
+*/
+@media (max-width: 700px) and (orientation: portrait) {
+    .hero {
+        display: block;
+        height: auto;
+        min-height: 100svh;
+    }
+
+    .hero > .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 141px;
+        padding-bottom: 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 10.5vw, 41px);
+        line-height: .98;
+    }
+
+    .hero h1 span {
+        display: block;
+    }
+
+    .hero p {
+        margin-top: 34px;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        margin-top: 28px;
+    }
+
+    .hero .btn-primary {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .hero-stats {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: calc(100% - 40px);
+        margin: 28px auto calc(32px + env(safe-area-inset-bottom));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        transform: none;
+    }
+
+    .hero-stat {
+        min-height: 68px;
+        height: 68px;
+        padding: 10px 8px;
+        border-radius: 28px;
+    }
+
+    .hero-stat h2 {
+        margin-bottom: 4px;
+        font-size: 27px;
+    }
+
+    .hero-stat span {
+        max-width: none;
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .hero-stat:nth-child(5) {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+    }
+}
+
+/* Desktop-only Home statistic-card geometry. */
+@media (min-width: 1280px) {
+    .hero .btn-primary {
+        width: 160px;
+    }
+
+    .hero-stats {
+        left: max(48px, calc((100% - 1480px) / 2 + 48px));
+        bottom: 65px;
+        right: 8px;
+        width: auto;
+        gap: 24px;
+        transform: none;
+    }
+
+    .hero-stat {
+        min-height: 116px;
+        height: 116px;
+    }
+}
+
+@media (min-width: 1344px) {
+    .hero-stats {
+        right: 24px;
+        gap: clamp(28px, 2.5vw, 60px);
+    }
+}
+
+@media (min-width: 1408px) {
+    .hero-stats {
+        right: 48px;
+        gap: clamp(32px, 2.5vw, 40px);
+    }
+}
+
+@media (min-width: 1480px) {
+    .hero-stats {
+        right: max(48px, calc((100% - 1480px) / 2 + 48px));
+    }
+}

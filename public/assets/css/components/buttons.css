@@ -1,0 +1,50 @@
+/* =========================================================
+   SHARED BUTTON PRIMITIVES
+   ========================================================= */
+
+/* Common CTA alignment used by the Home, Manufacturing, and
+   desktop-navbar button variants. Geometry remains with each owner. */
+.btn {
+    display: inline-flex;
+    align-items: center;
+}
+
+.hero .btn,
+.btn-navbar {
+    justify-content: center;
+}
+
+
+/* Shared reflection treatment retained for the existing glass-button
+   variants. Their colors, dimensions, and component-specific layers
+   remain with their respective owners. */
+.btn-hero,
+.btn-navbar {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.btn-hero::before,
+.btn-navbar::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 45%;
+    height: 200%;
+    transform: rotate(20deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+
+.btn-hero:hover::before,
+.btn-navbar:hover::before {
+    left: 140%;
+}

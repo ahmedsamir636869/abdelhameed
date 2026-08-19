@@ -1,0 +1,401 @@
+/* ==========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   LAYOUT.CSS
+   PREMIUM / LIQUID GLASS SYSTEM
+   ========================================================== */
+
+/* ---------------------------------------------------------*
+ * ROOT LAYOUT
+ * --------------------------------------------------------- */
+
+html,
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+html {
+    scrollbar-gutter: stable;
+}
+body {
+    position: relative;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------*
+ * MAIN WRAPPER
+ * --------------------------------------------------------- */
+
+.site-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------*
+ * CONTAINERS
+ * --------------------------------------------------------- */
+
+.container,
+.container-large,
+.container-small {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 1480px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.container-large {
+    max-width: 1700px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.container-small {
+    max-width: 1180px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* ---------------------------------------------------------*
+ * SECTIONS
+ * --------------------------------------------------------- */
+
+section {
+    position: relative;
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.section-small {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section-medium {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section-large {
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+/* ---------------------------------------------------------*
+ * GRIDS
+ * --------------------------------------------------------- */
+
+.grid {
+    display: grid;
+    width: 100%;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+    width: 100%;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+    width: 100%;
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* ---------------------------------------------------------*
+ * FLEX
+ * --------------------------------------------------------- */
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------*
+ * ALIGNMENT
+ * --------------------------------------------------------- */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* ---------------------------------------------------------*
+ * RESPONSIVE CONTAINERS
+ * --------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+
+    .container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .container-large {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .container-small {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .grid-2 {
+        gap: 40px;
+    }
+
+    .grid-3 {
+        gap: 28px;
+    }
+
+    .grid-4 {
+        gap: 24px;
+    }
+
+    .grid-5 {
+        gap: 18px;
+    }
+}
+
+/* ---------------------------------------------------------*
+ * TABLET
+ * --------------------------------------------------------- */
+
+@media (max-width: 950px) {
+
+    .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .container-large {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .container-small {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .section-small {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .section-medium {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .section-large {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .grid-5 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* ---------------------------------------------------------*
+ * MOBILE
+ * --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container-large {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container-small {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .section-small {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .section-medium {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .section-large {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .flex-between {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+}
+
+/* ---------------------------------------------------------*
+ * SMALL MOBILE
+ * --------------------------------------------------------- */
+
+@media (max-width: 520px) {
+
+    .container,
+    .container-large,
+    .container-small {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .section-small {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .section-medium {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .section-large {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+
+/* ---------------------------------------------------------*
+ * ACCESSIBILITY / MOTION
+ * --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+}

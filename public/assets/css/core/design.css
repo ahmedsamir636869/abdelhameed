@@ -1,0 +1,3880 @@
+/* =========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   MASTER DESIGN SYSTEM
+   LIQUID GLASS / PREMIUM INDUSTRIAL
+   ========================================================= */
+
+
+/* =========================================================
+   01 — DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+    /* ---------- Core backgrounds ---------- */
+
+    --bg-black: #020713;
+    --bg-dark: #061126;
+    --bg-blue: #0b1d40;
+
+    /* ---------- Brand ---------- */
+
+    --blue: #315dcc;
+    --blue-light: #5f8cff;
+    --blue-bright: #82a8ff;
+    --blue-soft: #9dbbff;
+
+    /* ---------- Text ---------- */
+
+    --text-white: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.86);
+    --text-soft: rgba(255, 255, 255, 0.70);
+    --text-muted: rgba(255, 255, 255, 0.52);
+
+    /* ---------- Liquid glass ---------- */
+
+    --glass-white: rgba(255, 255, 255, 0.10);
+    --glass-white-light: rgba(255, 255, 255, 0.065);
+    --glass-white-strong: rgba(255, 255, 255, 0.15);
+
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-border-soft: rgba(255, 255, 255, 0.10);
+
+    --glass-highlight:
+        rgba(255, 255, 255, 0.24);
+
+    --glass-blur: blur(24px);
+    --glass-blur-heavy: blur(34px);
+
+    /* ---------- Shadows ---------- */
+
+    --shadow-glass:
+        0 20px 70px rgba(0, 0, 0, 0.24);
+
+    --shadow-heavy:
+        0 30px 100px rgba(0, 0, 0, 0.42);
+
+    --shadow-blue:
+        0 20px 55px rgba(49, 93, 204, 0.30);
+
+    /* ---------- Radius ---------- */
+
+    --radius-xl: 36px;
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+    --radius-pill: 999px;
+
+}
+
+
+/* =========================================================
+   02 — GLOBAL
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg-black) 0%,
+            var(--bg-dark) 100%
+        );
+
+    color: var(--text-white);
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+main {
+    position: relative;
+
+    width: 100%;
+}
+
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   03 — LIQUID GLASS CORE
+   ========================================================= */
+
+/* Glass internal highlight */
+
+.glass::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.30),
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   04 — HERO
+   ========================================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #020713 0%,
+            #07152e 52%,
+            #102c5d 100%
+        );
+
+}
+
+
+/* =========================================================
+   05 — HERO IMAGE
+   ========================================================= */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+}
+
+
+.hero-background img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    opacity: 1;
+
+    filter:
+        brightness(0.92)
+        saturate(1.08)
+        contrast(1.03);
+
+    transform: scale(1.01);
+
+}
+
+
+/* =========================================================
+   06 — HERO IMAGE DEPTH
+   ========================================================= */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 78% 18%,
+            rgba(83, 137, 255, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(30, 131, 190, 0.18),
+            transparent 32%
+        );
+
+}
+
+
+/* =========================================================
+   07 — HERO OVERLAY
+   ========================================================= */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 7, 19, 0.80) 0%,
+            rgba(2, 7, 19, 0.58) 30%,
+            rgba(2, 7, 19, 0.27) 58%,
+            rgba(2, 7, 19, 0.14) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(2, 7, 19, 0.38) 0%,
+            transparent 30%,
+            rgba(2, 7, 19, 0.28) 100%
+        );
+
+}
+
+
+/* =========================================================
+   08 — AMBIENT LIQUID LIGHT
+   ========================================================= */
+
+.hero-light {
+
+    position: absolute;
+
+    z-index: 3;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+    opacity: 0.8;
+
+}
+
+
+.hero-light-1 {
+
+    width: 520px;
+    height: 520px;
+
+    top: -260px;
+    right: -120px;
+
+    background:
+        rgba(70, 118, 255, 0.30);
+
+}
+
+
+.hero-light-2 {
+
+    width: 420px;
+    height: 420px;
+
+    bottom: -220px;
+    left: -120px;
+
+    background:
+        rgba(36, 135, 190, 0.22);
+
+}
+
+
+/* =========================================================
+   09 — HERO CONTAINER
+   ========================================================= */
+
+.hero > .container {
+
+    position: relative;
+
+    z-index: 6;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   10 — HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    max-width: 760px;
+
+    padding-top: 135px;
+    padding-bottom: 160px;
+
+}
+
+
+/* =========================================================
+   11 — HERO BADGE
+   ========================================================= */
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 17px;
+
+    margin-bottom: 25px;
+
+    border-radius: var(--radius-pill);
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.055em;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+}
+
+
+/* Small glowing dot */
+
+.hero-badge::before {
+
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--blue-bright);
+
+    box-shadow:
+        0 0 12px rgba(130, 168, 255, 0.9);
+
+}
+
+
+/* =========================================================
+   12 — HERO TITLE
+   ========================================================= */
+
+.hero h1 {
+
+    margin: 0;
+
+    max-width: 850px;
+
+    color: #ffffff !important;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(54px, 6.4vw, 94px);
+
+    line-height: 0.98;
+
+    font-weight: 700;
+
+    letter-spacing: -0.055em;
+
+    text-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.38);
+
+}
+
+
+.hero h1 span {
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff 0%,
+            #a6c2ff 42%,
+            #5d88ff 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+
+}
+
+
+/* =========================================================
+   13 — HERO DESCRIPTION
+   ========================================================= */
+
+.hero p {
+
+    max-width: 650px;
+
+    margin: 28px 0 0;
+
+    color: rgba(255, 255, 255, 0.76) !important;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   14 — HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 34px;
+
+}
+
+
+/* =========================================================
+   15 — HERO BUTTON BASE
+   ========================================================= */
+
+.hero .btn {
+
+    position: relative;
+
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    border-radius: var(--radius-pill);
+
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+
+}
+
+
+/* =========================================================
+   16 — PRIMARY BUTTON
+   ========================================================= */
+
+.hero .btn-primary {
+
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #668fff 0%,
+            #315dcc 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    box-shadow:
+        0 14px 40px rgba(49, 93, 204, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+}
+
+
+.hero .btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 55px rgba(49, 93, 204, 0.56),
+        inset 0 1px 0 rgba(255, 255, 255, 0.30);
+
+}
+
+
+/* =========================================================
+   17 — GLASS BUTTON
+   ========================================================= */
+
+.hero .btn-hero {
+
+    color: #ffffff !important;
+
+    background:
+        rgba(255, 255, 255, 0.085);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+}
+
+
+.hero .btn-hero:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+
+}
+
+
+/* =========================================================
+   18 — HERO STATISTICS — CENTERED GLASS ROW
+   ========================================================= */
+
+.hero-stats {
+
+    position: absolute;
+
+    z-index: 8;
+
+    left: 50%;
+
+    bottom: 105px;
+
+    transform: translateX(-50%);
+
+    width: min(1120px, calc(100% - 80px));
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 16px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================================
+   19 — STAT CARD
+   ========================================================= */
+
+.hero-stat {
+
+    position: relative;
+
+    z-index: 8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    min-height: 96px;
+
+    padding: 18px 14px;
+
+    box-sizing: border-box;
+
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+
+    text-align: center;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+.hero-stat:hover {
+
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.065)
+        );
+
+    border-color:
+        rgba(255, 255, 255, 0.28);
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   20 — STAT NUMBER
+   ========================================================= */
+
+.hero-stat h2 {
+
+    margin: 0 0 8px;
+
+    color: #ffffff !important;
+
+    font-family: "Space Grotesk", "Poppins", sans-serif;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+/* =========================================================
+   21 — STAT LABEL
+   ========================================================= */
+
+.hero-stat span {
+
+    display: block;
+
+    max-width: 150px;
+
+    color: rgba(255, 255, 255, 0.72) !important;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   22 — STAT ACCENT
+   ========================================================= */
+
+.hero-stat:nth-child(4) h2,
+.hero-stat:nth-child(5) h2 {
+
+    color: var(--blue-bright) !important;
+
+}
+
+
+/* Old floating-position classes intentionally neutralized.
+   The cards are now controlled by .hero-stats. */
+
+.stat-one,
+.stat-two,
+.stat-three {
+
+    right: auto;
+
+    top: auto;
+
+    bottom: auto;
+
+    left: auto;
+
+}
+
+
+/* =========================================================
+   24 — HEADER
+   ========================================================= */
+
+
+
+/* =========================================================
+   25 — NAVBAR
+   ========================================================= */
+
+/* =========================================================
+   NAVBAR — 3D GLASS REFLECTION
+   ========================================================= */
+
+
+/* Soft light reflections inside the glass */
+
+/* Curved glass edge / thickness */
+/* =========================================================
+   NAVBAR — STRONG 3D GLASS REFLECTION
+   ========================================================= */
+
+
+
+/* =========================================================
+   CURVED GLASS EDGES
+   ========================================================= */
+
+
+
+/* =========================================================
+   26 — NAVBAR LOGO
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   27 — NAVIGATION
+   ========================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   28 — NAVBAR RIGHT SIDE
+   ========================================================= */
+
+
+
+/* =========================================================
+   29 — NAVBAR QUOTE BUTTON
+   ========================================================= */
+
+/* =========================================================
+   NAVBAR GET A QUOTE — PREMIUM GLASS
+   ========================================================= */
+
+
+/* Curved highlight */
+
+/* Glass edge */
+
+
+
+/* =========================================================
+   30 — MOBILE TOGGLE
+   ========================================================= */
+
+
+
+/* =========================================================
+   31 — NAVBAR HOVER LIGHT
+   ========================================================= */
+
+
+
+/* =========================================================
+   32 — DESKTOP LARGE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+
+    .hero-content {
+
+        max-width: 690px;
+
+    }
+
+    .hero-stats {
+
+        width: min(1120px, calc(100% - 70px));
+
+        gap: 14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   33 — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero-content {
+
+        max-width: 650px;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(48px, 8vw, 72px);
+
+    }
+
+    .hero-stats {
+
+        width: calc(100% - 40px);
+
+        gap: 10px;
+
+        bottom: 90px;
+
+    }
+
+    .hero-stat {
+
+        min-height: 88px;
+
+        padding: 15px 9px;
+
+    }
+
+    .hero-stat h2 {
+
+        font-size: 25px;
+
+    }
+
+    .hero-stat span {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   34 — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height: 900px;
+
+        align-items: flex-start;
+
+    }
+
+    .hero-background img {
+
+        object-position: 58% center;
+
+    }
+
+    .hero-overlay {
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(2, 7, 19, 0.68) 0%,
+                rgba(2, 7, 19, 0.48) 38%,
+                rgba(2, 7, 19, 0.70) 100%
+            );
+
+    }
+
+    .hero-content {
+
+        max-width: 100%;
+
+        padding-top: 175px;
+
+        padding-bottom: 300px;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(43px, 12vw, 65px);
+
+        letter-spacing: -0.05em;
+
+    }
+
+    .hero p {
+
+        max-width: 100%;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+    .hero-buttons {
+
+        flex-wrap: wrap;
+
+    }
+
+    .hero-stats {
+
+        left: 50%;
+
+        bottom: 55px;
+
+        width: calc(100% - 30px);
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        transform: translateX(-50%);
+
+    }
+
+    .hero-stat {
+
+        width: auto;
+
+        min-height: 72px;
+
+        padding: 12px 8px;
+
+        border-radius: 17px;
+
+    }
+
+    .hero-stat h2 {
+
+        font-size: 23px;
+
+    }
+
+    .hero-stat span {
+
+        font-size: 9px;
+
+    }
+
+    .hero-stat:nth-child(5) {
+
+        grid-column: 1 / -1;
+
+        max-width: 220px;
+
+        width: 100%;
+
+        justify-self: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   35 — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .hero-content {
+
+        padding-top: 145px;
+
+    }
+
+    .hero-badge {
+
+        padding: 8px 12px;
+
+        font-size: 9px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 41px;
+
+    }
+
+    .hero p {
+
+        font-size: 13px;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+    }
+
+    .hero .btn {
+
+        width: 100%;
+
+    }
+
+    .hero-stats {
+
+        bottom: 38px;
+
+        width: calc(100% - 18px);
+
+        gap: 7px;
+
+    }
+
+    .hero-stat {
+
+        width: auto;
+
+        min-height: 63px;
+
+        padding: 9px 5px;
+
+        border-radius: 15px;
+
+    }
+
+    .hero-stat h2 {
+
+        font-size: 19px;
+
+    }
+
+    .hero-stat span {
+
+        font-size: 7px;
+
+        text-align: center;
+
+    }
+
+    .hero-stat:nth-child(5) {
+
+        max-width: 190px;
+
+    }
+
+}
+
+
+/* =========================================================
+   36 — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   END OF LIQUID GLASS MASTER DESIGN
+   ========================================================= */
+   /* =========================================================
+   37 — REALISTIC LIQUID GLASS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Glass Edge Reflection
+--------------------------------------------------------- */
+
+.glass::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    box-shadow:
+
+        inset 1px 1px 0 rgba(255, 255, 255, 0.30),
+
+        inset -1px -1px 0 rgba(255, 255, 255, 0.08),
+
+        inset 0 0 25px rgba(255, 255, 255, 0.035);
+
+}
+
+
+/* ---------------------------------------------------------
+   Moving Light Reflection
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Hover — Light moves across the glass
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Navbar — More Transparent
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Statistics Cards
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Card Hover
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Glass Badge
+--------------------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Safari / Browser Fallback
+--------------------------------------------------------- */
+
+/* =========================================================
+   END — REALISTIC LIQUID GLASS
+   ========================================================= */
+
+  /* =========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   LIQUID GLASS NAVIGATION HOVER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MOVING GLASS BUBBLE
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   TOP GLASS REFLECTION
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   SOFT INTERNAL LIGHT
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   NAVIGATION ITEMS ABOVE GLASS
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   REMOVE OLD ACTIVE PILL
+   The moving glass is now responsible for it.
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   REMOVE INDIVIDUAL HOVER BACKGROUND
+   --------------------------------------------------------- */
+
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+.about-section {
+
+    position: relative;
+
+    padding: 150px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9fd 0%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ABOUT GRID
+   ========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(420px, .85fr);
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
+
+.about-content {
+
+    max-width: 700px;
+
+}
+
+
+.about-title {
+
+    margin-top: 24px;
+
+    font-size:
+        clamp(48px, 5vw, 76px);
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+
+    color: var(--text);
+
+}
+
+
+.about-title span {
+
+    display: block;
+
+    color: var(--primary);
+
+}
+
+
+.about-description {
+
+    margin-top: 28px;
+
+    max-width: 650px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: var(--gray);
+
+}
+
+
+.about-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 38px;
+
+    padding: 15px 22px;
+
+    border-radius: 999px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b78ff,
+            #2563eb
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(37,99,235,.22);
+
+    font-weight: 700;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.about-link span {
+
+    font-size: 20px;
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.about-link:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(37,99,235,.28);
+
+}
+
+
+.about-link:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   ABOUT VISUAL
+   ========================================================= */
+
+.about-visual {
+
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   LARGE GLASS CARD
+   ========================================================= */
+
+.about-glass-card {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 360px;
+
+    min-height: 360px;
+
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-radius: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.60)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+
+        0 35px 90px
+        rgba(7,22,46,.14),
+
+        inset 0 1px 0
+        rgba(255,255,255,.95),
+
+        inset 0 -1px 0
+        rgba(37,99,235,.05);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+}
+
+
+/* =========================================================
+   CARD LIGHT
+   ========================================================= */
+
+.about-glass-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse 180px 90px
+            at 10% 0%,
+            rgba(255,255,255,.95),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.about-card-number {
+
+    position: relative;
+
+    font-family:
+        var(--font-number);
+
+    font-size: 105px;
+
+    line-height: .85;
+
+    font-weight: 800;
+
+    letter-spacing: -6px;
+
+    color: var(--primary);
+
+}
+
+
+.about-card-title {
+
+    position: relative;
+
+    margin-top: 20px;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+}
+
+
+.about-card-description {
+
+    position: relative;
+
+    margin-top: 12px;
+
+    max-width: 220px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--gray);
+
+}
+
+
+/* =========================================================
+   ORBIT DECORATION
+   ========================================================= */
+
+.about-orbit {
+
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(37,99,235,.12);
+
+    border-radius: 50%;
+
+}
+
+
+.about-orbit-1 {
+
+    width: 430px;
+
+    height: 430px;
+
+}
+
+
+.about-orbit-2 {
+
+    width: 570px;
+
+    height: 570px;
+
+    border-color:
+        rgba(37,99,235,.07);
+
+}
+
+
+/* =========================================================
+   SIDE CARD
+   ========================================================= */
+
+.about-side-card {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 55px;
+
+    z-index: 5;
+
+    width: 170px;
+
+    padding: 22px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(7,22,46,.94);
+
+    color: white;
+
+    box-shadow:
+        0 25px 50px
+        rgba(7,22,46,.22);
+
+}
+
+
+.about-side-card span {
+
+    display: block;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+.about-side-card strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    color: #74b2ff;
+
+}
+
+
+.about-side-card small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.65);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+    }
+
+    .about-content {
+
+        max-width: 800px;
+
+    }
+
+    .about-visual {
+
+        min-height: 520px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-section {
+
+        padding: 100px 0;
+
+    }
+
+    .about-title {
+
+        font-size: 44px;
+
+        letter-spacing: -2px;
+
+    }
+
+    .about-description {
+
+        font-size: 15px;
+
+    }
+
+    .about-glass-card {
+
+        width: 300px;
+
+        min-height: 320px;
+
+        padding: 40px;
+
+    }
+
+    .about-card-number {
+
+        font-size: 82px;
+
+    }
+
+    .about-orbit-1 {
+
+        width: 350px;
+
+        height: 350px;
+
+    }
+
+    .about-orbit-2 {
+
+        width: 440px;
+
+        height: 440px;
+
+    }
+
+    .about-side-card {
+
+        right: 5px;
+
+        bottom: 35px;
+
+    }
+
+}
+/* ==========================================================
+   26 — ENGINEERING CAPABILITIES
+========================================================== */
+
+.capabilities-section {
+
+    position: relative;
+
+    padding: 140px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9fc 0%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* ----------------------------------------------------------
+   HEADER
+---------------------------------------------------------- */
+
+.capabilities-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 80px;
+
+    margin-bottom: 70px;
+}
+
+
+.capabilities-heading {
+
+    max-width: 650px;
+}
+
+
+.capabilities-title {
+
+    margin: 18px 0 0;
+
+    font-size: clamp(52px, 6vw, 88px);
+
+    line-height: .95;
+
+    letter-spacing: -0.055em;
+
+    color: #111827;
+}
+
+
+.capabilities-title span {
+
+    display: block;
+
+    color: #4969e8;
+}
+
+
+.capabilities-intro {
+
+    max-width: 430px;
+
+    padding-bottom: 5px;
+}
+
+
+.capabilities-intro p {
+
+    margin: 0 0 25px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #737d90;
+}
+
+
+.capabilities-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #4163e6;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        gap .35s ease,
+        color .35s ease;
+}
+
+
+.capabilities-link span {
+
+    font-size: 20px;
+
+    transition:
+        transform .35s ease;
+}
+
+
+.capabilities-link:hover {
+
+    gap: 18px;
+
+}
+
+
+.capabilities-link:hover span {
+
+    transform: translateX(4px);
+
+}
+
+
+
+/* ----------------------------------------------------------
+   GRID
+---------------------------------------------------------- */
+
+.capabilities-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        .75fr
+        .75fr;
+
+    grid-template-rows:
+        330px
+        330px;
+
+    gap: 18px;
+}
+
+
+
+/* ----------------------------------------------------------
+   CARDS
+---------------------------------------------------------- */
+
+.capability-card {
+
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    min-height: 330px;
+
+    text-decoration: none;
+
+    background: #182238;
+
+    isolation: isolate;
+
+    box-shadow:
+        0 20px 60px rgba(17, 31, 61, .10);
+
+    transition:
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        box-shadow .55s ease;
+}
+
+
+.capability-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 80px rgba(17, 31, 61, .20);
+}
+
+
+
+/* ----------------------------------------------------------
+   LARGE CARD
+---------------------------------------------------------- */
+
+.capability-card-large {
+
+    grid-row: span 2;
+
+    min-height: 678px;
+}
+
+
+.capability-card-wide {
+
+    grid-column: span 2;
+}
+
+
+
+/* ----------------------------------------------------------
+   IMAGE BACKGROUNDS
+---------------------------------------------------------- */
+
+.capability-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.02);
+
+    transition:
+        transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+
+.capability-card:hover .capability-card-image {
+
+    transform: scale(1.09);
+}
+
+
+
+/*
+   Replace these image paths with your actual product images.
+*/
+
+.capability-image-wire {
+
+    background-image:
+        url("/assets/images/products/wire-components.png");
+}
+
+
+.capability-image-appliance {
+
+    background-image:
+        url("/assets/images/products/appliance-components.png");
+}
+
+
+.capability-image-retail {
+
+    background-image:
+        url("/assets/images/products/retail-systems.png");
+}
+
+
+.capability-image-industrial {
+
+    background-image:
+        url("/assets/images/products/custom-industrial.png");
+}
+
+
+
+/* ----------------------------------------------------------
+   DARK GRADIENT
+---------------------------------------------------------- */
+
+.capability-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 12, 27, .05) 15%,
+            rgba(5, 12, 27, .25) 40%,
+            rgba(5, 12, 27, .92) 100%
+        );
+
+    transition:
+        background .5s ease;
+}
+
+
+.capability-card:hover .capability-overlay {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 12, 27, .05) 10%,
+            rgba(5, 12, 27, .35) 40%,
+            rgba(5, 12, 27, .96) 100%
+        );
+}
+
+
+
+/* ----------------------------------------------------------
+   NUMBER
+---------------------------------------------------------- */
+
+.capability-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 27px;
+
+    z-index: 3;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.10);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+
+/* ----------------------------------------------------------
+   CONTENT
+---------------------------------------------------------- */
+
+.capability-content {
+
+    position: absolute;
+
+    left: 30px;
+
+    right: 30px;
+
+    bottom: 28px;
+
+    z-index: 3;
+
+    color: white;
+}
+
+
+.capability-category {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+
+.capability-content h3 {
+
+    margin: 0;
+
+    font-size: clamp(26px, 3vw, 40px);
+
+    line-height: 1.05;
+
+    letter-spacing: -.035em;
+}
+
+
+.capability-content p {
+
+    max-width: 470px;
+
+    margin: 14px 0 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    opacity: .9;
+
+    transform: translateY(10px);
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+
+.capability-card:hover .capability-content p {
+
+    transform: translateY(0);
+
+    opacity: 1;
+}
+
+
+
+/* ----------------------------------------------------------
+   ARROW
+---------------------------------------------------------- */
+
+.capability-arrow {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 2px;
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.14);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    font-size: 20px;
+
+    opacity: .8;
+
+    transition:
+        transform .45s cubic-bezier(.22,.61,.36,1),
+        background .45s ease,
+        opacity .45s ease;
+}
+
+
+.capability-card:hover .capability-arrow {
+
+    transform: translateX(5px);
+
+    background: #4969e8;
+
+    opacity: 1;
+}
+
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .capabilities-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+
+    .capabilities-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: auto;
+    }
+
+
+    .capability-card-large {
+
+        grid-row: auto;
+
+        min-height: 450px;
+
+    }
+
+
+    .capability-card-wide {
+
+        grid-column: span 2;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .capabilities-section {
+
+        padding: 90px 0;
+
+    }
+
+
+    .capabilities-title {
+
+        font-size: 50px;
+
+    }
+
+
+    .capabilities-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .capability-card,
+    .capability-card-large,
+    .capability-card-wide {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+        min-height: 380px;
+
+    }
+
+}
+/* ==========================================================
+   CAPABILITIES / PRODUCT CATEGORY SECTION
+========================================================== */
+
+.capabilities-section {
+    position: relative;
+    padding: 140px 0 150px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.capabilities-header {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+
+.capabilities-title {
+    margin: 22px 0 0;
+    font-size: clamp(55px, 6vw, 88px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+    font-weight: 700;
+    color: #171d30;
+}
+
+
+.capabilities-title span {
+    display: block;
+    color: #4f6bea;
+}
+
+
+.capabilities-intro {
+    max-width: 430px;
+    padding-bottom: 8px;
+}
+
+
+.capabilities-intro p {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #7b8498;
+}
+
+
+.capabilities-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #4f6bea;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+
+.capabilities-link:hover {
+    gap: 18px;
+}
+
+
+.capabilities-link span {
+    font-size: 20px;
+}
+
+
+
+/* ==========================================================
+   PRODUCT GRID
+========================================================== */
+
+/*
+   4-column structure:
+
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â”‚                     â”‚ Applianceâ”‚  Retail  â”‚
+   â”‚   Wire Components   â”‚          â”‚          â”‚
+   â”‚                     â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+   â”‚                     â”‚ Custom Industrial   â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+*/
+
+.capabilities-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        280px 280px;
+
+    gap: 14px;
+}
+
+
+
+/* ==========================================================
+   CARD BASE
+========================================================== */
+
+.capability-card {
+    position: relative;
+
+    display: block;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #111729;
+
+    text-decoration: none;
+
+    isolation: isolate;
+
+    box-shadow:
+        0 18px 50px rgba(18, 27, 48, 0.10);
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease;
+}
+
+
+.capability-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 28px 70px rgba(18, 27, 48, 0.18);
+}
+
+
+
+/* ==========================================================
+   CARD POSITIONS
+========================================================== */
+
+/* 01 — Wire Components */
+
+.capability-wire {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+
+/* 02 — Appliance Components */
+
+.capability-appliance {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+
+/* 03 — Retail */
+
+.capability-retail {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+/* 04 — Custom Industrial */
+
+.capability-custom {
+    grid-column: 3 / 5;
+    grid-row: 2;
+}
+
+
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+.capability-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -3;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    /*
+       IMPORTANT:
+       Images are ALWAYS visible.
+    */
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Subtle zoom on hover */
+
+.capability-card:hover .capability-image {
+    transform: scale(1.045);
+}
+
+
+
+/* ==========================================================
+   DARK GRADIENT OVER IMAGE
+========================================================== */
+
+.capability-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 13, 28, 0.18) 0%,
+            rgba(8, 13, 28, 0.35) 35%,
+            rgba(7, 11, 24, 0.94) 100%
+        );
+
+    transition:
+        background 0.5s ease;
+}
+
+
+.capability-card:hover .capability-overlay {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 13, 28, 0.12) 0%,
+            rgba(8, 13, 28, 0.28) 35%,
+            rgba(7, 11, 24, 0.91) 100%
+        );
+}
+
+
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.capability-number {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,0.20);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    color:
+        rgba(255,255,255,0.90);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    z-index: 5;
+}
+
+
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.capability-content {
+    position: absolute;
+
+    left: 26px;
+    right: 80px;
+    bottom: 25px;
+
+    z-index: 5;
+}
+
+
+.capability-category {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: 0.10em;
+}
+
+
+.capability-content h3 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(25px, 2.4vw, 38px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 700;
+}
+
+
+.capability-content p {
+    margin: 0;
+
+    max-width: 520px;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+
+/* ==========================================================
+   ARROW
+========================================================== */
+
+.capability-arrow {
+    position: absolute;
+
+    right: 24px;
+    bottom: 24px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,0.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.09);
+
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    z-index: 6;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.capability-card:hover .capability-arrow {
+    background: #4f6bea;
+
+    border-color: #4f6bea;
+
+    transform: translateX(4px);
+}
+
+
+
+/* ==========================================================
+   INDIVIDUAL IMAGE POSITIONING
+========================================================== */
+
+/*
+   These make the AI images look better inside
+   their respective cards.
+*/
+
+.capability-wire .capability-image {
+    object-position: center;
+}
+
+
+.capability-appliance .capability-image {
+    object-position: center;
+}
+
+
+.capability-retail .capability-image {
+    object-position: center;
+}
+
+
+.capability-custom .capability-image {
+    object-position: center;
+}
+
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .capabilities-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+
+    .capabilities-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            300px 300px 300px;
+    }
+
+
+    /* Wire */
+
+    .capability-wire {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+
+    /* Appliance */
+
+    .capability-appliance {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+
+    /* Retail */
+
+    .capability-retail {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
+    /* Custom */
+
+    .capability-custom {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .capabilities-section {
+        padding: 90px 0 100px;
+    }
+
+
+    .capabilities-header {
+        margin-bottom: 45px;
+    }
+
+
+    .capabilities-title {
+        font-size:
+            clamp(48px, 14vw, 70px);
+    }
+
+
+    .capabilities-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        gap: 12px;
+    }
+
+
+    .capability-wire,
+    .capability-appliance,
+    .capability-retail,
+    .capability-custom {
+
+        grid-column: 1;
+
+        grid-row: auto;
+
+        width: 100%;
+
+        min-height: 320px;
+    }
+
+
+    .capability-wire {
+        min-height: 420px;
+    }
+
+
+    .capability-content {
+
+        left: 22px;
+
+        right: 70px;
+
+        bottom: 22px;
+    }
+
+
+    .capability-content h3 {
+        font-size: 30px;
+    }
+
+
+    .capability-content p {
+        font-size: 13px;
+    }
+
+
+    .capability-number {
+
+        top: 16px;
+
+        right: 16px;
+    }
+
+
+    .capability-arrow {
+
+        right: 18px;
+
+        bottom: 18px;
+    }
+
+}
+
+/* ==========================================================
+   PREMIUM FULL-PAGE SCROLL TRANSITIONS
+========================================================== */
+
+/* The actual page scrolling container */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+
+/* Major homepage sections snap into position */
+main > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    scroll-snap-align: start;
+}
+
+
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.about-section {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    scroll-snap-align: start;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* ==========================================================
+   CAPABILITIES
+========================================================== */
+
+.capabilities-section {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    scroll-snap-align: start;
+}
+
+
+/* ==========================================================
+   OTHER MAJOR SECTIONS
+========================================================== */
+
+.projects-section,
+.contact-section,
+.news-section,
+.manufacturing-section {
+    scroll-snap-align: start;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    main > section {
+        scroll-snap-stop: normal;
+    }
+
+    .hero,
+    .about-section,
+    .capabilities-section {
+        min-height: auto;
+    }
+
+}
+/* ==========================================================
+   FULL SCREEN SECTION TRANSITIONS
+========================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main > section {
+    scroll-snap-align: start;
+}
+
+
+/* Make the main visual sections occupy the viewport */
+.hero,
+.about-section,
+.capabilities-section {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+
+/* Don't interfere with mobile browsing */
+@media (max-width: 768px) {
+    .hero,
+    .about-section,
+    .capabilities-section {
+        min-height: auto;
+    }
+}
+/* ==========================================================
+   CAPABILITIES — INTRO HEADER REFINEMENT
+========================================================== */
+
+.capabilities-section .section-header {
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+
+/* LEFT SIDE — larger headline */
+.capabilities-section .section-header-left h2 {
+    font-size: clamp(4.8rem, 6vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    max-width: 720px;
+    margin: 0;
+}
+
+
+/* RIGHT SIDE — move content lower */
+.capabilities-section .section-header-right {
+    align-self: end;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-bottom: 5px;
+    max-width: 440px;
+}
+
+
+/* Description */
+.capabilities-section .section-header-right p {
+    margin: 0 0 24px 0;
+
+    font-size: 1.05rem;
+    line-height: 1.75;
+
+    max-width: 430px;
+}
+
+
+/* Explore link */
+.capabilities-section .section-header-right a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    width: fit-content;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Arrow */
+.capabilities-section .section-header-right a span {
+    transition: transform 0.3s ease;
+}
+
+
+.capabilities-section .section-header-right a:hover span {
+    transform: translateX(6px);
+}
+
+
+/* ==========================================================
+   DESKTOP SPACING
+========================================================== */
+
+@media (min-width: 1200px) {
+
+    .capabilities-section .section-header {
+        margin-bottom: 76px;
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .capabilities-section .section-header {
+        align-items: flex-start;
+        gap: 35px;
+    }
+
+    .capabilities-section .section-header-left h2 {
+        font-size: clamp(3.5rem, 8vw, 5rem);
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .capabilities-section .section-header {
+        flex-direction: column;
+        margin-bottom: 45px;
+    }
+
+    .capabilities-section .section-header-left h2 {
+        font-size: 3.5rem;
+    }
+
+    .capabilities-section .section-header-right {
+        max-width: 100%;
+        padding-bottom: 0;
+    }
+
+}
+/* ==========================================================
+   CAPABILITIES HEADER — FINAL SPACING / SCALE
+   ========================================================== */
+
+.capabilities-header {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: end;
+    column-gap: 100px;
+    margin-bottom: 55px;
+}
+
+/* Bigger main heading */
+.capabilities-title {
+    font-size: clamp(64px, 5.2vw, 92px);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    margin: 18px 0 0;
+    max-width: 700px;
+}
+
+/* Right-side text block */
+.capabilities-intro {
+    align-self: end;
+    max-width: 440px;
+    padding-bottom: 4px;
+}
+
+/* Paragraph sits lower */
+.capabilities-intro p {
+    margin: 0 0 28px;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 430px;
+}
+
+/* Explore link */
+.capabilities-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Arrow spacing */
+.capabilities-link span {
+    transition: transform 0.25s ease;
+}
+
+.capabilities-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ==========================================================
+   DESKTOP — MAKE THE HEADER FEEL MORE BALANCED
+   ========================================================== */
+
+@media (min-width: 1200px) {
+
+    .capabilities-header {
+        grid-template-columns: minmax(600px, 1.3fr) minmax(360px, 0.7fr);
+        column-gap: 110px;
+        margin-bottom: 58px;
+    }
+
+    .capabilities-title {
+        font-size: 82px;
+        max-width: 680px;
+    }
+
+    .capabilities-intro {
+        transform: translateY(8px);
+    }
+
+    .capabilities-intro p {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .capabilities-header {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    .capabilities-title {
+        font-size: clamp(54px, 9vw, 76px);
+    }
+
+    .capabilities-intro {
+        max-width: 600px;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    .capabilities-header {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        margin-bottom: 35px;
+    }
+
+    .capabilities-title {
+        font-size: clamp(46px, 14vw, 64px);
+        line-height: 0.95;
+    }
+
+    .capabilities-intro {
+        max-width: 100%;
+        transform: none;
+    }
+
+    .capabilities-intro p {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+}
+.capabilities-intro {
+    transform: translateY(30px);
+}
+/* ==========================================================
+   CAPABILITIES — LIGHT BRAND BLUE SECTION
+   ========================================================== */
+
+.capabilities-section {
+    background: #E2E9FF;
+}
+
+/* Keep the small section label BLUE */
+.capabilities-section .section-label {
+    color: #5267E8;
+}
+
+/* Keep main heading dark */
+.capabilities-section .capabilities-title {
+    color: #111525;
+}
+
+/* Keep "for industry." in the brand blue */
+.capabilities-section .capabilities-title span {
+    color: #5267E8;
+}
+
+/* Right-side description */
+.capabilities-section .capabilities-intro {
+    color: #737C91;
+}
+
+.capabilities-section .capabilities-intro p {
+    color: #737C91;
+}
+
+/* Explore link stays brand blue */
+.capabilities-section .capabilities-link {
+    color: #5267E8;
+}
+
+/* Keep product cards dark */
+.capabilities-section .capability-card {
+    background: #111728;
+}
+
+
+
+/* ==========================================================
+   FINAL HOMEPAGE SCROLL / CAPABILITIES FIX
+========================================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+
+
+
+
+/* ==========================================================
+   HIDE WEBSITE SCROLLBAR
+   Scrolling remains fully functional
+========================================================== */
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/* ==========================================================
+   HIDE WEBSITE SCROLLBAR — KEEP SCROLLING FUNCTIONAL
+========================================================== */
+
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* Chromium / Edge fallback */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ==========================================================
+   RESPONSIVE NAVIGATION AND TABLET FIT FIXES
+========================================================== */
+
+/* ==========================================================
+   PRODUCTS CATEGORY NAVIGATOR
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+        grid-template-rows: none !important;
+
+        grid-auto-rows: minmax(110px, auto) !important;
+
+        column-gap: 12px !important;
+
+        row-gap: 12px !important;
+
+    }
+
+
+    .product-category-nav-card {
+
+        min-height: 110px !important;
+
+        height: auto !important;
+
+        padding: 16px !important;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .product-category-nav-grid {
+
+        grid-template-columns: 1fr !important;
+
+    }
+
+
+    .product-category-nav-card {
+
+        min-height: 104px !important;
+
+    }
+
+}
+
+
+
+
+/* ==========================================================
+   TABLET MACHINERY GALLERY FIT
+========================================================== */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .manufacturing-machine-grid {
+
+        left: 0;
+
+        transform: none;
+
+    }
+
+}
+
+
+/* Keep the intentional desktop gallery offset inside the viewport. */
+@media (min-width: 1101px) and (max-width: 1493px) {
+
+    .manufacturing-machine-grid {
+
+        left: 48px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   CONTROLLED MOBILE COMPOSITION REFINEMENTS
+   Keep desktop layout untouched; compress only phone layouts.
+========================================================== */
+
+@media (max-width: 700px) {
+
+    /* PRODUCTS — retain the continuous showroom while reducing mobile detours. */
+    .products-hero {
+        min-height: 360px;
+    }
+
+    .product-category-nav {
+        transform: translateY(-18px);
+        padding-bottom: 4px !important;
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .product-category-nav-card {
+        min-height: 88px !important;
+        padding: 14px !important;
+    }
+
+    .showroom-category {
+        padding: 48px 0 52px;
+    }
+
+    .showroom-category-header {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .showroom-category-header h2 {
+        margin-bottom: 10px;
+        font-size: clamp(2rem, 9vw, 2.45rem);
+    }
+
+    .showroom-category-header p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .showroom-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .showroom-product-card {
+        border-radius: 16px;
+    }
+
+    .showroom-product-image img {
+        padding: 12px;
+    }
+
+    .showroom-product-info {
+        padding: 10px 12px 12px;
+    }
+
+    .showroom-product-category {
+        margin-bottom: 0;
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+    }
+
+    /* MANUFACTURING — compact cards and gallery without changing their desktop design. */
+    .manufacturing-hero {
+        min-height: 640px;
+    }
+
+    .manufacturing-systems {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+
+    .manufacturing-systems-layout {
+        gap: 18px;
+    }
+
+    .manufacturing-systems .manufacturing-section-title {
+        font-size: clamp(34px, 9.5vw, 40px);
+        letter-spacing: -0.05em;
+    }
+
+    .manufacturing-section-description {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .manufacturing-cert-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .manufacturing-cert-card {
+        min-height: 0;
+        padding: 10px 8px;
+        border-radius: 16px;
+    }
+
+    .manufacturing-cert-card h3 {
+        font-size: 11px;
+    }
+
+    .manufacturing-cert-card p {
+        margin-top: 4px;
+        font-size: 9.5px;
+        line-height: 1.35;
+    }
+
+    .manufacturing-certificates-showcase {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .manufacturing-certificates-showcase-head {
+        margin-bottom: 8px;
+    }
+
+    .manufacturing-certificate-preview img {
+        height: 110px;
+    }
+
+    .manufacturing-certificate-preview-label {
+        margin-top: 6px;
+        font-size: 8px;
+    }
+
+    .manufacturing-machinery {
+        min-height: 0;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .manufacturing-machinery-layout {
+        gap: 26px;
+    }
+
+    .manufacturing-machinery-title {
+        margin-top: 12px;
+        font-size: clamp(36px, 10vw, 44px);
+        letter-spacing: -0.05em;
+    }
+
+    .manufacturing-machinery-description,
+    .manufacturing-machinery-note {
+        margin-top: 14px;
+    }
+
+    .manufacturing-process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
+        margin-top: 16px;
+    }
+
+    .manufacturing-process-step small {
+        display: block;
+        margin-top: 3px;
+        font-size: 0.58rem;
+        line-height: 1.25;
+    }
+
+    .manufacturing-machine-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .manufacturing-machine-card {
+        padding: 4px;
+        border-radius: 12px;
+    }
+
+    .manufacturing-machine-image {
+        aspect-ratio: 1.08 / 1;
+        border-radius: 8px;
+    }
+
+    .manufacturing-machine-info {
+        padding: 6px 4px 5px;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .about-section {
+        padding-top: 38px;
+    }
+
+    .about-section .about-description {
+        font-size: 13px;
+    }
+
+    .capabilities-section .capabilities-grid,
+    .showroom-products,
+    .manufacturing-machine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .capabilities-section .capability-wire,
+    .capabilities-section .capability-appliance,
+    .capabilities-section .capability-retail,
+    .capabilities-section .capability-custom {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .manufacturing-cert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   FINAL TARGETED PHONE CORRECTIONS
+   Preserve the approved desktop composition.
+========================================================== */
+
+@media (max-width: 700px) {
+
+    /* PRODUCTS — clear the mobile navbar without changing the hero itself. */
+    .products-hero-content {
+        transform: translateY(40px);
+    }
+
+    /* PRODUCTS — reserve distinct vertical space for number and title. */
+    .product-category-nav {
+        padding-bottom: 18px !important;
+    }
+
+    .product-category-nav-heading {
+        margin-bottom: 10px !important;
+    }
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(5, 106px) !important;
+        grid-auto-rows: 106px !important;
+        column-gap: 10px !important;
+        row-gap: 8px !important;
+    }
+
+    .product-category-nav-card {
+        position: relative !important;
+        display: block !important;
+        min-height: 106px !important;
+        height: 106px !important;
+        padding: 10px 12px !important;
+        box-sizing: border-box;
+    }
+
+    .product-category-nav-card .nav-card-number {
+        position: absolute !important;
+        top: 10px !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: 12px !important;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 0 !important;
+        padding-top: 16px;
+        box-sizing: border-box;
+        color: #111827;
+        font-size: 0.72rem !important;
+        line-height: 1.18 !important;
+        text-align: center;
+    }
+
+    /* MANUFACTURING — keep the hero as the complete first phone screen. */
+    .manufacturing-hero,
+    .manufacturing-hero-inner {
+        height: 100svh;
+        min-height: 100svh;
+    }
+
+    .manufacturing-hero-content {
+        padding-top: 0;
+        transform: translateY(-30px);
+    }
+
+    /* MANUFACTURING — stack certification copy before the previews. */
+    .manufacturing-certificates-showcase-head {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        align-items: start;
+    }
+
+    .manufacturing-certificates-showcase-head h3 {
+        font-size: clamp(22px, 6.2vw, 24px);
+        line-height: 1.05;
+    }
+
+    .manufacturing-certificates-showcase-head p {
+        font-size: 0.68rem;
+        line-height: 1.45;
+    }
+
+    .manufacturing-certificates-paper {
+        margin-top: 12px;
+    }
+
+}
+
+@media (max-width: 340px) {
+
+    .product-category-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(5, 116px) !important;
+        grid-auto-rows: 116px !important;
+    }
+
+    .product-category-nav-card {
+        min-height: 116px !important;
+        height: 116px !important;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        font-size: 0.68rem !important;
+        line-height: 1.16 !important;
+    }
+}

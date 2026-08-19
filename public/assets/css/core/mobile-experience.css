@@ -1,0 +1,346 @@
+/*
+   MOBILE EXPERIENCE LAYER
+   Kept last in the stylesheet order so it clarifies the responsive hierarchy
+   without replacing the established liquid-glass visual language.
+*/
+
+:root {
+    --mobile-gutter: clamp(18px, 5vw, 28px);
+    --touch-target: 46px;
+}
+
+.motion-page [data-motion-reveal] {
+    will-change: opacity, transform;
+}
+
+@media (max-width: 950px) {
+    html {
+        scroll-padding-top: 96px;
+    }
+
+    .header {
+        padding-top: max(14px, env(safe-area-inset-top));
+    }
+
+    .navbar {
+        width: min(calc(100% - 32px), 680px);
+        min-height: 64px;
+        padding-inline: 12px;
+    }
+
+    .navigation {
+        top: calc(100% + 12px);
+        padding: 9px;
+        border-color: rgba(191, 211, 255, 0.24);
+        border-radius: 24px;
+        background:
+            linear-gradient(145deg, rgba(17, 41, 87, 0.96), rgba(4, 12, 29, 0.98));
+        box-shadow:
+            0 28px 70px rgba(0, 0, 0, 0.42),
+            inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .navigation.is-open {
+        animation: navigation-sheet-in 260ms cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .navigation.is-open .nav-links {
+        gap: 4px;
+    }
+
+    .navigation.is-open .nav-links a {
+        min-height: 54px;
+        padding-inline: 18px;
+        border-radius: 16px;
+    }
+
+    .navigation.is-open .nav-links a.active {
+        background: linear-gradient(120deg, rgba(114, 153, 255, 0.22), rgba(255, 255, 255, 0.05)) !important;
+        border-color: rgba(183, 205, 255, 0.20) !important;
+    }
+
+    .mobile-toggle {
+        width: var(--touch-target);
+        height: var(--touch-target);
+    }
+
+    body.mobile-navigation-open {
+        overflow: hidden;
+        overscroll-behavior: none;
+    }
+}
+
+@keyframes navigation-sheet-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 88px;
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    .container,
+    .container-large,
+    .container-small {
+        padding-inline: var(--mobile-gutter);
+    }
+
+    button,
+    a,
+    input,
+    textarea,
+    select {
+        touch-action: manipulation;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--blue-bright, #82a8ff);
+        outline-offset: 3px;
+    }
+
+    .header {
+        padding-top: max(10px, env(safe-area-inset-top));
+    }
+
+    .navbar {
+        width: calc(100% - (var(--mobile-gutter) * 2));
+        min-height: 60px;
+        padding-inline: 10px;
+    }
+
+    .nav-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-logo-text h4 {
+        font-size: 12px;
+    }
+
+    .nav-logo-text span {
+        font-size: 7px;
+    }
+
+    .navigation {
+        max-height: calc(100dvh - 94px - env(safe-area-inset-bottom));
+    }
+
+    .hero .btn-primary,
+    .contact-submit,
+    .quote-submit {
+        width: 100%;
+    }
+
+    .hero .btn,
+    .contact-submit,
+    .quote-submit {
+        min-height: var(--touch-target);
+    }
+
+    .hero-stats {
+        width: calc(100% - (var(--mobile-gutter) * 2));
+    }
+
+    .hero-stat {
+        min-height: 76px;
+    }
+
+    .hero-stat span {
+        font-size: 10px;
+    }
+
+    /* About: retain the editorial rhythm while making facility stories easy to scan. */
+    .about-opening {
+        padding-inline: var(--mobile-gutter);
+    }
+
+    .about-facilities {
+        padding-inline: var(--mobile-gutter);
+    }
+
+    .about-facilities .facility-row,
+    .about-second-factory .second-factory-row,
+    .about-third-factory .second-factory-row {
+        gap: 24px;
+    }
+
+    .about-facilities .facility-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .about-facilities .facility-image-frame {
+        border-radius: 20px;
+    }
+
+    /* Products: the directory stays dense enough to browse, without tiny labels. */
+    .product-category-nav-grid {
+        grid-template-rows: none !important;
+        grid-auto-rows: minmax(118px, auto) !important;
+        gap: 12px !important;
+    }
+
+    .product-category-nav-card {
+        min-height: 118px !important;
+        height: auto !important;
+        padding: 14px 12px !important;
+        border-radius: 18px !important;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        padding-top: 18px;
+        font-size: .82rem !important;
+        line-height: 1.22 !important;
+    }
+
+    .showroom-category {
+        padding-block: 54px;
+    }
+
+    .showroom-products {
+        gap: 10px;
+    }
+
+    .showroom-product-card {
+        border-radius: 18px;
+    }
+
+    .showroom-product-image img {
+        padding: 10px;
+    }
+
+    .showroom-product-info {
+        padding: 11px 10px 12px;
+    }
+
+    /* Manufacturing: long content can grow naturally rather than being squeezed into a viewport. */
+    .manufacturing-page section {
+        min-height: auto;
+    }
+
+    .manufacturing-hero,
+    .manufacturing-hero-inner {
+        height: auto !important;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .manufacturing-hero-inner {
+        align-items: center;
+        padding-top: 132px;
+        padding-bottom: 62px;
+    }
+
+    .manufacturing-hero-content {
+        width: min(100%, 34rem);
+        margin-inline: auto;
+        padding-top: 0;
+        text-align: center;
+        transform: none;
+    }
+
+    .manufacturing-hero-content .section-label {
+        justify-content: center;
+    }
+
+    .manufacturing-hero-title,
+    .manufacturing-hero-description {
+        margin-inline: auto;
+    }
+
+    .manufacturing-hero-button {
+        margin-inline: auto;
+    }
+
+    .manufacturing-hero-media {
+        width: 100%;
+    }
+
+    .manufacturing-hero-media::before {
+        background:
+            linear-gradient(180deg, rgba(7, 22, 46, .78) 0%, rgba(7, 22, 46, .58) 45%, rgba(7, 22, 46, .94) 100%);
+    }
+
+    .manufacturing-page .manufacturing-systems {
+        min-height: auto;
+        padding-block: 64px;
+    }
+
+    .manufacturing-process-list {
+        gap: 12px;
+    }
+
+    .manufacturing-machine-grid {
+        gap: 12px;
+    }
+
+    /* Contact and quote: phone form controls stay comfortably tappable and never trigger iOS zoom. */
+    .contact-hero {
+        min-height: 500px;
+    }
+
+    .contact-information,
+    .contact-message {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .contact-submit {
+        justify-content: space-between;
+    }
+
+    .quote-hero {
+        min-height: 450px;
+    }
+
+    .quote-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .quote-upload {
+        min-height: 86px;
+    }
+}
+
+@media (max-width: 370px) {
+    .nav-logo-text {
+        display: none;
+    }
+
+    .hero-stat h2 {
+        font-size: 22px;
+    }
+
+    .product-category-nav-card .nav-card-title {
+        font-size: .76rem !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .motion-page [data-motion-reveal] {
+        will-change: auto;
+    }
+
+    .navigation.is-open {
+        animation: none;
+    }
+}

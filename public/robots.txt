@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# These paths are already server-blocked. Keep them out of crawler queues
+# without restricting public pages, styles, scripts, or product images.
+Disallow: /includes/
+Disallow: /vendor/
+Disallow: /docs/
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /AGENTS.md
+
+Sitemap: https://abdelhamid.co/sitemap.xml

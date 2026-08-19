@@ -1,0 +1,209 @@
+/* ==========================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   RESET.CSS
+   PREMIUM / LIQUID GLASS FOUNDATION
+   ========================================== */
+
+/* ---------- Universal Reset ---------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Root ---------- */
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* ---------- Body ---------- */
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    background: var(--background);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    line-height: 1.6;
+}
+
+/* ---------- Images ---------- */
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Videos ---------- */
+
+video {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- Links ---------- */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- Lists ---------- */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+
+    font: inherit;
+    color: inherit;
+
+    cursor: pointer;
+}
+
+/* ---------- Form Controls ---------- */
+
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    max-width: 100%;
+}
+
+/* ---------- Textarea ---------- */
+
+textarea {
+    resize: vertical;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---------- SVG ---------- */
+
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* ---------- Iframe ---------- */
+
+iframe {
+    border: 0;
+    max-width: 100%;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* ---------- Focus ---------- */
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #061426;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+
+    background: linear-gradient(
+        to bottom,
+        #1b77ff,
+        #4aa2ff
+    );
+
+    border: 2px solid #061426;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        to bottom,
+        #4aa2ff,
+        #69b1ff
+    );
+}
+
+/* ---------- Firefox Scrollbar ---------- */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #2f84ff #061426;
+}
+
+/* ---------- Prevent Horizontal Media Overflow ---------- */
+
+canvas,
+picture {
+    max-width: 100%;
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

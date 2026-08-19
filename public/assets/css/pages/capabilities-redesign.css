@@ -1,0 +1,643 @@
+/* ==========================================================
+   HOME / CAPABILITIES REDESIGN
+   Editorial bento layout on large screens; swipeable product
+   stories on phones. Loaded last so this section has one clear
+   responsive source of truth while legacy page rules are retired.
+   ========================================================== */
+
+.capabilities-section {
+    --capabilities-blue: #4565e9;
+    --capabilities-ink: #0d1428;
+    position: relative;
+    isolation: isolate;
+    height: auto;
+    min-height: auto;
+    padding: clamp(88px, 8vw, 136px) 0;
+    overflow: clip;
+    background:
+        radial-gradient(circle at 88% 8%, rgba(124, 151, 255, .24), transparent 30%),
+        radial-gradient(circle at 8% 92%, rgba(255, 255, 255, .78), transparent 34%),
+        #edf1ff;
+    scroll-snap-align: start;
+}
+
+.capabilities-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -180px;
+    right: -140px;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(69, 101, 233, .13);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 70px rgba(69, 101, 233, .035),
+        0 0 0 140px rgba(69, 101, 233, .025);
+    pointer-events: none;
+}
+
+.capabilities-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.capabilities-section .capabilities-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(310px, .75fr);
+    align-items: end;
+    gap: clamp(42px, 7vw, 112px);
+    margin-bottom: clamp(38px, 4vw, 62px);
+}
+
+.capabilities-section .section-label {
+    gap: 11px;
+    padding: 8px 13px 8px 9px;
+    border: 1px solid rgba(69, 101, 233, .16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .62);
+    color: var(--capabilities-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    box-shadow: 0 10px 30px rgba(35, 54, 128, .06);
+    backdrop-filter: blur(12px);
+}
+
+.capabilities-section .section-label::before {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--capabilities-blue);
+    box-shadow: 0 0 0 5px rgba(69, 101, 233, .10);
+}
+
+.capabilities-section .capabilities-title {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--capabilities-ink);
+    font-size: clamp(58px, 6vw, 92px);
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -.06em;
+    text-wrap: balance;
+}
+
+.capabilities-section .capabilities-title span {
+    display: block;
+    color: var(--capabilities-blue);
+}
+
+.capabilities-section .capabilities-intro {
+    max-width: 455px;
+    padding: 0 0 5px;
+    transform: none;
+}
+
+.capabilities-section .capabilities-intro p {
+    max-width: 440px;
+    margin: 0 0 25px;
+    color: #5f6980;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.capabilities-section .capabilities-link {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px;
+    border: 1px solid rgba(69, 101, 233, .20);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .72);
+    color: #2948c7;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(35, 54, 128, .08);
+    transition:
+        color .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.capabilities-section .capabilities-link span {
+    font-size: 18px;
+    transition: transform .25s ease;
+}
+
+.capabilities-section .capabilities-link:hover {
+    gap: 12px;
+    color: #fff;
+    border-color: var(--capabilities-blue);
+    background: var(--capabilities-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(45, 74, 199, .22);
+}
+
+.capabilities-section .capabilities-link:hover span {
+    transform: translate(2px, -2px);
+}
+
+.capabilities-section .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    height: clamp(550px, 49vw, 650px);
+}
+
+.capabilities-section .capability-wire {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+}
+
+.capabilities-section .capability-appliance {
+    grid-column: 6 / 13;
+    grid-row: 1;
+}
+
+.capabilities-section .capability-retail {
+    grid-column: 6 / 9;
+    grid-row: 2;
+}
+
+.capabilities-section .capability-custom {
+    grid-column: 9 / 13;
+    grid-row: 2;
+}
+
+.capabilities-section .capability-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 30px;
+    background: #0b1224;
+    color: #fff;
+    text-decoration: none;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .10) inset,
+        0 22px 50px rgba(19, 29, 69, .13);
+    transform: translateZ(0);
+    transition:
+        transform .5s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .5s ease,
+        border-color .35s ease;
+}
+
+.capabilities-section .capability-card::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, .13), transparent 23%);
+    opacity: .55;
+    pointer-events: none;
+    transition: opacity .35s ease;
+}
+
+.capabilities-section .capability-card:hover {
+    border-color: rgba(255, 255, 255, .34);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .16) inset,
+        0 30px 70px rgba(19, 29, 69, .22);
+    transform: translateY(-7px);
+}
+
+.capabilities-section .capability-card:hover::after {
+    opacity: .9;
+}
+
+.capabilities-section .capability-image {
+    position: absolute;
+    z-index: -3;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    filter: saturate(.82) contrast(1.04);
+    transform: scale(1.01);
+    transition:
+        filter .8s ease,
+        transform .9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.capabilities-section .capability-wire .capability-image {
+    object-position: 52% center;
+}
+
+.capabilities-section .capability-appliance .capability-image {
+    object-position: center 58%;
+}
+
+.capabilities-section .capability-card:hover .capability-image {
+    filter: saturate(1) contrast(1.02);
+    transform: scale(1.065);
+}
+
+.capabilities-section .capability-overlay,
+.capabilities-section .capability-wire .capability-overlay,
+.capabilities-section .capability-appliance .capability-overlay,
+.capabilities-section .capability-retail .capability-overlay,
+.capabilities-section .capability-custom .capability-overlay {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(5, 10, 23, .12) 0%, rgba(5, 10, 23, .20) 28%, rgba(5, 10, 23, .92) 100%),
+        linear-gradient(110deg, rgba(41, 72, 199, .12), transparent 52%);
+    transition: background .5s ease;
+}
+
+.capabilities-section .capability-card:hover .capability-overlay {
+    background:
+        linear-gradient(180deg, rgba(5, 10, 23, .06) 0%, rgba(5, 10, 23, .15) 28%, rgba(5, 10, 23, .91) 100%),
+        linear-gradient(110deg, rgba(66, 100, 234, .20), transparent 52%);
+}
+
+.capabilities-section .capability-number {
+    position: absolute;
+    z-index: 5;
+    top: 22px;
+    left: 22px;
+    right: auto;
+    width: auto;
+    height: auto;
+    padding: 8px 11px;
+    border: 1px solid rgba(255, 255, 255, .17);
+    border-radius: 999px;
+    background: rgba(7, 12, 27, .34);
+    color: rgba(255, 255, 255, .92);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .10em;
+    line-height: 1;
+    backdrop-filter: blur(14px);
+}
+
+.capabilities-section .capability-number::after {
+    content: " / 04";
+    color: rgba(255, 255, 255, .48);
+}
+
+.capabilities-section .capability-content {
+    position: absolute;
+    z-index: 5;
+    right: 28px;
+    bottom: 28px;
+    left: 28px;
+}
+
+.capabilities-section .capability-category {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 11px;
+    color: rgba(211, 220, 255, .88);
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: .13em;
+}
+
+.capabilities-section .capability-category::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: #7794ff;
+}
+
+.capabilities-section .capability-content h3 {
+    max-width: 520px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(25px, 2.2vw, 39px);
+    font-weight: 650;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+}
+
+.capabilities-section .capability-content p {
+    max-width: 430px;
+    margin: 12px 0 0;
+    color: rgba(234, 238, 249, .77);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.capabilities-section .capability-retail .capability-content,
+.capabilities-section .capability-custom .capability-content {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+}
+
+.capabilities-section .capability-retail .capability-content h3,
+.capabilities-section .capability-custom .capability-content h3 {
+    font-size: clamp(23px, 1.85vw, 31px);
+}
+
+.capabilities-section .capability-retail .capability-content p,
+.capabilities-section .capability-custom .capability-content p {
+    display: none;
+}
+
+.capabilities-section .capability-arrow {
+    position: absolute;
+    z-index: 6;
+    top: 18px;
+    right: 18px;
+    bottom: auto;
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 50%;
+    background: rgba(7, 12, 27, .36);
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    backdrop-filter: blur(14px);
+    transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.capabilities-section .capability-card:hover .capability-arrow {
+    border-color: #6f8cff;
+    background: #5675ee;
+    transform: rotate(-35deg) scale(1.06);
+}
+
+.capabilities-section .capability-card:focus-visible,
+.capabilities-section .capabilities-link:focus-visible {
+    outline: 3px solid #284ad7;
+    outline-offset: 5px;
+}
+
+.capabilities-swipe-hint {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .capabilities-section {
+        padding: 100px 0;
+        overflow: hidden;
+    }
+
+    .capabilities-section .capabilities-header {
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+        gap: 48px;
+    }
+
+    .capabilities-section .capabilities-title {
+        font-size: clamp(54px, 7.6vw, 76px);
+    }
+
+    .capabilities-section .capabilities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, 310px);
+        height: auto;
+    }
+
+    .capabilities-section .capability-wire,
+    .capabilities-section .capability-appliance,
+    .capabilities-section .capability-retail,
+    .capabilities-section .capability-custom {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .capabilities-section .capability-retail .capability-content,
+    .capabilities-section .capability-custom .capability-content {
+        right: 28px;
+        bottom: 28px;
+        left: 28px;
+    }
+
+    .capabilities-section .capability-retail .capability-content h3,
+    .capabilities-section .capability-custom .capability-content h3 {
+        font-size: clamp(25px, 3vw, 34px);
+    }
+
+    .capabilities-section .capability-retail .capability-content p,
+    .capabilities-section .capability-custom .capability-content p {
+        display: block;
+    }
+}
+
+@media (max-width: 760px) {
+    .capabilities-section {
+        padding: 76px 0 68px;
+    }
+
+    .capabilities-section::before {
+        top: -150px;
+        right: -230px;
+        width: 430px;
+        height: 430px;
+    }
+
+    .capabilities-section .capabilities-header {
+        grid-template-columns: 1fr;
+        gap: 27px;
+        margin-bottom: 34px;
+    }
+
+    .capabilities-section .section-label {
+        font-size: 10px;
+    }
+
+    .capabilities-section .capabilities-title {
+        max-width: 550px;
+        margin-top: 18px;
+        font-size: clamp(46px, 13vw, 68px);
+        line-height: .92;
+    }
+
+    .capabilities-section .capabilities-intro {
+        max-width: 560px;
+    }
+
+    .capabilities-section .capabilities-intro p {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .capabilities-section .capabilities-link {
+        min-height: 46px;
+        font-size: 13px;
+    }
+
+    .capabilities-section .capabilities-grid {
+        display: flex;
+        gap: 14px;
+        width: auto;
+        height: auto;
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 3px 20px 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-padding-inline: 20px;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .capabilities-section .capabilities-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .capabilities-section .capability-wire,
+    .capabilities-section .capability-appliance,
+    .capabilities-section .capability-retail,
+    .capabilities-section .capability-custom {
+        flex: 0 0 min(82vw, 520px);
+        width: min(82vw, 520px);
+        height: clamp(410px, 112vw, 510px);
+        min-height: 0;
+        scroll-snap-align: start;
+    }
+
+    .capabilities-section .capability-card {
+        border-radius: 26px;
+    }
+
+    .capabilities-section .capability-number {
+        top: 18px;
+        left: 18px;
+    }
+
+    .capabilities-section .capability-arrow {
+        top: 14px;
+        right: 14px;
+        width: 44px;
+        height: 44px;
+        background: rgba(7, 12, 27, .60);
+    }
+
+    .capabilities-section .capability-content,
+    .capabilities-section .capability-retail .capability-content,
+    .capabilities-section .capability-custom .capability-content {
+        right: 23px;
+        bottom: 24px;
+        left: 23px;
+    }
+
+    .capabilities-section .capability-content h3,
+    .capabilities-section .capability-retail .capability-content h3,
+    .capabilities-section .capability-custom .capability-content h3 {
+        max-width: 390px;
+        font-size: clamp(29px, 8vw, 38px);
+    }
+
+    .capabilities-section .capability-content p,
+    .capabilities-section .capability-retail .capability-content p,
+    .capabilities-section .capability-custom .capability-content p {
+        display: block;
+        max-width: 390px;
+        margin-top: 12px;
+        font-size: 13px;
+        line-height: 1.48;
+    }
+
+    .capabilities-section .capability-category {
+        margin-bottom: 10px;
+        font-size: 8px;
+    }
+
+    .capabilities-swipe-hint {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-top: 3px;
+        color: #667086;
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    .capabilities-swipe-track {
+        position: relative;
+        width: 58px;
+        height: 2px;
+        overflow: hidden;
+        border-radius: 2px;
+        background: rgba(69, 101, 233, .17);
+    }
+
+    .capabilities-swipe-track span {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 24px;
+        border-radius: inherit;
+        background: var(--capabilities-blue);
+        animation: capability-swipe-cue 2.2s ease-in-out infinite;
+    }
+}
+
+@media (max-width: 420px) {
+    .capabilities-section {
+        padding-top: 68px;
+    }
+
+    .capabilities-section .capabilities-title {
+        font-size: clamp(43px, 13.5vw, 56px);
+    }
+
+    .capabilities-section .capability-wire,
+    .capabilities-section .capability-appliance,
+    .capabilities-section .capability-retail,
+    .capabilities-section .capability-custom {
+        flex-basis: 84vw;
+        width: 84vw;
+        height: clamp(410px, 122vw, 480px);
+    }
+}
+
+@keyframes capability-swipe-cue {
+    0%, 100% {
+        opacity: .55;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(34px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .capabilities-section .capability-card,
+    .capabilities-section .capability-image,
+    .capabilities-section .capability-arrow,
+    .capabilities-section .capabilities-link,
+    .capabilities-section .capabilities-link span {
+        transition-duration: .01ms;
+    }
+
+    .capabilities-swipe-track span {
+        animation: none;
+    }
+}

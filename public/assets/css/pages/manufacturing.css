@@ -1,0 +1,1442 @@
+/* =========================================================
+   MANUFACTURING PAGE
+   Safely extracted Manufacturing-owned source-order region.
+   Mixed multi-page responsive patches remain in css/design.css.
+   ========================================================= */
+
+/* ==========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   MANUFACTURING PAGE
+   PAGE-SPECIFIC DESIGN
+========================================================== */
+
+
+/* ==========================================================
+   SHARED MANUFACTURING VALUES
+========================================================== */
+
+.manufacturing-page {
+    background: var(--background);
+    color: var(--text);
+}
+
+
+.manufacturing-page section {
+    min-height: 100vh;
+}
+
+
+/* ==========================================================
+   SECTION 01 — HERO
+========================================================== */
+
+.manufacturing-hero {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background: var(--navy);
+    color: #fff;
+}
+
+.manufacturing-hero-inner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.manufacturing-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 53%;
+    padding-top: 60px;
+}
+
+.manufacturing-hero-content .section-label {
+    color: var(--primary-light);
+}
+
+.manufacturing-hero-title {
+    margin-top: 22px;
+    max-width: 720px;
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: clamp(52px, 6.1vw, 88px);
+    font-weight: 800;
+    line-height: .94;
+    letter-spacing: -4px;
+}
+
+.manufacturing-hero-title span {
+    color: var(--primary-light);
+}
+
+.manufacturing-hero-description {
+    max-width: 590px;
+    margin-top: 30px;
+    color: rgba(255,255,255,.68);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.manufacturing-hero-button {
+    margin-top: 30px;
+    gap: 22px;
+    min-height: 54px;
+    padding: 0 22px;
+    color: #fff;
+}
+
+.manufacturing-hero-button span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.manufacturing-hero-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 67%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.manufacturing-hero-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(
+            90deg,
+            var(--navy) 0%,
+            rgba(7,22,46,.96) 12%,
+            rgba(7,22,46,.74) 29%,
+            rgba(7,22,46,.25) 56%,
+            rgba(7,22,46,.05) 100%
+        );
+}
+
+.manufacturing-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7,22,46,.35),
+            transparent 35%,
+            rgba(7,22,46,.18)
+        );
+}
+
+.manufacturing-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.manufacturing-hero-media picture,
+.manufacturing-machine-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==========================================================
+   SECTION 02 — MANAGEMENT SYSTEMS
+========================================================== */
+
+.manufacturing-systems {
+    display: flex;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    background: #07162e;
+    color: #fff;
+}
+
+.manufacturing-systems-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr);
+    gap: 70px;
+    align-items: center;
+}
+
+.manufacturing-systems-intro .section-label {
+    color: var(--primary-light);
+}
+
+.manufacturing-section-title {
+    margin-top: 22px;
+    color: var(--text);
+    font-family: var(--font-title);
+    font-size: clamp(42px, 4.7vw, 68px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.manufacturing-systems .manufacturing-section-title {
+    color: #fff;
+}
+
+.manufacturing-section-title span {
+    color: var(--primary-light);
+}
+
+.manufacturing-section-description {
+    max-width: 520px;
+    margin-top: 25px;
+    color: rgba(255,255,255,.64);
+    font-size: .98rem;
+    line-height: 1.8;
+}
+
+.manufacturing-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 18px;
+}
+
+.manufacturing-cert-card {
+    min-height: 260px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.17);
+    border-radius: var(--radius-sm);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        var(--glass-shadow);
+    transition:
+        transform .35s ease,
+        border-color .35s ease;
+}
+
+.manufacturing-cert-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(90,156,255,.55);
+}
+
+.manufacturing-cert-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(116,178,255,.75);
+    border-radius: 50%;
+    color: var(--primary-light);
+    font-family: var(--font-number);
+    font-size: 23px;
+}
+
+.manufacturing-cert-card h3 {
+    margin-top: 24px;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: -.2px;
+}
+
+.manufacturing-cert-card p {
+    margin-top: 10px;
+    color: rgba(255,255,255,.56);
+    font-size: .78rem;
+    line-height: 1.55;
+}
+
+/* ==========================================================
+   CERTIFICATION RECORD
+   THREE COMPACT CERTIFICATE PREVIEWS
+========================================================== */
+
+.manufacturing-certificates-showcase {
+    margin-top: 28px;
+}
+
+.manufacturing-certificates-showcase-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(230px, .65fr);
+    gap: 35px;
+    align-items: end;
+}
+
+.manufacturing-certificates-eyebrow {
+    display: block;
+    position: relative;
+
+    margin-bottom: 10px;
+    padding-left: 30px;
+
+    color: var(--primary-light);
+
+    font-family: var(--font-number);
+    font-size: .65rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.manufacturing-certificates-eyebrow::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 20px;
+    height: 1px;
+
+    background: var(--primary-light);
+}
+
+.manufacturing-certificates-showcase-head h3 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: var(--font-title);
+
+    font-size: clamp(24px, 2.3vw, 34px);
+    font-weight: 800;
+
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.manufacturing-certificates-showcase-head h3 span {
+    color: var(--primary-light);
+}
+
+.manufacturing-certificates-showcase-head p {
+    margin: 0;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: .72rem;
+    line-height: 1.6;
+}
+
+
+/* ----------------------------------------------------------
+   WHITE CERTIFICATION PANEL
+---------------------------------------------------------- */
+
+.manufacturing-certificates-paper {
+    margin-top: 22px;
+
+    padding: 10px;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.10);
+}
+
+/* The upper ISO record uses the same unified paper panel as the lower record. */
+.manufacturing-certificates-paper.manufacturing-certificates-paper--systems {
+    margin-top: 0;
+}
+
+
+/* ----------------------------------------------------------
+   THREE CERTIFICATE COLUMNS
+---------------------------------------------------------- */
+
+.manufacturing-certificate-previews {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+/* ----------------------------------------------------------
+   INDIVIDUAL CERTIFICATE
+---------------------------------------------------------- */
+
+.manufacturing-certificate-preview {
+    position: relative;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    background: #f5f6f8;
+
+    border: 1px solid rgba(21,29,44,.07);
+}
+
+
+/* Certificate image */
+
+.manufacturing-certificate-preview img {
+    display: block;
+
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: top center;
+
+    background: #fff;
+}
+
+
+/* ----------------------------------------------------------
+   CERTIFICATE LABEL
+---------------------------------------------------------- */
+
+.manufacturing-certificate-preview-label {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 12px 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7,22,46,0),
+            rgba(7,22,46,.92)
+        );
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+.manufacturing-certificate-preview-label strong {
+    font-family: var(--font-title);
+
+    font-size: .72rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.manufacturing-certificate-preview-label span {
+    margin-top: 3px;
+
+    color: rgba(255,255,255,.68);
+
+    font-size: .58rem;
+
+    line-height: 1.25;
+}
+
+
+/* ==========================================================
+   CERTIFICATE HOVER
+========================================================== */
+
+.manufacturing-certificate-preview {
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.manufacturing-certificate-preview:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(7,22,46,.15);
+}
+
+.manufacturing-certificate-preview img {
+    transition:
+        transform .4s ease;
+}
+
+.manufacturing-certificate-preview:hover img {
+    transform: scale(1.02);
+}
+
+
+/* ==========================================================
+   SECTION 03 — MACHINERY
+========================================================== */
+
+.manufacturing-machinery {
+    display: flex;
+    align-items: flex-start;
+    background: var(--background);
+
+    min-height: auto;
+    height: auto;
+}
+
+.manufacturing-machinery-layout {
+    display: grid;
+    grid-template-columns: 275px minmax(0,1fr);
+    gap: 42px;
+    align-items: start;
+
+    height: auto;
+    min-height: 0;
+}
+
+.manufacturing-machinery-sidebar {
+    position: relative;
+}
+
+.manufacturing-machinery-sidebar .section-label {
+    color: var(--primary);
+}
+
+.manufacturing-machinery-title {
+    margin-top: 0;
+    color: var(--text);
+    font-family: var(--font-title);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -3px;
+}
+
+.manufacturing-machinery-title span {
+    color: var(--primary);
+}
+
+.manufacturing-machinery-description {
+    margin-top: 22px;
+    color: #6a7285;
+    font-size: .88rem;
+    line-height: 1.75;
+}
+
+.manufacturing-machinery-note {
+    margin-top: 22px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 1px solid rgba(37,99,235,.22);
+    border-radius: var(--radius-xs);
+    background: rgba(37,99,235,.035);
+}
+
+.manufacturing-note-icon {
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(37,99,235,.45);
+    border-radius: 50%;
+    color: var(--primary);
+    font-family: var(--font-number);
+    font-size: .75rem;
+}
+
+.manufacturing-machinery-note p {
+    color: var(--gray);
+    font-size: .73rem;
+    line-height: 1.55;
+}
+
+.manufacturing-machinery-note strong {
+    color: var(--text);
+}
+
+.manufacturing-process {
+    margin-top: 32px;
+}
+
+.manufacturing-process > .section-label {
+    color: var(--primary);
+}
+
+.manufacturing-process-list {
+    position: relative;
+    margin-top: 20px;
+    padding-left: 26px;
+}
+
+.manufacturing-process-list::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 45px;
+    left: 7px;
+    width: 1px;
+    background: rgba(37,99,235,.25);
+}
+
+.manufacturing-process-step {
+    position: relative;
+    min-height: 58px;
+    display: grid;
+    grid-template-columns: 30px minmax(0,1fr);
+    gap: 5px;
+    padding-bottom: 10px;
+}
+
+.manufacturing-process-step::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -23px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 0 4px var(--background);
+}
+
+.manufacturing-process-step > span {
+    color: var(--primary);
+    font-family: var(--font-number);
+    font-size: .72rem;
+    font-weight: 600;
+}
+
+.manufacturing-process-step strong {
+    display: block;
+    color: var(--text);
+    font-size: .75rem;
+    line-height: 1.25;
+}
+
+.manufacturing-process-step small {
+    display: block;
+    margin-top: 4px;
+    color: var(--gray);
+    font-size: .65rem;
+    line-height: 1.35;
+}
+
+
+/* ==========================================================
+   MACHINE GALLERY
+========================================================== */
+
+.manufacturing-machine-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 50px 40px;
+
+    height: auto;
+    min-height: 0;
+
+    align-content: start;
+}
+
+
+/*
+ * COMPACT MACHINE CARD
+ *
+ * No fixed height.
+ * No artificial bottom space.
+ * The card ends directly after the machine name.
+ */
+
+.manufacturing-machine-card {
+    overflow: hidden;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    padding: 6px;
+
+    border: 1px solid rgba(21,29,44,.08);
+    border-radius: 16px;
+
+    background: #fff;
+
+    box-shadow:
+        0 10px 28px rgba(7,22,46,.055);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.manufacturing-machine-card h3 {
+    display: none;
+}
+
+.manufacturing-machine-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(37,99,235,.25);
+
+    box-shadow:
+        0 17px 38px rgba(7,22,46,.10);
+}
+
+
+/* ----------------------------------------------------------
+   MACHINE IMAGE
+---------------------------------------------------------- */
+
+.manufacturing-machine-image {
+    position: relative;
+
+    width: 100%;
+
+    /* Increased ~20% in height while keeping the 4-column layout */
+    aspect-ratio: 1.12 / 1;
+
+    overflow: hidden;
+
+    border-radius: 11px;
+
+    background: #e8edf4;
+}
+
+.manufacturing-machine-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(7,22,46,.10)
+        );
+}
+
+.manufacturing-machine-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    transition:
+        transform .5s ease;
+}
+
+.manufacturing-machine-card:hover
+.manufacturing-machine-image img {
+    transform: scale(1.025);
+}
+
+
+/* ----------------------------------------------------------
+   MACHINE INFORMATION
+---------------------------------------------------------- */
+
+.manufacturing-machine-info {
+    width: 100%;
+
+    min-height: 0;
+
+    height: auto;
+
+    padding:
+        7px
+        6px
+        7px;
+}
+
+
+/* Machine number */
+
+.manufacturing-machine-number {
+    display: block;
+
+    margin: 0 0 4px;
+
+    color: var(--primary);
+
+    font-family: var(--font-number);
+
+    font-size: .60rem;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: .08em;
+}
+
+
+/* Machine name */
+
+.manufacturing-machine-info h3 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-family: var(--font-title);
+
+    font-size: .76rem;
+    font-weight: 700;
+
+    line-height: 1.18;
+
+    letter-spacing: -.18px;
+}
+
+
+/*
+ * Machine functions/descriptions are intentionally removed.
+ */
+
+.manufacturing-machine-info p {
+    display: none !important;
+
+    margin: 0;
+}
+
+
+/* ==========================================================
+   SECTION 04 — CERTIFICATES
+========================================================== */
+
+.manufacturing-certificates {
+    display: flex;
+    align-items: center;
+    background: #f1f4f9;
+}
+
+.manufacturing-certificates-header {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, .8fr);
+    gap: 70px;
+    align-items: end;
+}
+
+.manufacturing-certificates-header p {
+    color: var(--gray);
+    font-size: .92rem;
+    line-height: 1.8;
+}
+
+.manufacturing-certificate-image {
+    margin-top: 45px;
+    overflow: hidden;
+    border: 1px solid rgba(21,29,44,.08);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+
+.manufacturing-certificate-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.manufacturing-certificate-summary {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    background: var(--navy);
+}
+
+.manufacturing-certificate-summary > div {
+    min-height: 88px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.manufacturing-certificate-summary > div:last-child {
+    border-right: 0;
+}
+
+.manufacturing-certificate-summary strong {
+    color: #fff;
+    font-family: var(--font-number);
+    font-size: .78rem;
+}
+
+.manufacturing-certificate-summary span {
+    margin-top: 5px;
+    color: rgba(255,255,255,.5);
+    font-size: .68rem;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .manufacturing-machinery-layout {
+        grid-template-columns: 240px minmax(0,1fr);
+        gap: 28px;
+    }
+
+    .manufacturing-machine-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+
+    .manufacturing-systems-layout {
+        gap: 40px;
+    }
+
+    .manufacturing-hero-title {
+        font-size: clamp(48px, 6vw, 72px);
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .manufacturing-page section {
+        min-height: auto;
+    }
+
+    .manufacturing-hero {
+        min-height: 760px;
+    }
+
+    .manufacturing-hero-inner {
+        min-height: 760px;
+    }
+
+    .manufacturing-hero-content {
+        width: 70%;
+        padding-top: 80px;
+    }
+
+    .manufacturing-hero-media {
+        width: 82%;
+    }
+
+    .manufacturing-systems {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .manufacturing-systems-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .manufacturing-machinery {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .manufacturing-machinery-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .manufacturing-machinery-sidebar {
+        max-width: 680px;
+    }
+
+    .manufacturing-process-list {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 5px 25px;
+    }
+
+    .manufacturing-process-list::before {
+        display: none;
+    }
+
+    .manufacturing-process-step::before {
+        display: none;
+    }
+
+    .manufacturing-process-list {
+        padding-left: 0;
+    }
+
+    .manufacturing-machine-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+
+    .manufacturing-certificates {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .manufacturing-hero {
+        min-height: 700px;
+    }
+
+    .manufacturing-hero-inner {
+        min-height: 700px;
+    }
+
+    .manufacturing-hero-media {
+        width: 100%;
+    }
+
+    .manufacturing-hero-media::before {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7,22,46,.98) 0%,
+                rgba(7,22,46,.78) 45%,
+                rgba(7,22,46,.25) 100%
+            );
+    }
+
+    .manufacturing-hero-content {
+        width: 90%;
+        padding-top: 80px;
+    }
+
+    .manufacturing-hero-title {
+        font-size: clamp(44px, 11vw, 64px);
+        letter-spacing: -3px;
+    }
+
+    .manufacturing-hero-description {
+        font-size: .92rem;
+    }
+
+    .manufacturing-process-list {
+        grid-template-columns: 1fr;
+    }
+
+    .manufacturing-machine-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 14px;
+    }
+
+    .manufacturing-certificates-header {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .manufacturing-certificate-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .manufacturing-certificate-summary > div {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .manufacturing-certificate-summary > div:last-child {
+        border-bottom: 0;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .manufacturing-machine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manufacturing-hero-content {
+        width: 100%;
+    }
+
+    .manufacturing-hero-title {
+        font-size: 42px;
+    }
+}
+
+
+/* ==========================================================
+   FINAL MANUFACTURING PAGE ADJUSTMENTS
+========================================================== */
+
+
+/* ==========================================================
+   PAGE 1 — HERO IMAGE
+   Extend the image all the way to the right edge
+   of the browser viewport.
+========================================================== */
+
+.manufacturing-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.manufacturing-hero-media {
+    /*
+     * The hero media sits inside .container.
+     * Extend it outside the container so the image
+     * reaches the actual right edge of the viewport.
+     */
+    right: calc((100vw - 100%) / -2);
+
+    width: calc(
+        67% + (100vw - 100%) / 2
+    );
+
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.manufacturing-hero-media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* ==========================================================
+   PAGE 3 — MACHINERY
+========================================================== */
+
+.manufacturing-machinery {
+    box-sizing: border-box;
+
+    min-height: 100vh;
+
+    padding-top: 45px;
+    padding-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/*
+ * Keep the layout vertically balanced.
+ */
+
+.manufacturing-machinery-layout {
+    align-items: center;
+}
+
+
+/* ==========================================================
+   LEFT SIDE — OUR MACHINERY
+========================================================== */
+
+/*
+ * Move the complete left information block slightly down.
+ *
+ * FINAL POSITION:
+ * 30px downward
+ */
+
+.manufacturing-machinery-sidebar {
+    transform: translateY(35px);
+}
+
+
+/* ==========================================================
+   RIGHT SIDE — MACHINE CARDS
+========================================================== */
+
+/*
+ * Move the complete machinery gallery slightly right
+ * while keeping its vertical position.
+ *
+ * FINAL POSITION:
+ * 12px right
+ * 8px down
+ */
+
+.manufacturing-machine-grid {
+    position: relative;
+    left: 55px;
+    transform: translateY(0);
+}
+
+/*
+ * Keep cards compact and prevent any artificial
+ * extra height at the bottom.
+ */
+
+.manufacturing-machine-card {
+    height: auto;
+    min-height: 0;
+}
+
+
+/*
+ * Remove any remaining bottom space inside the
+ * machine information area.
+ */
+
+.manufacturing-machine-info {
+    height: auto;
+    min-height: 0;
+
+    padding-bottom: 6px;
+}
+
+
+/* ==========================================================
+   MOBILE — RESTORE NORMAL BEHAVIOUR
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .manufacturing-hero-media {
+        right: 0;
+        width: 100%;
+    }
+
+    .manufacturing-machinery {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .manufacturing-machinery-sidebar {
+        transform: none;
+    }
+
+    .manufacturing-machine-grid {
+        left: 0;
+        transform: none;
+    }
+
+}
+
+/* Later Manufacturing-specific responsive overrides retain their original
+   source-order relationship with the extracted desktop rules. */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .manufacturing-machine-grid { left: 0; transform: none; }
+}
+
+@media (min-width: 1101px) {
+    .manufacturing-machinery-sidebar {
+        transform: translateY(-20px);
+        margin-bottom: -55px;
+    }
+}
+
+@media (min-width: 1101px) and (max-width: 1493px) {
+    .manufacturing-machine-grid { left: 48px; }
+}
+
+@media (max-width: 700px) {
+    .manufacturing-hero { min-height: 640px; }
+    .manufacturing-systems { padding-top: 38px; padding-bottom: 38px; }
+    .manufacturing-systems-layout { gap: 18px; }
+    .manufacturing-systems .manufacturing-section-title { font-size: clamp(34px, 9.5vw, 40px); letter-spacing: -0.05em; }
+    .manufacturing-section-description { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+    .manufacturing-certificates-showcase { margin-top: 14px; padding: 12px; border-radius: 18px; }
+    .manufacturing-certificates-showcase-head { margin-bottom: 8px; }
+    .manufacturing-certificate-preview img { height: 110px; }
+    .manufacturing-certificates-paper--systems .manufacturing-certificate-preview img { height: 110px; }
+    .manufacturing-certificate-preview-label { margin-top: 6px; font-size: 8px; }
+    .manufacturing-machinery { min-height: 0; padding-top: 48px; padding-bottom: 48px; }
+    .manufacturing-machinery-layout { gap: 26px; }
+    .manufacturing-machinery-title { margin-top: 0; font-size: clamp(36px, 10vw, 44px); letter-spacing: -0.05em; }
+    .manufacturing-machinery-description,
+    .manufacturing-machinery-note { margin-top: 14px; }
+    .manufacturing-process-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; margin-top: 16px; }
+    .manufacturing-process-step small { display: block; margin-top: 3px; font-size: 0.58rem; line-height: 1.25; }
+    .manufacturing-machine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .manufacturing-machine-card { padding: 4px; border-radius: 12px; }
+    .manufacturing-machine-image { aspect-ratio: 1.08 / 1; border-radius: 8px; }
+    .manufacturing-machine-info { padding: 6px 4px 5px; }
+}
+
+@media (max-width: 360px) {
+    .manufacturing-machine-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+    .manufacturing-hero,
+    .manufacturing-hero-inner { height: 100svh; min-height: 100svh; }
+    .manufacturing-hero-content { padding-top: 0; transform: translateY(-30px); }
+    .manufacturing-certificates-showcase-head { grid-template-columns: minmax(0, 1fr); gap: 8px; align-items: start; }
+    .manufacturing-certificates-showcase-head h3 { font-size: clamp(22px, 6.2vw, 24px); line-height: 1.05; }
+    .manufacturing-certificates-showcase-head p { font-size: 0.68rem; line-height: 1.45; }
+    .manufacturing-certificates-paper { margin-top: 12px; }
+}
+
+/* Keep the certification composition as one full phone viewport. */
+@media (max-width: 700px) {
+    .manufacturing-page .manufacturing-systems {
+        box-sizing: border-box;
+        min-height: 100svh;
+    }
+}
+
+/* Keep the certification record clear of the fixed return control on compact phones. */
+@media (max-width: 700px) and (max-height: 850px) {
+    .manufacturing-systems {
+        align-items: flex-start;
+    }
+}
+
+/* Compress only the short-phone certification composition enough to fit. */
+@media (max-width: 700px) and (max-height: 720px) {
+    .manufacturing-systems {
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .manufacturing-systems-layout {
+        gap: 10px;
+    }
+
+    .manufacturing-systems .manufacturing-section-title {
+        font-size: clamp(30px, 8.8vw, 34px);
+    }
+
+    .manufacturing-section-description {
+        margin-top: 8px;
+        font-size: 12.5px;
+        line-height: 1.35;
+    }
+
+    .manufacturing-certificates-showcase {
+        margin-top: 8px;
+        padding: 8px;
+    }
+
+    .manufacturing-certificates-showcase-head {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    .manufacturing-certificates-showcase-head h3 {
+        font-size: 20px;
+    }
+
+    .manufacturing-certificates-showcase-head p {
+        font-size: .62rem;
+        line-height: 1.3;
+    }
+
+    .manufacturing-certificates-paper {
+        margin-top: 4px;
+        padding: 6px;
+    }
+
+    .manufacturing-certificate-previews {
+        gap: 6px;
+    }
+
+    .manufacturing-certificate-preview img {
+        height: 88px;
+    }
+
+    .manufacturing-certificates-paper--systems .manufacturing-certificate-preview img {
+        height: 88px;
+    }
+
+    .manufacturing-certificate-preview-label {
+        padding: 5px;
+    }
+
+    .manufacturing-certificate-preview-label strong {
+        font-size: .55rem;
+    }
+
+    .manufacturing-certificate-preview-label span {
+        margin-top: 2px;
+        font-size: .46rem;
+        line-height: 1.15;
+    }
+}
+
+/* Preserve the Manufacturing hero hierarchy below the compact mobile navbar. */
+@media (max-width: 340px) and (max-height: 600px) {
+    .manufacturing-hero-content {
+        transform: translateY(16px);
+    }
+
+    .manufacturing-hero-title {
+        margin-top: 16px;
+        font-size: 36px;
+        letter-spacing: -2px;
+    }
+
+    .manufacturing-hero-description {
+        margin-top: 18px;
+        font-size: .82rem;
+        line-height: 1.45;
+    }
+
+    .manufacturing-hero-button {
+        min-height: 48px;
+        margin-top: 18px;
+        gap: 16px;
+        padding: 0 18px;
+    }
+}
+
+/* Do not force the portrait hero composition into a very short landscape viewport. */
+@media (max-width: 700px) and (max-height: 500px) and (orientation: landscape) {
+    .manufacturing-hero,
+    .manufacturing-hero-inner {
+        height: auto;
+        min-height: 520px;
+    }
+
+    .manufacturing-hero-inner {
+        align-items: flex-start;
+    }
+
+    .manufacturing-hero-content {
+        width: calc(75% - 76px);
+        margin-left: 76px;
+        padding-top: 116px;
+        transform: none;
+    }
+
+    .manufacturing-hero-title {
+        margin-top: 16px;
+        font-size: clamp(38px, 6vw, 48px);
+        letter-spacing: -2.4px;
+    }
+
+    .manufacturing-hero-description {
+        margin-top: 16px;
+        font-size: .82rem;
+        line-height: 1.45;
+    }
+
+    .manufacturing-hero-button {
+        min-height: 48px;
+        margin-top: 18px;
+    }
+}

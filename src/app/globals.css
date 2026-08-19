@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Existing, page-specific art direction is compiled through the Tailwind build. */
+@import "../../public/assets/css/core/variables.css";
+@import "../../public/assets/css/core/reset.css";
+@import "../../public/assets/css/core/typography.css";
+@import "../../public/assets/css/core/layout.css";
+@import "../../public/assets/css/core/utilities.css";
+@import "../../public/assets/css/core/design.css";
+@import "../../public/assets/css/pages/home.css";
+@import "../../public/assets/css/pages/about.css";
+@import "../../public/assets/css/pages/products.css";
+@import "../../public/assets/css/pages/manufacturing.css";
+@import "../../public/assets/css/pages/contact.css";
+@import "../../public/assets/css/pages/quote.css";
+@import "../../public/assets/css/components/glass.css";
+@import "../../public/assets/css/components/buttons.css";
+@import "../../public/assets/css/components/navbar.css";
+@import "../../public/assets/css/components/back-to-top.css";
+@import "../../public/assets/css/core/mobile-experience.css";
+
+@source "../content/**/*.html";
+
+@theme {
+  --color-ink-950: #020713;
+  --color-ink-900: #061126;
+  --color-steel-900: #0b1d40;
+  --color-electric-500: #315dcc;
+  --color-electric-400: #5f8cff;
+  --color-electric-300: #82a8ff;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --radius-glass: 1.25rem;
+}
+
+@layer base {
+  html {
+    @apply bg-ink-950;
+  }
+
+  body {
+    @apply min-w-0 overflow-x-clip bg-ink-950 font-sans text-white antialiased caret-electric-300;
+  }
+
+  ::selection {
+    @apply bg-electric-500/70 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-3 outline-electric-300;
+  }
+
+  ::-webkit-scrollbar {
+    width: .7rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-solid border-ink-950 bg-electric-500;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric-400;
+  }
+}
+
+@layer components {
+  .motion-page {
+    @apply relative isolate min-h-screen overflow-x-clip;
+  }
+
+  .touch-surface {
+    @apply touch-manipulation select-none;
+  }
+}

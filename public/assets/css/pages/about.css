@@ -1,0 +1,1850 @@
+/* =========================================================
+   ABOUT PAGE
+   Final/effective About styles extracted from css/design.css
+   and the former about.php page-local stylesheet.
+   ========================================================= */
+
+/* ==========================================================
+   ABOUT â€” OUR FACILITIES
+   SECOND SECTION
+========================================================== */
+
+.about-facilities {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 90px 7% 110px;
+
+    background: #f4ead7;
+
+    background-image:
+
+        linear-gradient(
+            rgba(142, 105, 63, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(142, 105, 63, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 7px 7px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   INTRODUCTION
+========================================================== */
+
+.facilities-intro {
+
+    width: min(900px, 100%);
+
+    margin: 0 auto 85px;
+
+    text-align: center;
+}
+
+
+.facilities-eyebrow {
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color: #92704a;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+.facilities-intro h1 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(48px, 5vw, 76px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: #4b321e;
+}
+
+
+.facilities-intro > p {
+
+    max-width: 700px;
+
+    margin: 28px auto 0;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: #634b34;
+}
+
+
+/* ==========================================================
+   INTRO DIVIDER
+========================================================== */
+
+.facilities-divider,
+.facilities-section-divider,
+.facilities-bottom-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+.facilities-divider {
+
+    margin: 20px auto 0;
+}
+
+
+.facilities-divider span,
+.facilities-section-divider span,
+.facilities-bottom-divider span {
+
+    display: block;
+
+    width: 110px;
+
+    height: 1px;
+
+    background:
+        rgba(145, 104, 61, 0.5);
+}
+
+
+.facilities-divider i,
+.facilities-section-divider i,
+.facilities-bottom-divider i {
+
+    display: block;
+
+    width: 9px;
+
+    height: 9px;
+
+    background: #a9783c;
+
+    transform: rotate(45deg);
+}
+
+
+/* ==========================================================
+   FACILITY ROW
+========================================================== */
+
+.facility-row {
+
+    width: 100%;
+
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.72fr)
+        minmax(500px, 1.55fr);
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* ==========================================================
+   FACILITY TEXT
+========================================================== */
+
+.facility-text {
+
+    padding: 20px 0;
+}
+
+
+.facility-year {
+
+    display: block;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #ad7429;
+
+    margin-bottom: 18px;
+}
+
+
+.facility-text h2 {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(38px, 3.2vw, 54px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: #4b321e;
+}
+
+
+/* ==========================================================
+   TEXT DIVIDER
+========================================================== */
+
+.facility-line {
+
+    display: flex;
+
+    align-items: center;
+
+    margin: 20px 0 25px;
+
+    gap: 10px;
+}
+
+
+.facility-line span {
+
+    width: 105px;
+
+    height: 1px;
+
+    background:
+        rgba(145, 104, 61, 0.5);
+}
+
+
+.facility-line i {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #a9783c;
+
+    transform: rotate(45deg);
+}
+
+
+.facility-text p {
+
+    max-width: 430px;
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: #634b34;
+}
+
+
+/* ==========================================================
+   WOODEN PHOTO FRAME
+========================================================== */
+
+.facility-image-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 9px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            #5c381d 0%,
+            #9b6735 18%,
+            #4b2d18 38%,
+            #8b5a2d 60%,
+            #432715 82%,
+            #79502b 100%
+        );
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(55, 35, 18, 0.22),
+
+        inset 0 0 0 1px
+        rgba(255,255,255,0.12);
+
+    overflow: hidden;
+}
+
+
+.facility-image-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 3px;
+
+    border:
+        1px solid
+        rgba(225, 185, 130, 0.35);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.facility-image-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 1.55 / 1;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.facility-image-frame picture,
+.second-factory-image-frame picture {
+    display: block;
+}
+
+
+/* ==========================================================
+   BETWEEN FACILITIES
+========================================================== */
+
+.facilities-section-divider {
+
+    max-width: 1200px;
+
+    margin: 65px auto;
+
+    opacity: 0.8;
+}
+
+
+/* ==========================================================
+   SECOND ROW
+   PHOTO LEFT / TEXT RIGHT
+========================================================== */
+
+.facility-factory {
+
+    grid-template-columns:
+        minmax(500px, 1.55fr)
+        minmax(280px, 0.72fr);
+}
+
+
+/* ==========================================================
+   BOTTOM DIVIDER
+========================================================== */
+
+.facilities-bottom-divider {
+
+    margin: 70px auto 0;
+}
+
+
+.facilities-bottom-divider span {
+
+    width: 120px;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .about-facilities {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+    }
+
+
+    .facility-row,
+    .facility-factory {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .facility-text {
+
+        max-width: 650px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .facility-text p {
+
+        max-width: 600px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .facility-line {
+
+        justify-content: center;
+    }
+
+
+    .facility-factory .facility-text {
+
+        order: 2;
+    }
+
+
+    .facility-factory .facility-image-frame {
+
+        order: 1;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .about-facilities {
+
+        padding:
+            55px 20px 70px;
+    }
+
+
+    .facilities-intro {
+
+        margin-bottom: 55px;
+    }
+
+
+    .facilities-intro h1 {
+
+        font-size: 48px;
+    }
+
+
+    .facilities-intro > p {
+
+        font-size: 18px;
+
+        line-height: 1.6;
+    }
+
+
+    .facility-row,
+    .facility-factory {
+
+        gap: 30px;
+    }
+
+
+    .facility-text h2 {
+
+        font-size: 40px;
+    }
+
+
+    .facility-text p {
+
+        font-size: 18px;
+
+        line-height: 1.65;
+    }
+
+
+    .facility-image-frame {
+
+        padding: 7px;
+    }
+
+
+    .facilities-section-divider {
+
+        margin: 45px auto;
+    }
+
+
+    .facilities-divider span,
+    .facilities-section-divider span,
+    .facilities-bottom-divider span {
+
+        width: 70px;
+    }
+
+}
+
+/* ==========================================================
+   ABOUT â€” PAGE 4
+   SECOND FACTORY â€” 2015
+========================================================== */
+
+.about-second-factory .second-factory-row {
+
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(600px, 1.55fr)
+        minmax(280px, 0.72fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+}
+
+
+/* ==========================================================
+   SECOND FACTORY PHOTO GALLERY
+========================================================== */
+
+.second-factory-gallery {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    width: 100%;
+
+}
+
+
+/* ==========================================================
+   SECOND FACTORY IMAGE FRAME
+========================================================== */
+
+.second-factory-image-frame {
+
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    padding: 7px;
+
+    background: #6f4b2c;
+
+    box-shadow:
+        0 14px 30px rgba(65, 42, 22, 0.18);
+
+    overflow: hidden;
+
+}
+
+
+.second-factory-image-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* ==========================================================
+   SECOND FACTORY TEXT
+========================================================== */
+
+.second-factory-text {
+
+    padding: 20px 0;
+
+}
+
+
+.second-factory-text p {
+
+    max-width: 450px;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .about-second-factory {
+
+        height: auto;
+        min-height: 100vh;
+
+        padding:
+            120px 6%
+            80px;
+
+    }
+
+
+    .about-second-factory .second-factory-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .second-factory-gallery {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .second-factory-text {
+
+        text-align: center;
+
+        margin: 0 auto;
+
+    }
+
+
+    .second-factory-text p {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
+    .second-factory-text .facility-line {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .second-factory-gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .second-factory-image-frame {
+
+        aspect-ratio: 3 / 4;
+
+    }
+
+
+    .second-factory-text h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .second-factory-text p {
+
+        font-size: 18px;
+
+        line-height: 1.65;
+
+    }
+
+}
+/* ==========================================================
+   ABOUT â€” PAGE 5
+   THIRD FACTORY â€” PRESENT
+   FINAL LAYOUT OVERRIDE
+========================================================== */
+
+.about-third-factory .second-factory-row {
+
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(600px, 1.55fr)
+        minmax(300px, 0.72fr);
+
+    align-items: center;
+
+    gap: 75px;
+
+}
+
+
+/* ==========================================================
+   PHOTO GALLERY
+========================================================== */
+
+.about-third-factory .second-factory-gallery {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* ==========================================================
+   PHOTO FRAMES
+========================================================== */
+
+.about-third-factory .second-factory-image-frame {
+
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    padding: 7px;
+
+    background: #6f4b2c;
+
+    box-shadow:
+        0 14px 30px rgba(65, 42, 22, 0.18);
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.about-third-factory .second-factory-text {
+
+    padding: 20px 0;
+
+}
+
+
+.about-third-factory .second-factory-text p {
+
+    max-width: 450px;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .about-third-factory {
+
+        height: auto;
+        min-height: 100vh;
+
+        padding:
+            120px 6%
+            80px;
+
+    }
+
+
+    .about-third-factory .second-factory-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .about-third-factory .second-factory-gallery {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-third-factory .second-factory-text {
+
+        text-align: center;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-third-factory .second-factory-text p {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .about-third-factory .second-factory-gallery {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-third-factory .second-factory-image-frame {
+
+        height: 400px;
+
+    }
+
+
+    .about-third-factory .second-factory-text h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .about-third-factory .second-factory-text p {
+
+        font-size: 18px;
+
+        line-height: 1.65;
+
+    }
+
+}
+
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f7ead5;
+    color: #593720;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   ABOUT OPENING
+===================================================== */
+
+.about-opening {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    margin-top: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px 70px 40px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(120, 82, 48, 0.035) 0px,
+            rgba(120, 82, 48, 0.035) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            rgba(120, 82, 48, 0.018) 0px,
+            rgba(120, 82, 48, 0.018) 1px,
+            transparent 1px,
+            transparent 8px
+        ),
+
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(175, 125, 75, 0.06),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(175, 125, 75, 0.05),
+            transparent 40%
+        ),
+
+        #f7ead5;
+}
+
+
+/* =====================================================
+   WOOD STRIP BEHIND NAVBAR
+===================================================== */
+
+.about-opening::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 170px;
+
+    background-image: url("/assets/images/wood-strip.png");
+
+    background-repeat: repeat-x;
+
+    background-size: auto 108px;
+
+    background-position: center top;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.about-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1100px, 100%);
+
+    text-align: center;
+
+    transform: translateY(35px);
+}
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.about-story {
+
+    margin-top: 42px;
+}
+
+
+.about-story p {
+
+    width: min(930px, 100%);
+
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(21px, 1.7vw, 27px);
+
+    line-height: 1.32;
+
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+
+    color: #593720;
+}
+
+
+.about-story strong {
+
+    font-weight: 600;
+
+    color: #4b2c18;
+}
+
+
+/* =====================================================
+   SCRIPT STATEMENT
+===================================================== */
+
+.about-highlight {
+
+  margin: 28px auto 30px;
+
+    font-family: "Allura", cursive;
+
+    /* Preserve the inherited div typography now that this visible statement is the page H1. */
+    font-weight: 400;
+    letter-spacing: normal;
+
+   font-size: clamp(52px, 5.2vw, 80px);
+
+    line-height: 1;
+
+    color: #9a6a3d;
+
+    white-space: nowrap;
+
+    text-shadow:
+
+        0 1px 0 rgba(255,255,255,0.65),
+
+        0 3px 5px rgba(103,65,35,0.10);
+}
+
+
+/* =====================================================
+   LAST PARAGRAPH
+===================================================== */
+
+.about-story p:last-child {
+
+    margin-top: 24px;
+}
+
+
+/* =====================================================
+   BOTTOM DECORATION
+===================================================== */
+
+.about-bottom-rule {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    margin: 28px auto 0;
+}
+
+
+.about-bottom-rule span {
+
+    width: 145px;
+
+    height: 1px;
+
+    background: rgba(139,91,52,0.55);
+}
+
+
+.about-bottom-rule i {
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #a97646;
+
+    transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   QUOTATION MARKS
+===================================================== */
+
+.quote-mark {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-family: Georgia, serif;
+
+    font-size: 180px;
+
+    line-height: 0.7;
+
+    color: rgba(159,110,67,0.40);
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   LEFT QUOTE
+===================================================== */
+
+.quote-left {
+
+    left: 8vw;
+
+    top: 145px;
+
+    right: auto;
+
+    bottom: auto;
+}
+
+
+/* =====================================================
+   RIGHT QUOTE
+===================================================== */
+
+.quote-right {
+
+    right: 8vw;
+
+    bottom: 70px;
+
+    left: auto;
+
+    top: auto;
+}
+
+
+/* =====================================================
+   LEFT VERTICAL LINE
+===================================================== */
+
+.quote-left::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 47px;
+
+    top: 105px;
+
+    right: auto;
+
+    bottom: auto;
+
+    width: 1px;
+
+    height: 540px;
+
+    background: rgba(151,102,61,0.42);
+}
+
+
+/* =====================================================
+   RIGHT VERTICAL LINE
+===================================================== */
+
+.quote-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 47px;
+
+    bottom: 190px;
+
+    left: auto;
+
+    top: auto;
+
+    width: 1px;
+
+    height: 540px;
+
+    background: rgba(151,102,61,0.42);
+}
+
+
+/* =====================================================
+   HEADER / NAVBAR
+===================================================== */
+
+.header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000 !important;
+}
+
+/* The wood belongs to the page background, while the shared Home navbar
+   stays above it. */
+.about-opening::before {
+    z-index: 0;
+}
+
+.about-content {
+    position: relative;
+    z-index: 5;
+}
+
+.quote-mark {
+    z-index: 2;
+}
+
+
+/* =====================================================
+   MOBILE / RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .quote-mark {
+
+        opacity: 0.35;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-opening {
+
+        height: auto;
+
+        min-height: 100svh;
+
+        margin-top: 0;
+
+        align-items: flex-start;
+
+        padding:
+            160px 20px
+            22px;
+
+        overflow: visible;
+    }
+
+
+    .about-content {
+
+        transform: none;
+    }
+
+
+    .about-story {
+
+        margin-top: 0;
+    }
+
+
+    .about-story p {
+
+        font-size: clamp(18px, 4.9vw, 20px);
+
+        line-height: 1.2;
+    }
+
+
+    .about-story p:last-child {
+
+        margin-top: 12px;
+    }
+
+
+    .about-highlight {
+
+        font-size: clamp(38px, 10vw, 44px);
+
+        line-height: 0.95;
+
+        white-space: normal;
+
+        margin:
+            12px auto
+            14px;
+    }
+
+
+    .about-bottom-rule {
+
+        gap: 14px;
+
+        margin-top: 14px;
+    }
+
+
+    .about-bottom-rule span {
+
+        width: 55px;
+    }
+
+
+    .quote-mark {
+
+        font-size: 76px;
+    }
+
+
+    .quote-left {
+
+        left: 10px;
+
+        top: 118px;
+    }
+
+
+    .quote-right {
+
+        right: 10px;
+
+        bottom: 26px;
+    }
+
+
+    .quote-left::after,
+    .quote-right::after {
+
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 701px) {
+
+    /* Center the unbroken handwritten line even when it is wider than its text column. */
+    .about-highlight {
+
+        width: max-content;
+
+        margin: 28px 0 30px;
+
+        position: relative;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+    }
+
+    .about-opening .about-bottom-rule {
+
+        margin-top: 14px;
+
+    }
+
+}
+
+/* ==========================================================
+   ABOUT â€” FACILITY PAGES
+   PAGE 2 = FIRST BUILDING
+   PAGE 3 = FIRST FACTORY
+========================================================== */
+
+.about-facilities {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    padding: 0 6vw;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(142, 105, 63, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(142, 105, 63, 0.035) 1px,
+            transparent 1px
+        ),
+
+        #f7ead5;
+
+    background-size: 7px 7px;
+}
+
+
+/* ==========================================================
+   FACILITY PAGE CONTENT
+========================================================== */
+
+.facility-page-content {
+
+    width: 100%;
+    max-width: 1450px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(25px);
+
+}
+
+
+/* ==========================================================
+   FACILITY ROW
+========================================================== */
+
+.about-facilities .facility-row {
+
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(500px, 1.55fr)
+        minmax(280px, 0.72fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+/* ==========================================================
+   BUILDING PAGE â€” TEXT LEFT / PHOTO RIGHT
+========================================================== */
+
+.about-facilities .facility-building {
+
+    grid-template-columns:
+        minmax(280px, 0.72fr)
+        minmax(500px, 1.55fr);
+
+}
+
+
+/* ==========================================================
+   FACILITY IMAGE
+========================================================== */
+
+.about-facilities .facility-image-frame {
+
+    width: 100%;
+
+    max-width: 850px;
+
+}
+
+
+/* ==========================================================
+   FACILITY TEXT
+========================================================== */
+
+.about-facilities .facility-text {
+
+    padding: 20px 0;
+
+}
+
+
+.about-facilities .facility-text p {
+
+    max-width: 430px;
+
+}
+
+
+/* ==========================================================
+   BOTTOM DIVIDER
+========================================================== */
+
+.about-facilities .facilities-bottom-divider {
+
+    margin: 75px auto 0;
+
+}
+
+
+/* ==========================================================
+   DESKTOP HEIGHT CONTROL
+========================================================== */
+
+@media (min-width: 1101px) {
+
+    .about-facilities .facility-image-frame img {
+
+        max-height: 58vh;
+
+        object-fit: cover;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .about-facilities {
+
+        height: auto;
+        min-height: 100vh;
+
+        padding:
+            120px 6%
+            80px;
+
+    }
+
+
+    .about-facilities .facility-row,
+    .about-facilities .facility-building {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .about-facilities .facility-image-frame {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-facilities .facility-text {
+
+        text-align: center;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-facilities .facility-line {
+
+        justify-content: center;
+
+    }
+
+
+    .about-facilities .facility-text p {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET FACTORY LAYOUTS
+========================================================== */
+
+@media (min-width: 1001px) and (max-width: 1100px) {
+
+    .about-second-factory .second-factory-row,
+    .about-third-factory .second-factory-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .about-second-factory .second-factory-gallery,
+    .about-third-factory .second-factory-gallery {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-second-factory .second-factory-text,
+    .about-third-factory .second-factory-text {
+
+        text-align: center;
+
+        margin: 0 auto;
+
+    }
+
+
+    .about-second-factory .second-factory-text p,
+    .about-third-factory .second-factory-text p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .about-second-factory .second-factory-text .facility-line,
+    .about-third-factory .second-factory-text .facility-line {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .about-facilities {
+
+        min-height: 0;
+
+        padding:
+            72px 20px
+            56px;
+
+    }
+
+
+    .about-facilities .facility-row {
+
+        margin: 20px auto;
+
+        gap: 30px;
+
+    }
+
+
+    .about-second-factory .second-factory-row,
+    .about-third-factory .second-factory-row {
+
+        margin: 20px auto;
+
+        gap: 30px;
+
+    }
+
+
+    .about-facilities .facility-text h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .about-facilities .facility-text p {
+
+        font-size: 18px;
+
+        line-height: 1.65;
+
+    }
+
+
+    .about-facilities .facility-image-frame {
+
+        padding: 7px;
+
+    }
+
+
+    .about-second-factory .second-factory-gallery,
+    .about-third-factory .second-factory-gallery {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+    }
+
+
+    .about-second-factory .second-factory-image-frame {
+
+        aspect-ratio: 3 / 4;
+
+        padding: 5px;
+
+    }
+
+
+    .about-third-factory .second-factory-image-frame {
+
+        height: auto;
+
+        aspect-ratio: 3 / 4;
+
+        padding: 5px;
+
+    }
+
+
+    .about-facilities .facilities-bottom-divider {
+
+        margin: 40px auto 0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ABOUT BACK-TO-TOP CONTROL
+========================================================== */
+
+.about-back-to-top {
+
+    background: linear-gradient(135deg, rgba(96, 83, 56, 0.78), rgba(57, 46, 28, 0.8));
+    box-shadow: 0 14px 34px rgba(54, 45, 29, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+}
+
+
+.about-back-to-top:hover,
+.about-back-to-top:focus-visible {
+
+    background: linear-gradient(135deg, rgba(125, 108, 77, 0.92), rgba(70, 57, 35, 0.92));
+    box-shadow: 0 18px 38px rgba(54, 45, 29, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+}

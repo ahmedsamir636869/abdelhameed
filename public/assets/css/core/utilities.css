@@ -1,0 +1,397 @@
+/* ==========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   UTILITIES.CSS
+   ========================================================== */
+
+/*---------------------------------------------------------*
+ * DISPLAY
+ *---------------------------------------------------------*/
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-grid {
+    display: grid !important;
+}
+
+/*---------------------------------------------------------*
+ * FLEX
+ *---------------------------------------------------------*/
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/*---------------------------------------------------------*
+ * GAP
+ *---------------------------------------------------------*/
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.gap-60 {
+    gap: 60px;
+}
+
+/*---------------------------------------------------------*
+ * TEXT
+ *---------------------------------------------------------*/
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.light {
+    font-weight: 300;
+}
+
+/*---------------------------------------------------------*
+ * WIDTH
+ *---------------------------------------------------------*/
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.max-100 {
+    max-width: 100%;
+}
+
+/*---------------------------------------------------------*
+ * HEIGHT
+ *---------------------------------------------------------*/
+
+.h-100 {
+    height: 100%;
+}
+
+.min-vh {
+    min-height: 100vh;
+}
+
+/*---------------------------------------------------------*
+ * POSITION
+ *---------------------------------------------------------*/
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+/*---------------------------------------------------------*
+ * OVERFLOW
+ *---------------------------------------------------------*/
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------*
+ * BORDER RADIUS
+ *---------------------------------------------------------*/
+
+.radius-sm {
+    border-radius: 16px;
+}
+
+.radius {
+    border-radius: 24px;
+}
+
+.radius-lg {
+    border-radius: 36px;
+}
+
+.radius-xl {
+    border-radius: 48px;
+}
+
+.radius-round {
+    border-radius: 999px;
+}
+
+/*---------------------------------------------------------*
+ * SHADOW
+ *---------------------------------------------------------*/
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.blue-shadow {
+    box-shadow: var(--blue-shadow);
+}
+
+/*---------------------------------------------------------*
+ * BACKGROUND
+ *---------------------------------------------------------*/
+
+.bg-white {
+    background: #ffffff;
+}
+
+.bg-primary {
+    background: var(--primary);
+}
+
+.bg-dark {
+    background: var(--navy);
+}
+
+.bg-transparent {
+    background: transparent;
+}
+
+/*---------------------------------------------------------*
+ * VISIBILITY
+ *---------------------------------------------------------*/
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+/*---------------------------------------------------------*
+ * TRANSITIONS
+ *---------------------------------------------------------*/
+
+.transition {
+    transition: var(--transition);
+}
+
+.transition-fast {
+    transition: var(--transition-fast);
+}
+
+.transition-slow {
+    transition: var(--transition-slow);
+}
+
+/*---------------------------------------------------------*
+ * LIQUID GLASS HELPERS
+ *---------------------------------------------------------*/
+
+.glass-surface {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(170%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(170%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+        0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.glass-highlight {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.10);
+}
+
+/*---------------------------------------------------------*
+ * RESPONSIVE UTILITIES
+ *---------------------------------------------------------*/
+
+@media (max-width: 700px) {
+
+    .gap-60 {
+        gap: 40px;
+    }
+
+    .radius-xl {
+        border-radius: 36px;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .gap-60 {
+        gap: 30px;
+    }
+
+    .radius-lg {
+        border-radius: 28px;
+    }
+
+    .radius-xl {
+        border-radius: 30px;
+    }
+
+}

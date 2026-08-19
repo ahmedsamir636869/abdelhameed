@@ -1,0 +1,205 @@
+/*==========================================================
+   ABDELHAMID ENGINEERING INDUSTRIES
+   DESIGN SYSTEM
+===========================================================*/
+
+:root {
+
+    /*====================================================
+                    COLORS
+    ====================================================*/
+
+    --primary: #2563EB;
+    --primary-dark: #1748CC;
+    --primary-light: #5A9CFF;
+    --accent: #74B2FF;
+
+    --navy: #07162E;
+    --dark: #0B1424;
+
+    --background: #F7F9FD;
+
+    --white: #FFFFFF;
+
+    --text: #151D2C;
+    --gray: #6A7485;
+    --gray-light: #AEB6C5;
+
+    --success: #22C55E;
+    --danger: #EF4444;
+
+
+    /*====================================================
+                    LIQUID GLASS
+    ====================================================*/
+
+    --glass: rgba(255, 255, 255, 0.10);
+    --glass-2: rgba(255, 255, 255, 0.16);
+    --glass-3: rgba(255, 255, 255, 0.22);
+
+    --glass-border: rgba(255, 255, 255, 0.28);
+    --glass-border-light: rgba(255, 255, 255, 0.45);
+
+    --glass-shadow:
+        0 12px 40px rgba(7, 18, 46, 0.12);
+
+    --glass-shadow-lg:
+        0 40px 120px rgba(0, 0, 0, 0.18);
+
+    /* Stronger material values used by the navbar/cards */
+
+    --glass-blur: 24px;
+    --glass-saturation: 180%;
+    --glass-contrast: 112%;
+    --glass-brightness: 108%;
+
+    --glass-highlight:
+        rgba(255, 255, 255, 0.28);
+
+    --glass-rim:
+        rgba(255, 255, 255, 0.22);
+
+    --glass-inner-shadow:
+        rgba(0, 0, 0, 0.12);
+
+
+    /*====================================================
+                    GRADIENTS
+    ====================================================*/
+
+    --gradient-blue:
+        linear-gradient(
+            135deg,
+            #2B78FF,
+            #2563EB
+        );
+
+    --gradient-dark:
+        linear-gradient(
+            180deg,
+            rgba(5, 12, 24, 0.90),
+            rgba(5, 12, 24, 0.45)
+        );
+
+    --gradient-light:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.26),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    /* Liquid Glass lighting */
+
+    --gradient-glass:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.045)
+        );
+
+    --gradient-glass-highlight:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.025) 48%,
+            rgba(255, 255, 255, 0.08)
+        );
+
+
+    /*====================================================
+                    RADIUS
+    ====================================================*/
+
+    --radius-xs: 10px;
+    --radius-sm: 18px;
+    --radius: 26px;
+    --radius-lg: 34px;
+    --radius-xl: 48px;
+    --radius-round: 999px;
+
+
+    /*====================================================
+                    SPACING
+    ====================================================*/
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 64px;
+    --space-7: 80px;
+    --space-8: 120px;
+
+
+    /*====================================================
+                    FONT
+    ====================================================*/
+
+    --font-title:
+        'Poppins',
+        sans-serif;
+
+    --font-body:
+        'Inter',
+        sans-serif;
+
+    --font-number:
+        'Space Grotesk',
+        sans-serif;
+
+
+    /* Compatibility aliases used by the current CSS */
+
+    --font-main:
+        'Inter',
+        sans-serif;
+
+    --text-primary:
+        #FFFFFF;
+
+    --text-secondary:
+        rgba(255, 255, 255, 0.68);
+
+
+    /*====================================================
+                TRANSITIONS
+    ====================================================*/
+
+    --transition:
+        0.45s cubic-bezier(.22, .61, .36, 1);
+
+    --transition-fast:
+        0.28s ease;
+
+    --transition-slow:
+        0.9s cubic-bezier(.22, .61, .36, 1);
+
+
+    /*====================================================
+                    SHADOWS
+    ====================================================*/
+
+    --shadow-sm:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    --shadow:
+        0 18px 60px rgba(0, 0, 0, 0.12);
+
+    --shadow-lg:
+        0 40px 120px rgba(0, 0, 0, 0.16);
+
+    --blue-shadow:
+        0 30px 80px rgba(37, 99, 235, 0.25);
+
+
+    /*====================================================
+                    BREAKPOINTS
+    ====================================================*/
+
+    --desktop: 1440px;
+    --laptop: 1200px;
+    --tablet: 992px;
+    --mobile: 768px;
+    --small: 576px;
+}

@@ -1,0 +1,174 @@
+/* =========================================================
+   SHARED LIQUID-GLASS VISUAL SYSTEM
+   Component geometry remains in the owning stylesheet.
+   ========================================================= */
+
+/* Main liquid-glass surface. */
+.glass,
+.navbar,
+.hero-stat {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0.075) 45%,
+            rgba(255, 255, 255, 0.035) 100%
+        );
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(18px)
+        saturate(145%)
+        brightness(108%);
+    -webkit-backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(18px)
+        saturate(145%)
+        brightness(108%);
+    box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Shared tint overlay. */
+.glass::after,
+.navbar::after,
+.hero-stat::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 20% 0%,
+            rgba(255, 255, 255, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+/* Navbar and stat-card edge reflections.
+   The .glass::before primitive remains in design.css to preserve
+   the approved source order with shared button shine effects. */
+.navbar::before,
+.hero-stat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow:
+        inset 1px 1px 0 rgba(255, 255, 255, 0.30),
+        inset -1px -1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 0 25px rgba(255, 255, 255, 0.035);
+}
+
+/* Shared animated glass response. */
+.navbar,
+.hero-stat,
+.glass {
+    background-size: 200% 200%;
+    transition:
+        transform 0.4s cubic-bezier(.22,.61,.36,1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background-position 0.8s ease;
+}
+
+.navbar:hover,
+.hero-stat:hover,
+.glass:hover {
+    background-position: 100% 0%;
+    border-color: rgba(255, 255, 255, 0.34);
+    box-shadow:
+        0 25px 75px rgba(0, 0, 0, 0.30),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.34),
+        inset -1px -1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Existing component visual variants; no component geometry is included. */
+.navbar {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.045)
+        );
+    backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(24px)
+        saturate(155%)
+        brightness(110%);
+    -webkit-backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(24px)
+        saturate(155%)
+        brightness(110%);
+}
+
+.hero-stat {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.045)
+        );
+    backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(20px)
+        saturate(150%)
+        brightness(108%);
+    -webkit-backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(20px)
+        saturate(150%)
+        brightness(108%);
+}
+
+.hero-stat:hover {
+    transform:
+        translateY(-8px)
+        scale(1.015);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.065)
+        );
+}
+
+.hero-badge {
+    backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(16px)
+        saturate(145%);
+    -webkit-backdrop-filter:
+        url(#abdelhamid-glass-distortion)
+        blur(16px)
+        saturate(145%);
+}
+
+/* Browser fallback for the injected SVG filter. */
+@supports not (backdrop-filter: url(#abdelhamid-glass-distortion)) {
+    .glass,
+    .navbar,
+    .hero-stat,
+    .hero-badge {
+        backdrop-filter:
+            blur(24px)
+            saturate(140%);
+        -webkit-backdrop-filter:
+            blur(24px)
+            saturate(140%);
+    }
+}

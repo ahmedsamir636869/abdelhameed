@@ -42,16 +42,17 @@
         const fileInput = document.getElementById('quote-files');
 
         if (!fileInput) {
-            return;
+            return function () {};
         }
 
         fileInput.addEventListener('change', updateSelectedFiles);
         updateSelectedFiles();
+
+        return function () {
+            fileInput.removeEventListener('change', updateSelectedFiles);
+        };
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initialiseQuoteFileSelection, { once: true });
-    } else {
-        initialiseQuoteFileSelection();
-    }
+    window.__abdelhamidEffects = window.__abdelhamidEffects || {};
+    window.__abdelhamidEffects['/assets/js/quote.js'] = initialiseQuoteFileSelection;
 })();

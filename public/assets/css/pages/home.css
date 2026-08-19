@@ -9,9 +9,7 @@
 ========================================================== */
 
 .hero {
-    height: 100svh;
     min-height: 100svh;
-    max-height: 100svh;
     box-sizing: border-box;
     padding-bottom: 0;
 }
@@ -61,12 +59,9 @@
 .about-section {
     display: flex;
     align-items: center;
-    height: 100svh;
     min-height: 100svh;
-    max-height: 100svh;
     box-sizing: border-box;
     padding: clamp(52px, 7vh, 96px) 0;
-    overflow: hidden;
 }
 
 .about-section > .container {
@@ -134,13 +129,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100svh;
     min-height: 100svh;
-    max-height: 100svh;
     box-sizing: border-box;
     padding: clamp(48px, 6.2vh, 72px) 0 clamp(36px, 4.8vh, 52px);
     background: #E2E9FF;
-    overflow: hidden;
     scroll-snap-align: start;
 }
 
@@ -264,8 +256,13 @@
         font-size: clamp(40px, 6vw, 54px);
     }
 
+    .about-section .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
     .about-section .about-visual {
-        min-height: clamp(320px, 42vh, 420px);
+        min-height: clamp(280px, 38vh, 360px);
     }
 
     .capabilities-section .capabilities-title {
@@ -400,19 +397,29 @@
     }
 
     .about-section .about-grid {
-        gap: 18px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-section .about-visual {
+        min-height: 280px;
+        width: min(100%, 288px);
+        margin-inline: auto;
+        overflow: visible;
     }
 
     .about-section .about-title {
         margin-top: 14px;
         font-size: clamp(36px, 10vw, 42px);
         letter-spacing: -0.045em;
+        line-height: 1.1;
     }
 
     .about-section .about-description {
         margin-top: 14px;
-        font-size: 14px;
-        line-height: 1.48;
+        font-size: 15px;
+        line-height: 1.6;
     }
 
     .about-section .about-link {
@@ -422,40 +429,43 @@
     }
 
     .about-section .about-visual {
-        min-height: 178px;
+        min-height: 280px;
+        width: min(100%, 288px);
+        margin-inline: auto;
+        overflow: visible;
     }
 
     .about-section .about-glass-card {
-        width: 164px;
-        min-height: 164px;
-        padding: 22px;
-        border-radius: 28px;
+        width: 220px;
+        min-height: 220px;
+        padding: 28px;
+        border-radius: 32px;
     }
 
     .about-section .about-card-number {
-        font-size: 58px;
-        letter-spacing: -0.075em;
+        font-size: 56px;
+        letter-spacing: -0.06em;
     }
 
     .about-section .about-card-title {
         margin-top: 8px;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .about-section .about-orbit-1 {
-        width: 208px;
-        height: 208px;
+        width: 264px;
+        height: 264px;
     }
 
     .about-section .about-orbit-2 {
-        width: 276px;
-        height: 276px;
+        width: 328px;
+        height: 328px;
     }
 
     .about-section .about-side-card {
-        right: 8px;
-        bottom: 2px;
-        width: 106px;
+        right: 12px;
+        bottom: 16px;
+        width: 112px;
         padding: 12px;
         border-radius: 16px;
     }
@@ -790,7 +800,9 @@
         display: block;
         height: auto;
         min-height: 100svh;
-        padding-bottom: 0;
+        /* Own the trailing space here so the stat row's bottom margin cannot
+           collapse out of the hero and expose the page background. */
+        padding-bottom: calc(32px + env(safe-area-inset-bottom));
     }
 
     .hero > .container {
@@ -836,7 +848,7 @@
         bottom: auto;
         left: auto;
         width: calc(100% - 40px);
-        margin: 28px auto calc(32px + env(safe-area-inset-bottom));
+        margin: 28px auto 0;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
         transform: none;
@@ -1008,12 +1020,7 @@
     }
 
     .hero-stats {
-        left: max(48px, calc((100% - 1480px) / 2 + 48px));
-        bottom: 65px;
-        right: 8px;
-        width: auto;
-        gap: 24px;
-        transform: none;
+        gap: 16px;
     }
 
     .hero-stat {
@@ -1024,20 +1031,6 @@
 
 @media (min-width: 1344px) {
     .hero-stats {
-        right: 24px;
-        gap: clamp(28px, 2.5vw, 60px);
-    }
-}
-
-@media (min-width: 1408px) {
-    .hero-stats {
-        right: 48px;
-        gap: clamp(32px, 2.5vw, 40px);
-    }
-}
-
-@media (min-width: 1480px) {
-    .hero-stats {
-        right: max(48px, calc((100% - 1480px) / 2 + 48px));
+        gap: clamp(16px, 1.6vw, 24px);
     }
 }

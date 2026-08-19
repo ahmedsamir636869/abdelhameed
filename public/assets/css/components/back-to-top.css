@@ -7,7 +7,9 @@
 .home-back-to-top,
 .products-back-to-top,
 .about-back-to-top,
-.manufacturing-back-to-top {
+.manufacturing-back-to-top,
+.contact-back-to-top,
+.quote-back-to-top {
     position: fixed;
     z-index: 950;
     left: 16px;
@@ -28,7 +30,9 @@
 
 .home-back-to-top,
 .products-back-to-top,
-.manufacturing-back-to-top {
+.manufacturing-back-to-top,
+.contact-back-to-top,
+.quote-back-to-top {
     background: linear-gradient(135deg, rgba(78, 112, 231, 0.78), rgba(18, 42, 88, 0.8));
     box-shadow: 0 14px 34px rgba(7, 22, 46, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
@@ -36,7 +40,9 @@
 .home-back-to-top span,
 .products-back-to-top span,
 .about-back-to-top span,
-.manufacturing-back-to-top span {
+.manufacturing-back-to-top span,
+.contact-back-to-top span,
+.quote-back-to-top span {
     font-size: 24px;
     font-weight: 300;
     line-height: 1;
@@ -62,7 +68,9 @@
 
     .home-back-to-top,
     .products-back-to-top,
-    .manufacturing-back-to-top {
+    .manufacturing-back-to-top,
+    .contact-back-to-top,
+    .quote-back-to-top {
         transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -71,7 +79,11 @@
     .products-back-to-top:hover,
     .products-back-to-top:focus-visible,
     .manufacturing-back-to-top:hover,
-    .manufacturing-back-to-top:focus-visible {
+    .manufacturing-back-to-top:focus-visible,
+    .contact-back-to-top:hover,
+    .contact-back-to-top:focus-visible,
+    .quote-back-to-top:hover,
+    .quote-back-to-top:focus-visible {
         transform: translateY(-3px);
         background: linear-gradient(135deg, rgba(100, 136, 255, 0.92), rgba(27, 59, 120, 0.92));
         box-shadow: 0 18px 38px rgba(7, 22, 46, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -84,7 +96,9 @@
     .home-back-to-top,
     .products-back-to-top,
     .about-back-to-top,
-    .manufacturing-back-to-top {
+    .manufacturing-back-to-top,
+    .contact-back-to-top,
+    .quote-back-to-top {
         left: 22px;
         bottom: 22px;
         width: 54px;
@@ -97,7 +111,9 @@
     .home-back-to-top,
     .products-back-to-top,
     .about-back-to-top,
-    .manufacturing-back-to-top {
+    .manufacturing-back-to-top,
+    .contact-back-to-top,
+    .quote-back-to-top {
         left: 30px;
         bottom: 30px;
         width: 54px;
@@ -106,7 +122,9 @@
 
     .home-back-to-top,
     .products-back-to-top,
-    .manufacturing-back-to-top {
+    .manufacturing-back-to-top,
+    .contact-back-to-top,
+    .quote-back-to-top {
         transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -115,7 +133,11 @@
     .products-back-to-top:hover,
     .products-back-to-top:focus-visible,
     .manufacturing-back-to-top:hover,
-    .manufacturing-back-to-top:focus-visible {
+    .manufacturing-back-to-top:focus-visible,
+    .contact-back-to-top:hover,
+    .contact-back-to-top:focus-visible,
+    .quote-back-to-top:hover,
+    .quote-back-to-top:focus-visible {
         transform: translateY(-3px);
         background: linear-gradient(135deg, rgba(100, 136, 255, 0.92), rgba(27, 59, 120, 0.92));
         box-shadow: 0 18px 38px rgba(7, 22, 46, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);

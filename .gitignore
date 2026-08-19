@@ -3,3 +3,9 @@ node_modules/
 out/
 .env.local
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Agent skill installs (managed via `npx skills add`)
+.claude/skills/
+.agents/skills/

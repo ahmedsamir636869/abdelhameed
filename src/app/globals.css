@@ -13,6 +13,9 @@
 @import "../../public/assets/css/pages/manufacturing.css";
 @import "../../public/assets/css/pages/contact.css";
 @import "../../public/assets/css/pages/quote.css";
+@import "../../public/assets/css/pages/capabilities-redesign.css";
+@import "../../public/assets/css/pages/product-directory-redesign.css";
+@import "../../public/assets/css/pages/manufacturing-certifications-redesign.css";
 @import "../../public/assets/css/components/glass.css";
 @import "../../public/assets/css/components/buttons.css";
 @import "../../public/assets/css/components/navbar.css";
@@ -20,7 +23,7 @@
 @import "../../public/assets/css/core/mobile-experience.css";
 @import "../../public/assets/css/core/fitted-sections.css";
 
-@source "../content/**/*.html";
+@source "../components/**/*.tsx";
 
 @theme {
   --color-ink-950: #020713;

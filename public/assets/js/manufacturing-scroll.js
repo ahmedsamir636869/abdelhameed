@@ -27,7 +27,7 @@
             window.location.pathname.endsWith("/manufacturing.php");
 
         if (!isManufacturingPage) {
-            return;
+            return function () {};
         }
 
 
@@ -42,7 +42,16 @@
         );
 
         if (sections.length < 2) {
-            return;
+            return function () {};
+        }
+
+        const cleanups = [];
+
+        function listen(target, type, handler, options) {
+            target.addEventListener(type, handler, options);
+            cleanups.push(function () {
+                target.removeEventListener(type, handler, options);
+            });
         }
 
 
@@ -827,7 +836,7 @@
            MOUSE / TRACKPAD
         ===================================================== */
 
-        window.addEventListener(
+        listen(window,
             "wheel",
             function (event) {
 
@@ -1121,7 +1130,7 @@
         );
 
 
-        window.addEventListener(
+        listen(window,
             "manufacturingbacktotop",
             function () {
 
@@ -1187,7 +1196,7 @@
            KEYBOARD
         ===================================================== */
 
-        window.addEventListener(
+        listen(window,
             "keydown",
             function (event) {
 
@@ -1365,7 +1374,7 @@
            RESIZE
         ===================================================== */
 
-        window.addEventListener(
+        listen(window,
             "resize",
             function () {
 
@@ -1376,7 +1385,7 @@
             }
         );
 
-        window.addEventListener(
+        listen(window,
             "blur",
             clearWheelGesture
         );
@@ -1388,30 +1397,35 @@
         updateCurrentSection();
         syncFinalSectionScrollMode();
 
+        return function cleanupManufacturingScroll() {
+            cleanups.forEach(function (fn) {
+                fn();
+            });
+
+            if (animationFrame !== null) {
+                cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+
+            if (backToTopRestoreTimer) {
+                clearTimeout(backToTopRestoreTimer);
+                backToTopRestoreTimer = null;
+            }
+
+            if (wheelGestureTimer) {
+                clearTimeout(wheelGestureTimer);
+                wheelGestureTimer = null;
+            }
+
+            restoreScrollBehavior();
+            restoreScrollSnapAfterFinalSection();
+        };
+
     }
 
 
-    /* =========================================================
-       SAFE INITIALIZATION
-    ========================================================= */
-
-    if (
-        document.readyState ===
-        "loading"
-    ) {
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initManufacturingScroll
-        );
-
-    }
-
-    else {
-
-        initManufacturingScroll();
-
-    }
+    window.__abdelhamidEffects = window.__abdelhamidEffects || {};
+    window.__abdelhamidEffects['/assets/js/manufacturing-scroll.js'] = initManufacturingScroll;
 
 })();
 

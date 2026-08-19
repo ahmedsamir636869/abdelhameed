@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initHomeScroll() {
 
     /* ==========================================================
        HOMEPAGE ONLY
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pagePath === "/Abdelhamid/index.php";
 
     if (!isHomePage) {
-        return;
+        return function () {};
     }
 
     const sections = Array.from(
@@ -22,7 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     if (!sections.length) {
-        return;
+        return function () {};
+    }
+
+    const cleanups = [];
+
+    function listen(target, type, handler, options) {
+        target.addEventListener(type, handler, options);
+        cleanups.push(function () {
+            target.removeEventListener(type, handler, options);
+        });
     }
 
     let currentSection = 0;
@@ -490,7 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.addEventListener(
+    listen(window,
         "wheel",
         function (event) {
 
@@ -622,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-    window.addEventListener(
+    listen(window,
         "homebacktotop",
         function () {
 
@@ -678,17 +687,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-    window.addEventListener(
+    listen(window,
         "blur",
         clearWheelGesture
     );
 
-    window.addEventListener(
+    listen(window,
         "resize",
         clearWheelGesture
     );
 
-    window.addEventListener(
+    listen(window,
         "keydown",
         function (event) {
 
@@ -759,4 +768,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateCurrentSection();
 
-});
+    return function cleanupHomeScroll() {
+        cleanups.forEach(function (fn) {
+            fn();
+        });
+
+        if (animationFrame !== null) {
+            cancelAnimationFrame(animationFrame);
+            animationFrame = null;
+        }
+
+        if (backToTopRestoreTimer) {
+            clearTimeout(backToTopRestoreTimer);
+            backToTopRestoreTimer = null;
+        }
+
+        if (wheelGestureTimer) {
+            clearTimeout(wheelGestureTimer);
+            wheelGestureTimer = null;
+        }
+
+        restoreScrollBehavior();
+    };
+
+}
+
+
+window.__abdelhamidEffects = window.__abdelhamidEffects || {};
+window.__abdelhamidEffects['/assets/js/home-scroll.js'] = initHomeScroll;
+

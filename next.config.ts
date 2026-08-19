@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    staleTimes: {
+      dynamic: 3600,
+      static: 86400,
+    },
+  },
 };
 
 export default nextConfig;

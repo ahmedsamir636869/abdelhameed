@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Abdelhamid Engineering Industries",
+  "alternateName": "ABD-ELHAMID",
+  "url": "https://abdelhameed-ten.vercel.app",
+  "logo": "https://abdelhameed-ten.vercel.app/assets/logos/logo.png",
+  "foundingDate": "1988",
+  "description": "Egyptian manufacturer of precision wire and metal components for household appliances, retail displays and industrial applications.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "EG"
+  }
+}

@@ -21,7 +21,7 @@
 
 
         if (!isAboutPage) {
-            return;
+            return function () {};
         }
 
 
@@ -37,7 +37,16 @@
 
 
         if (sections.length < 2) {
-            return;
+            return function () {};
+        }
+
+        const cleanups = [];
+
+        function listen(target, type, handler, options) {
+            target.addEventListener(type, handler, options);
+            cleanups.push(function () {
+                target.removeEventListener(type, handler, options);
+            });
         }
 
 
@@ -585,7 +594,7 @@
            MOUSE WHEEL
         ================================================== */
 
-        window.addEventListener(
+        listen(window,
             "wheel",
             function (event) {
 
@@ -729,7 +738,7 @@
         );
 
 
-        window.addEventListener(
+        listen(window,
             "aboutbacktotop",
             function () {
 
@@ -793,7 +802,7 @@
            KEYBOARD
         ================================================== */
 
-        window.addEventListener(
+        listen(window,
             "keydown",
             function (event) {
 
@@ -885,12 +894,12 @@
             }
         );
 
-        window.addEventListener(
+        listen(window,
             "blur",
             clearWheelGesture
         );
 
-        window.addEventListener(
+        listen(window,
             "resize",
             clearWheelGesture
         );
@@ -902,30 +911,34 @@
 
         updateCurrentSection();
 
+        return function cleanupAboutScroll() {
+            cleanups.forEach(function (fn) {
+                fn();
+            });
+
+            if (animationFrame !== null) {
+                cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+
+            if (backToTopRestoreTimer) {
+                clearTimeout(backToTopRestoreTimer);
+                backToTopRestoreTimer = null;
+            }
+
+            if (wheelGestureTimer) {
+                clearTimeout(wheelGestureTimer);
+                wheelGestureTimer = null;
+            }
+
+            restoreScrollBehavior();
+        };
+
     }
 
 
-    /* ======================================================
-       INITIALIZE
-    ====================================================== */
-
-    if (
-        document.readyState === "loading"
-    ) {
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initAboutScroll
-        );
-
-    }
-
-    else {
-
-        initAboutScroll();
-
-    }
-
+    window.__abdelhamidEffects = window.__abdelhamidEffects || {};
+    window.__abdelhamidEffects['/assets/js/about-scroll.js'] = initAboutScroll;
 
 })();
 

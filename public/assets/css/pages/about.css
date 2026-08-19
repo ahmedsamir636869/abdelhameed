@@ -365,7 +365,9 @@
 }
 
 .facility-image-frame picture,
-.second-factory-image-frame picture {
+.facility-image-frame > img,
+.second-factory-image-frame picture,
+.second-factory-image-frame > img {
     display: block;
 }
 
@@ -937,7 +939,9 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* Scoped to the About page so the parchment canvas never leaks onto the
+   dark-themed pages during overscroll. */
+body:has(.about-page) {
     margin: 0;
     background: #f7ead5;
     color: #593720;
@@ -1021,7 +1025,7 @@ body {
     width: 100%;
     height: 170px;
 
-    background-image: url("/assets/images/wood-strip.png");
+    background-image: url("/assets/images/optimized/about/wood-strip.webp");
 
     background-repeat: repeat-x;
 
@@ -1039,7 +1043,7 @@ body {
    MAIN CONTENT
 ===================================================== */
 
-.about-content {
+.about-page .about-content {
     position: relative;
 
     z-index: 5;
@@ -1299,7 +1303,7 @@ body {
     z-index: 0;
 }
 
-.about-content {
+.about-page .about-content {
     position: relative;
     z-index: 5;
 }

@@ -12,7 +12,7 @@ body:has(.manufacturing-page) {
 
 .manufacturing-systems {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background:
         radial-gradient(circle at 88% 8%, rgba(67, 104, 238, .16), transparent 31%),
         radial-gradient(circle at 5% 96%, rgba(47, 78, 180, .14), transparent 29%),
@@ -93,16 +93,26 @@ body:has(.manufacturing-page) {
 }
 
 .manufacturing-certificates-showcase {
-    margin-top: 28px;
-    padding: 28px;
-    border: 1px solid rgba(132, 158, 255, .15);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 0;
+    padding: 22px;
+    border: 1px solid rgba(132, 158, 255, .22);
     border-radius: 28px;
     background: linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .025));
     box-shadow: 0 18px 40px rgba(0, 5, 18, .12);
 }
 
 .manufacturing-certificates-showcase .manufacturing-certificates-paper {
-    margin-top: 20px;
+    margin-top: 0;
+}
+
+@media (min-width: 1101px) {
+    .manufacturing-certificate-preview img,
+    .manufacturing-certificates-paper--systems .manufacturing-certificate-preview img {
+        height: clamp(150px, 20vh, 210px);
+    }
 }
 
 .manufacturing-certificates-showcase-head h3 {
@@ -192,8 +202,9 @@ body:has(.manufacturing-page) {
     }
 
     .manufacturing-certificates-showcase {
-        margin-top: 18px;
-        padding: 18px 14px 14px;
+        margin-top: 0;
+        padding: 14px;
+        gap: 14px;
         border-radius: 22px;
         text-align: center;
     }

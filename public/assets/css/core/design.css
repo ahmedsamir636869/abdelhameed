@@ -426,6 +426,8 @@ a {
 
     letter-spacing: -0.055em;
 
+    word-spacing: 0.12em;
+
     text-shadow:
         0 8px 40px rgba(0, 0, 0, 0.38);
 
@@ -2029,39 +2031,6 @@ a {
 .capability-card:hover .capability-card-image {
 
     transform: scale(1.09);
-}
-
-
-
-/*
-   Replace these image paths with your actual product images.
-*/
-
-.capability-image-wire {
-
-    background-image:
-        url("/assets/images/products/wire-components.png");
-}
-
-
-.capability-image-appliance {
-
-    background-image:
-        url("/assets/images/products/appliance-components.png");
-}
-
-
-.capability-image-retail {
-
-    background-image:
-        url("/assets/images/products/retail-systems.png");
-}
-
-
-.capability-image-industrial {
-
-    background-image:
-        url("/assets/images/products/custom-industrial.png");
 }
 
 

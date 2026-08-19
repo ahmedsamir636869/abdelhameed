@@ -1,6 +1,43 @@
+'use client';
+
 /* Migrated from the legacy src/content/quote.html fragment. */
 
+import { useState, type FormEvent } from 'react';
+
 export function QuoteContent() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        body: formData, // multipart — supports file uploads
+      });
+
+      const json = await res.json();
+
+      if (!res.ok || !json.ok) {
+        setStatus('error');
+        setErrorMsg(json.error || 'Something went wrong. Please try again.');
+        return;
+      }
+
+      setStatus('success');
+      form.reset();
+    } catch {
+      setStatus('error');
+      setErrorMsg('Network error. Please check your connection and try again.');
+    }
+  }
+
   return (
     <>
       <main className="quote-page relative isolate overflow-x-clip">
@@ -37,14 +74,14 @@ export function QuoteContent() {
                           Tell us what<br />
                           you need.
                           <span>
-                              We'll engineer<br />
+                              We&apos;ll engineer<br />
                               the right solution.
                           </span>
                       </h1>
 
                       <p>
                           Share your project requirements with our engineering
-                          team and we'll review your request and prepare
+                          team and we&apos;ll review your request and prepare
                           a quotation tailored to your needs.
                       </p>
 
@@ -65,11 +102,8 @@ export function QuoteContent() {
 
                       {/* FORM HEADER */}
 
-                      <div className="quote-card-header">
 
-                          <div className="quote-card-icon" aria-hidden="true">
-                              <span>↗</span>
-                          </div>
+                      <div className="quote-card-header">
 
                           <div>
                               <span className="quote-card-label">
@@ -89,19 +123,27 @@ export function QuoteContent() {
                       </div>
 
 
+                      {status === 'success' && (
+                          <div className="contact-form-status contact-form-success" role="status">
+                              <strong>✓ Quote request sent successfully!</strong>
+                              <p>Our engineering team will review your request and contact you with the next steps.</p>
+                          </div>
+                      )}
 
-                      {/* FORM */}
+                      {status === 'error' && (
+                          <div className="contact-form-status contact-form-error" role="alert">
+                              <strong>✕ {errorMsg}</strong>
+                          </div>
+                      )}
 
-                      <form className="quote-form" method="post" action="" encType="multipart/form-data" aria-labelledby="quote-form-heading">
+                      {status !== 'success' && (
+
+                      <form className="quote-form" onSubmit={handleSubmit} encType="multipart/form-data" aria-labelledby="quote-form-heading">
 
                           <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', overflow: 'hidden' }}>
                               <label htmlFor="quote-website">Website</label>
                               <input id="quote-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
                           </div>
-
-                          <input type="hidden" name="form_started_at" defaultValue="1787154250" />
-
-                          <input type="hidden" name="csrf_token" defaultValue="" />
 
                           {/* ROW 1 */}
 
@@ -241,14 +283,14 @@ export function QuoteContent() {
                                   and contact you with the next steps.
                               </div>
 
-                              <button type="submit" className="quote-submit">
+                              <button type="submit" className="quote-submit" disabled={status === 'sending'}>
 
                                   <span>
-                                      REQUEST QUOTATION
+                                      {status === 'sending' ? 'SENDING...' : 'REQUEST QUOTATION'}
                                   </span>
 
                                   <span className="quote-submit-arrow" aria-hidden="true">
-                                      →
+                                      {status === 'sending' ? '⟳' : '→'}
                                   </span>
 
                               </button>
@@ -256,6 +298,8 @@ export function QuoteContent() {
                           </div>
 
                       </form>
+
+                      )}
 
                   </div>
 

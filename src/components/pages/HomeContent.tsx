@@ -322,7 +322,6 @@ export function HomeContent() {
 
                           <SiteLink href="products.php#product-categories" className="capabilities-link">
                               Explore all products
-                              <span aria-hidden="true">&#8599;</span>
                           </SiteLink>
 
                       </div>

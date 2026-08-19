@@ -1,6 +1,44 @@
+'use client';
+
 /* Migrated from the legacy src/content/contact.html fragment. */
 
+import { useState, type FormEvent } from 'react';
+
 export function ContactContent() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok || !json.ok) {
+        setStatus('error');
+        setErrorMsg(json.error || 'Something went wrong. Please try again.');
+        return;
+      }
+
+      setStatus('success');
+      form.reset();
+    } catch {
+      setStatus('error');
+      setErrorMsg('Network error. Please check your connection and try again.');
+    }
+  }
+
   return (
     <>
       <main className="contact-page relative isolate overflow-x-clip">
@@ -294,16 +332,26 @@ export function ContactContent() {
 
 
 
-                      <form className="contact-form" method="post" action="" aria-labelledby="contact-form-heading">
+                      {status === 'success' && (
+                          <div className="contact-form-status contact-form-success" role="status">
+                              <strong>✓ Message sent successfully!</strong>
+                              <p>Thank you for reaching out. We will get back to you shortly.</p>
+                          </div>
+                      )}
+
+                      {status === 'error' && (
+                          <div className="contact-form-status contact-form-error" role="alert">
+                              <strong>✕ {errorMsg}</strong>
+                          </div>
+                      )}
+
+                      {status !== 'success' && (
+                      <form className="contact-form" onSubmit={handleSubmit} aria-labelledby="contact-form-heading">
 
                           <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', overflow: 'hidden' }}>
                               <label htmlFor="contact-website">Website</label>
                               <input id="contact-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
                           </div>
-
-                          <input type="hidden" name="form_started_at" defaultValue="1787154250" />
-
-                          <input type="hidden" name="csrf_token" defaultValue="" />
 
 
                           {/* NAME + COMPANY */}
@@ -400,20 +448,21 @@ export function ContactContent() {
 
                           {/* SUBMIT */}
 
-                          <button type="submit" className="contact-submit">
+                          <button type="submit" className="contact-submit" disabled={status === 'sending'}>
 
                               <span>
-                                  SEND MESSAGE
+                                  {status === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}
                               </span>
 
                               <span className="contact-submit-arrow" aria-hidden="true">
-                                  →
+                                  {status === 'sending' ? '⟳' : '→'}
                               </span>
 
                           </button>
 
 
                       </form>
+                      )}
 
                   </article>
 

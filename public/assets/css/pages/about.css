@@ -605,7 +605,8 @@
 
     aspect-ratio: 3 / 4;
 
-    padding: 7px;
+    border: 7px solid #6f4b2c;
+    padding: 0;
 
     background: #6f4b2c;
 
@@ -800,7 +801,8 @@
 
     aspect-ratio: 3 / 4;
 
-    padding: 7px;
+    border: 7px solid #6f4b2c;
+    padding: 0;
 
     background: #6f4b2c;
 
@@ -1789,7 +1791,8 @@ body:has(.about-page) {
 
     .about-facilities .facility-image-frame {
 
-        padding: 7px;
+        border-width: 7px;
+        padding: 0;
 
     }
 
@@ -1808,7 +1811,8 @@ body:has(.about-page) {
 
         aspect-ratio: 3 / 4;
 
-        padding: 5px;
+        border-width: 5px;
+        padding: 0;
 
     }
 
@@ -1819,7 +1823,8 @@ body:has(.about-page) {
 
         aspect-ratio: 3 / 4;
 
-        padding: 5px;
+        border-width: 5px;
+        padding: 0;
 
     }
 

@@ -1,0 +1,19 @@
+Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
+src\app\layout.tsx (89:9) @ RootLayout
+
+
+  87 |     <html lang="en">
+  88 |       <head>
+> 89 |         <script
+     |         ^
+  90 |           id="browser-extension-hydration-guard"
+  91 |           dangerouslySetInnerHTML={{ __html: extensionHydrationGuard }}
+  92 |         />
+Call Stack
+14
+
+Show 12 ignore-listed frame(s)
+script
+<anonymous>
+RootLayout
+src\app\layout.tsx (89:9)

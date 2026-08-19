@@ -301,8 +301,6 @@ html:has(.quote-page) {
     .about-second-factory,
     .about-third-factory,
     .manufacturing-page section,
-    .manufacturing-hero,
-    .manufacturing-hero-inner,
     .manufacturing-systems,
     .manufacturing-machinery,
     .contact-page {
@@ -310,6 +308,16 @@ html:has(.quote-page) {
         max-height: none;
         min-height: auto;
         overflow: visible;
+    }
+
+    /* The manufacturing hero keeps min-height: 100svh so it fills the
+       viewport on every phone and tablet. Only reset the other sections. */
+    .manufacturing-hero,
+    .manufacturing-hero-inner {
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        /* min-height intentionally NOT reset — kept at 100svh */
     }
 
     .about-opening {
@@ -414,8 +422,8 @@ html:has(.quote-page) {
         min-height: 0;
     }
 
-    .manufacturing-hero,
-    .manufacturing-hero-inner,
+    /* Let the manufacturing systems section flow naturally, but keep the
+       hero at full viewport height so it fills every phone screen. */
     .manufacturing-page .manufacturing-systems {
         height: auto;
         min-height: auto;

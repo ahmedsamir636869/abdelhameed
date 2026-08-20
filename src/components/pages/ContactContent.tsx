@@ -149,9 +149,18 @@ export function ContactContent() {
                                   </h3>
 
                                   <p>
-                                      Industrial Zone C5, Plot # 1 &amp; 2,<br />
-                                      P.O. Box: 167, Tenth of Ramadan City,<br />
-                                      Egypt.
+                                      <a 
+                                          href="https://maps.app.goo.gl/em1TghayvmybhTAb7" 
+                                          target="_blank" 
+                                          rel="noopener noreferrer"
+                                          style={{ color: 'inherit', textDecoration: 'none' }}
+                                          onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+                                          onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+                                      >
+                                          Industrial Zone C5, Plot # 1 &amp; 2,<br />
+                                          P.O. Box: 167, Tenth of Ramadan City,<br />
+                                          Egypt.
+                                      </a>
                                   </p>
 
                               </div>

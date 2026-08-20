@@ -129,7 +129,7 @@ export function ContactContent() {
 
                           <div className="contact-info-item">
 
-                              <a className="contact-icon" href="https://maps.app.goo.gl/em1TghayvmybhTAb7" target="_blank" rel="noopener noreferrer" aria-label="Open Abdelhamid Engineering Industries location in Google Maps">
+                              <a className="contact-icon contact-icon-btn" href="https://maps.app.goo.gl/em1TghayvmybhTAb7" target="_blank" rel="noopener noreferrer" aria-label="Open Abdelhamid Engineering Industries location in Google Maps">
 
                                   <svg viewBox="0 0 24 24">
 
